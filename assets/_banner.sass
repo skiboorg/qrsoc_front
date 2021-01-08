@@ -1,0 +1,81 @@
+.banner
+  background: url(/banner.jpg) no-repeat
+  background-position-x: center
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+  height: 748px
+  margin-bottom: 115px
+  &-inner
+    max-width: 1180px
+    padding: 0 10px
+    margin: 0 auto
+    position: relative
+    height: 750px
+    display: flex
+    align-items: flex-start
+    justify-content: center
+    flex-direction: column
+    & .section-title
+      max-width: 480px
+      margin-bottom: 40px
+  &-checks
+    width: 480px
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    justify-content: space-between
+  &-check
+    font-size: 24px
+    color: #ffffff
+    font-weight: bold
+    flex-basis: 50%
+    margin-bottom: 55px
+    text-align: center
+    img
+      margin-right: 15px
+
+
+  &-btn
+    width: 480px
+
+    & .btn
+      margin: 0 auto
+  &-decor
+    position: absolute
+    right: 0
+    bottom: -100px
+  &-info-block
+
+    padding: 50px
+
+    z-index: 1000
+    transition: all .05s linear
+
+    &__top
+      display: flex
+      align-items: center
+      justify-content: flex-start
+      margin-bottom: 25px
+      &--img
+        width: 150px
+        height: 150px
+        object-fit: cover
+        border-radius: 100%
+        margin-right: 50px
+      &--name
+        p
+          letter-spacing: 0.05em
+          text-transform: uppercase
+          &:first-child
+            font-size: 40px
+          &:last-child
+            font-size: 14px
+            opacity: .8
+    &__content
+      p
+
+        line-height: 150%
+
+@media (max-width: 576px)
+  .banner
+    background: url(http://placehold.it/400) no-repeat
+    height: 400px

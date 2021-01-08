@@ -1,0 +1,102 @@
+.user-profile
+  &-menu
+    background: #FFFFFF
+    box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.25), 5px 5px 20px #E6E6F0
+    border-radius: 5px
+    position: sticky
+    top: 20px
+    &.faq-menu
+      & .user-profile-menu__item
+        p
+          flex-basis: 100%
+          text-align: unset
+    &.header-user-menu
+      background: transparent
+      box-shadow: unset
+      & .user-profile-menu__item--wrapper
+        color: #FFFFFF
+        &.nuxt-link-exact-active
+          color: $color-text
+      & .user-profile-menu__item
+        svg
+          fill: #FFFFFF
+      & .profileMenuActive
+        svg
+          fill: $color-text-d-blue
+        a
+          color: $color-text
+    &__top
+      display: flex
+      align-items: center
+      justify-content: space-between
+      border-bottom: 2px solid #CECFDF
+      padding: 15px 15px 15px 25px
+      &--inner
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        img
+          width: 35px
+          height: 35px
+          border-radius: 100%
+          object-fit: cover
+          margin-right: 15px
+    &__item
+      &--wrapper
+        color: inherit
+      position: relative
+      padding: 15px 35px
+      display: flex
+      align-items: center
+      justify-content: space-between
+      cursor: pointer
+      transition: all .2s linear
+      svg
+        transition: all .2s linear
+        fill: #CECFDF
+      p
+        font-size: 14px
+        text-align: center
+        flex-basis: 60%
+      a
+        color: inherit
+        font-size: 14px
+
+      & .is__vip
+        color: #F48502
+      &:hover
+        //background: #F8F8FB
+        border-radius: 2px
+        transition: all .2s linear
+        svg
+          transition: all .2s linear
+        //  fill: $color-text-d-blue
+        //&::before
+        //  transition: all .2s linear
+        //  position: absolute
+        //  content: ''
+        //  width: 4px
+        //  height: 100%
+        //  top: 0
+        //  left: 0
+        //  background: $color-text-d-blue
+        //  border-radius: 5px
+      &.profileMenuActive
+        background: #F8F8FB
+        border-radius: 2px
+        transition: all .2s linear
+        svg
+          transition: all .2s linear
+          fill: $color-text-d-blue
+        &::before
+          position: absolute
+          content: ''
+          width: 4px
+          height: 100%
+          top: 0
+          left: 0
+          background: $color-text-d-blue
+          border-radius: 5px
+        &.menu-item-vip::before
+          background: #F48502
+
