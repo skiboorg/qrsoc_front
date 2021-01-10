@@ -1,7 +1,6 @@
 <template>
        <div  class="user-profile-tab">
               <div class="user-profile-block">
-
                 <h3 class="user-profile-block__title">简要信息</h3>
                 <div class="user-profile-block__info-grid">
                   <p>已加入</p>

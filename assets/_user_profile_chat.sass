@@ -8,11 +8,37 @@
     grid-column-gap: 7px
     padding: 20px 20px 20px 0
     min-height: 560px
-
   &__left
     flex-grow: 1
-
   &__right
     flex-grow: 6
+  & .stream-tabs
+    display: none
 
 
+@media (max-width: 576px)
+  .user-profile-chat
+    &__wrapper
+      position: relative
+      display: block
+      padding: 0 10px
+    &__left
+      right: 10px
+      left: 10px
+      position: absolute
+    &__right
+      position: absolute
+      right: 10px
+      left: 10px
+      bottom: 0
+      top: 65px
+    & .stream-tabs
+      display: flex
+      margin: 0 -10px 15px
+  .mobileTab
+    opacity: 0
+    pointer-events: none
+    transition: all .2s linear
+    &.mobileTabActive
+      opacity: 1
+      pointer-events: all

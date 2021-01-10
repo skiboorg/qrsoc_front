@@ -14,7 +14,7 @@
             <svg class="user-profile-stats__bar--step--separator" width="4" height="10" viewBox="0 0 4 10" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="4" height="10" fill="white"/>
             </svg>
-            <p class="user-profile-stats__bar--step--points">330</p>
+            <p class="user-profile-stats__bar--step--points">100</p>
             <div data-num="-15%" class="user-profile-stats__bar--step--bottom">
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="20" cy="20" r="18.5"  stroke="white" stroke-width="3"/>
@@ -30,7 +30,7 @@
             <svg class="user-profile-stats__bar--step--separator" width="4" height="10" viewBox="0 0 4 10" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="4" height="10" fill="white"/>
             </svg>
-            <p class="user-profile-stats__bar--step--points">330</p>
+            <p class="user-profile-stats__bar--step--points">200</p>
             <div data-num="-25%" class="user-profile-stats__bar--step--bottom">
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="20" cy="20" r="18.5"  stroke="white" stroke-width="3"/>
@@ -48,7 +48,7 @@
             <svg class="user-profile-stats__bar--step--separator" width="4" height="10" viewBox="0 0 4 10" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="4" height="10" fill="white"/>
             </svg>
-            <p class="user-profile-stats__bar--step--points">330</p>
+            <p class="user-profile-stats__bar--step--points">300</p>
             <div data-num="-35%" class="user-profile-stats__bar--step--bottom">
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="20" cy="20" r="18.5"  stroke="white" stroke-width="3"/>
@@ -66,7 +66,7 @@
             <svg class="user-profile-stats__bar--step--separator" width="4" height="10" viewBox="0 0 4 10" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="4" height="10" fill="white"/>
             </svg>
-            <p class="user-profile-stats__bar--step--points">330</p>
+            <p class="user-profile-stats__bar--step--points">400</p>
             <div data-num="-40%" class="user-profile-stats__bar--step--bottom">
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="20" cy="20" r="18.5"  stroke="white" stroke-width="3"/>
@@ -76,7 +76,7 @@
 
           </div>
           <div class="user-profile-stats__mainbar">
-            <div class="user-profile-stats__progressbar" :style="'width:' + 100 / this.$auth.user.rating + '%'">
+            <div class="user-profile-stats__progressbar" :style="'width:' + this.$auth.user.rating /4 + '%'">
               <p>{{this.$auth.user.rating}}</p>
             </div>
           </div>

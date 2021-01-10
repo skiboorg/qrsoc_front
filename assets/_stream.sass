@@ -159,6 +159,8 @@
         background: $color-text-d-blue
         height: 4px
         border-radius: 5px
+    &.tabDisabled
+      pointer-events: none
   &-tab-chat
     padding: 0 20px
     height: calc(100% - 90px)
@@ -190,3 +192,9 @@
         margin-left: 10px
 
 
+@media (max-width: 576px)
+  .stream
+    &-wrapper
+      grid-template-columns: 1fr
+    &-tab-chat
+      min-height: 400px

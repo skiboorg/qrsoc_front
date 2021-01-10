@@ -28,9 +28,9 @@
 
       </div>
     </section>
-    <el-dialog title="Select BG" :visible.sync="bgDialogVisible" width="30%">
+    <el-dialog class="selectBg" title="Select BG" :visible.sync="bgDialogVisible" >
       <div class="user-bg__wrapper">
-        <div class="user-bg__item" v-for="image in user_bg" :key="image.id" :class="{'itemForVip':image.is_for_vip}">
+        <div class="user-bg__item"  v-for="image in user_bg" :key="image.id" :class="{'itemForVip':!$auth.user.is_vip && image.is_for_vip}">
           <img @click="changeUserBg(image.id,image.image)" :src="image.image" alt="">
         </div>
       </div>
@@ -40,7 +40,6 @@
 <script>
 export default {
   props:['is_own_profile'],
-
   data() {
     return {
       bgDialogVisible:false,

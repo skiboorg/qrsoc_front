@@ -19,18 +19,12 @@
                        :nickname="this.$store.getters['girl_profile/getUser'].nickname"
                        :balance="this.$store.getters['girl_profile/getUser'].balance"
                        :is_streamer="this.$store.getters['girl_profile/getUser'].is_streamer"/>
-
             <ProfileMenu/>
-
-
-
             <Nuxt />
           </div>
         </div>
       </div>
     </section>
-
-
   </div>
 
 </template>

@@ -15,9 +15,10 @@
     "element-ui": "^2.13.2",
     "nuxt": "^2.14.6",
     "swiper": "^5.3.6",
-    "vue-awesome-swiper": "^4.1.1",
     "video.js": "^7.10.2",
-    "videojs-flash": "^2.2.1"
+    "videojs-flash": "^2.2.1",
+    "vue-awesome-swiper": "^4.1.1",
+    "vue-scrollto": "^2.20.0"
   },
   "devDependencies": {
     "node-sass": "^5.0.0",

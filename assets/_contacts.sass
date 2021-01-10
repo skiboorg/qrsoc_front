@@ -16,3 +16,18 @@
     & .el-select-dropdown__item
       &.selected
         color: $color-text-d-blue
+
+@media (max-width: 576px)
+  .contacts
+    &-wrapper
+      display: grid
+      grid-template-columns: 1fr
+
+
+.contact-item
+  display: flex
+  align-items: flex-start
+  justify-content: flex-start
+  margin-bottom: 20px
+  svg
+    margin-right: 30px

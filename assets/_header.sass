@@ -15,6 +15,11 @@
     flex-grow: 2
     a
       color: #ffffff
+    &-mobile
+      align-items: center
+      justify-content: center
+      display: none
+      margin-right: 10px
   &-nav
     &-mobile
       display: none
@@ -50,7 +55,7 @@
       display: flex
       align-items: center
       justify-content: center
-      background: $color-text-blue
+      background: $color-d-red
       border-radius: 22px
       height: 45px
       cursor: pointer
@@ -96,6 +101,8 @@
         display: flex
         align-items: center
         justify-content: center
+        svg
+            stroke: #656565
         &--num
           position: absolute
           background: #832A2A
@@ -179,6 +186,8 @@
       padding: 0
     &-logo
       display: none
+      &-mobile
+        display: flex
     &-nav
       display: none
       &-mobile
@@ -231,15 +240,28 @@
       justify-content: space-between
       max-width: 87%
       background: $color-text-d-blue
-      padding: 7px 0 7px 10px
+      padding: 7px 10px 7px 10px
+      &__user
+        background: $color-d-red
+        pointer-events: none
+        &--name
+          color: #FFFFFF
+        &--arrow
+          display: none
+
       &__balance
         display: none
       &__notify
         order: 2
+        &--img
+          background: $color-d-red
+          svg
+            stroke: #FFFFFF
+
       &__user-menu
         display: flex
         order: 3
-        flex-basis: 50px
+        //flex-basis: 50px
         align-items: center
         justify-content: center
         svg

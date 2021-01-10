@@ -212,8 +212,27 @@
             display: none
         &__bottom
           display: none
+      &-about__img--change
+        padding: 13px !important
+        right: unset !important
+        left: 50% !important
+        transform: translateX(-50%)
+        span
+          display: none
+        svg
+          margin-right: 0 !important
 
 
+.selectBg
+  .el-dialog
+    max-width: 600px
 
+@media (max-width: 576px)
+  .selectBg
+    .el-dialog
+      width: 95%
 
-
+  .user-bg
+    &__wrapper
+      display: grid
+      grid-template-columns: repeat(2,1fr)

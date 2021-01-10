@@ -30,7 +30,14 @@
             </div>
           </div>
           <div class="faq-page__content user-profile-block">
-
+            <el-select class="faq-page__select" v-model="value" placeholder="Select" >
+              <el-option
+                  v-for="item in options"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value">
+              </el-option>
+            </el-select>
             <Nuxt/>
           </div>
         </div>
@@ -62,7 +69,28 @@ export default {
   },
   data(){
     return{
+      options: [
+        {
+          value: '/faq',
+          label: '隐私权保护政策'
+        }, {
+          value: '/faq/faq1',
+          label: '用户注册协议'
+        }, {
+          value: '/faq/faq2',
+          label: '侵权投诉指引'
+        }, {
+          value: '/faq/faq3',
+          label: '侵权投诉指引'
+        }
+      ],
+      value: '/faq'
 
+    }
+  },
+  watch:{
+    value(val){
+      this.$router.push(val)
     }
   },
   components:{

@@ -14,7 +14,7 @@
           <span v-else>编辑封面图片</span>
         </p>
       </el-upload>
-      <div v-show="level" class="user-profile-about__img--level"><p>{{level}}</p></div>
+      <div  class="user-profile-about__img--level" :class="{'userIsVip':userData.is_vip}"><p>{{level}}</p></div>
     </div>
     <div class="user-profile-about__name">
       <p>{{fio}}</p>
@@ -63,6 +63,7 @@
       return {
         userData:{
           avatar:this.$auth.loggedIn ? this.$auth.user.avatar : null,
+          is_vip:this.$auth.loggedIn ? this.$auth.user.is_vip : null,
           password1:null,
           password2:null
         },

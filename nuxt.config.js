@@ -37,6 +37,7 @@ export default {
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     '@/plugins/element-ui',
+    '@/plugins/scroll',
     { src: '@/plugins/swiper', mode: 'client' },
   ],
 
@@ -52,6 +53,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/auth',
+
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)

@@ -208,18 +208,22 @@
             opacity: 1
             pointer-events: all
             bottom: 30px
-        //&--list
-        //  pointer-events: none
-        //  opacity: 0
-        //  position: absolute
-        //  bottom: 21px
-        //  transition: all .2s linear
-        //  left: -20px
-        //  background: #ffffff
-        //  padding: 20px
-        //  box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.25), 5px 5px 20px #E6E6F0
-        //  border-radius: 3px
-        //  z-index: 20
+        &--list-alt
+          pointer-events: none
+          opacity: 0
+          position: absolute
+          bottom: 21px
+          transition: all .2s linear
+          left: -20px
+          background: #ffffff
+          padding: 20px
+          box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.25), 5px 5px 20px #E6E6F0
+          border-radius: 3px
+          z-index: 20
+          &.smilesListActive
+            opacity: 1
+            pointer-events: all
+            bottom: 30px
 
       &--send
         position: absolute
@@ -249,3 +253,6 @@
       &:hover
         transform: scale(1.1)
 
+@media (max-width: 576px)
+  .chat-messages
+    margin-bottom: 10px

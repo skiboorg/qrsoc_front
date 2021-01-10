@@ -10,7 +10,6 @@
     justify-content: space-between
     margin-bottom: 20px
     height: 110px
-
     &__img
       position: absolute
       left: 40px
@@ -41,6 +40,12 @@
           color: #ffffff
           font-weight: bold
           font-size: 24px
+        &.userIsVip
+          &::before
+            position: absolute
+            content: url(/user_vip.png)
+            top: -30px
+
       &--change
         position: absolute
         background: rgba(0, 0, 0, 0.77)

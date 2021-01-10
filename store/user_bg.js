@@ -18,9 +18,6 @@ export const actions = {
             commit('setUserBg',user_bg_data.data)
             console.log('user_bg after update',this.state.user_bg)
         }
-
-
-
     }
 }
 
