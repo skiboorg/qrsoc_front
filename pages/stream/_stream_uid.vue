@@ -44,6 +44,17 @@
                   </a>
                 </p>
               </video>
+              <div class="stream-video__gift" :class="{'streamGiftActive':streamGiftActive}">
+                <div class="stream-video__gift--from">
+                  <img :src="giftFromImg" alt="">
+                  <p>{{giftFrom}}</p>
+                </div>
+                <div class="stream-video__gift--content">
+                  <img :src="giftImg" alt="">
+                  <p>{{giftMessage}}</p>
+                </div>
+
+              </div>
             </div>
           </div>
           <div  v-else class="user-profile-block" style="min-height: 450px">
@@ -210,9 +221,14 @@
     data(){
       return {
         smilesListActive:null,
+        giftFromImg:null,
+        giftFrom:null,
+        giftImg:null,
+        giftMessage:null,
         loading: true,
         giftModal: false,
         streamBtnActive:true,
+        streamGiftActive:false,
         img_url:process.env.img_url,
         donates:[],
         // donates:[
@@ -243,11 +259,17 @@
         console.log('giftRecieved',val)
         //val['gift_to'] === this.$auth.user.id ? this.$auth.fetchUser() : null
         await this.getDonaters()
-        this.$notify({
-          title: `Подарок от @${val['gift_from']}`,
-          dangerouslyUseHTMLString: true,
-          message: ` <img src="${process.env.img_url+val['gift_img']}"> - ${val['gift_message']}`
-        });
+
+        this.giftImg = process.env.img_url+val['gift_img']
+        this.giftMessage = val['gift_message']
+        this.giftFrom = val['gift_from']
+        this.giftFromImg = process.env.img_url+val['gift_from_avatar']
+
+        this.streamGiftActive = true
+
+        setTimeout(()=>{
+          this.streamGiftActive = false;
+          }, 5000);
         this.donates.push(val)
         if (val['gift_to'] === this.$auth.user.id){
           this.$auth.fetchUser()

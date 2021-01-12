@@ -11,6 +11,7 @@
     border-radius: 3px
     margin-bottom: 20px
     padding: 15px 20px
+
     &__top
       display: flex
       align-items: center
@@ -47,14 +48,64 @@
       display: flex
       align-items: center
       justify-content: center
+      min-height: 510px
       &--play
         position: absolute
-
         left: 50%
         transform: translateX(-50%)
         margin: auto
         cursor: pointer
         z-index: 10
+
+    &__gift
+      position: absolute
+      display: flex
+      align-items: center
+      justify-content: space-between
+      background: #383845
+      mix-blend-mode: multiply
+      opacity: 0
+      border-radius: 38.5px
+      bottom: 0
+      pointer-events: none
+      height: 80px
+      padding: 20px 35px
+      left: 35px
+      transition: all .2s linear
+      right: 35px
+      &--from
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        img
+          width: 35px
+          height: 35px
+          object-fit: cover
+          border-radius: 100%
+          margin-right: 10px
+        p
+          color: #FFFFFF
+          font-size: 12px
+          font-weight: bold
+      &--content
+        flex-basis: 70%
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        img
+          width: 35px
+          height: 35px
+          object-fit: cover
+          border-radius: 100%
+          margin-right: 10px
+        p
+          color: #FFFFFF
+          font-size: 12px
+
+      &.streamGiftActive
+        opacity: .9
+        pointer-events: all
+        bottom: 35px
 
 
 

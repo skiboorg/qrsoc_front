@@ -167,6 +167,7 @@ export default {
         })
         this.$router.push(`/lk`)
       } catch (error) {
+
         this.notify('Ошибка','Введеные не верные данные','error')
       }
     }

@@ -1,0 +1,88 @@
+.best-users
+  margin-bottom: 60px
+  &-first
+    display: flex
+    align-items: center
+    justify-content: space-evenly
+    flex-wrap: wrap
+  &-second
+    display: flex
+    align-items: center
+    justify-content: space-around
+    margin-bottom: 25px
+  &-third
+    display: flex
+    align-items: center
+    justify-content: space-between
+.best-user
+  &-item
+    display: inline-block
+    text-align: center
+    &__img
+      position: relative
+      text-align: center
+      margin-bottom: 15px
+      img
+        width: 85px
+        height: 85px
+        object-fit: cover
+        border-radius: 100%
+      &::before
+        position: absolute
+        content: attr(data-num)
+        bottom: -10px
+        left: 50%
+        transform: translateX(-50%)
+        background: #F8F8FB
+        width: 35px
+        height: 35px
+        display: flex
+        align-items: center
+        justify-content: center
+        color: #383845
+        font-size: 12px
+        font-weight: bold
+        border-radius: 100%
+        font-family: 'Inter', sans-serif
+    &__name
+      font-weight: bold
+      font-size: 13px
+      color: #383845
+      margin-bottom: 5px
+    &__score
+      font-size: 11px
+      color: $color-text-d-blue
+
+    &.user-top
+      & .best-user-item__img
+        img
+          width: 115px
+          height: 115px
+        &::before
+          width: 50px
+          height: 50px
+
+    &.user-gold
+      flex-basis: 100%
+      & .best-user-item__img
+        img
+          width: 150px
+          height: 150px
+          bottom: -15px
+          border: 5px solid #F4C344
+        &::before
+          content: url(/best_user_gold.png)
+
+    &.user-sliver
+      & .best-user-item__img
+        img
+          border: 5px solid #B7D5EC
+        &::before
+          content: url(/best_user_silver.png)
+
+    &.user-bronze
+      & .best-user-item__img
+        img
+          border: 5px solid #E69C09
+        &::before
+          content: url(/best_user_bronze.png)

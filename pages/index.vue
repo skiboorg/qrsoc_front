@@ -227,8 +227,6 @@
         </div>
       </div>
     </section>
-
-
     <section class="pricing">
       <div class="container">
         <h3 class="section-title">我们的房价</h3>
@@ -315,6 +313,33 @@
         </div>
       </div>
     </section>
+    <section class="road-map">
+      <div class="container">
+        <h3 class="section-title">我们平台的功能</h3>
+      </div>
+      <div class="road-map__inner">
+        <div class="container">
+          <div data-num="1" class="road-map__item num  road-map__item--first">
+            <img src="/road_map_1.png" alt="">
+            <p>女孩开始交流，向我们注册</p>
+          </div>
+          <div data-num="2" class="road-map__item num  road-map__item--second">
+            <img src="/road_map_2.png" alt="">
+            <p>学习中国 语言和文化</p>
+          </div>
+          <div data-num="3" class="road-map__item num  road-map__item--third">
+            <img src="/road_map_3.png" alt="">
+            <p>通过捐赠和捐 赠提高其评分</p>
+          </div>
+          <div data-text="决赛" class="road-map__item text  road-map__item--four">
+            <img src="/road_map_4.png" alt="">
+            <p>每六个月，获得TOP3评级的女孩实现他们的梦想-前往上海学习</p>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
     <section class="faq">
       <div class="container">
         <div class="faq-wrapper">
@@ -390,6 +415,118 @@
         </div>
       </div>
     </section>
+    <section class="best-users">
+      <div class="container">
+        <h3 class="section-title mb-30">门户网站上的顶级动态</h3>
+        <p class="mb-30">培训，如果您真的有兴趣的话，您将会成功。例如，经常在视频流的前半小时或一个小时，我一直在讲话直到订阅者赶上。如果您对我的操作方式感兴趣-签名中有一个链接，则可以执行相同</p>
+        <div class="best-users-first">
+          <div class="best-user-item user-gold user-top">
+            <nuxt-link to="/">
+              <div data-num="4" class="best-user-item__img">
+                <img src="http://placehold.it/300" alt="">
+              </div>
+              <p class="best-user-item__name">Hei Pi Jey</p>
+              <p class="best-user-item__score">捐赠了7320颗水晶</p>
+
+            </nuxt-link>
+          </div>
+          <div class="best-user-item user-sliver user-top">
+            <nuxt-link to="/">
+              <div data-num="4" class="best-user-item__img">
+                <img src="http://placehold.it/300" alt="">
+              </div>
+              <p class="best-user-item__name">Hei Pi Jey</p>
+              <p class="best-user-item__score">捐赠了7320颗水晶</p>
+
+            </nuxt-link>
+          </div>
+          <div class="best-user-item user-bronze user-top">
+            <nuxt-link to="/">
+              <div data-num="4" class="best-user-item__img">
+                <img src="http://placehold.it/300" alt="">
+              </div>
+              <p class="best-user-item__name">Hei Pi Jey</p>
+              <p class="best-user-item__score">捐赠了7320颗水晶</p>
+
+            </nuxt-link>
+          </div>
+        </div>
+        <div class="best-users-second">
+          <div class="best-user-item">
+            <nuxt-link to="/">
+              <div data-num="4" class="best-user-item__img">
+                <img src="http://placehold.it/300" alt="">
+              </div>
+              <p class="best-user-item__name">Hei Pi Jey</p>
+              <p class="best-user-item__score">捐赠了7320颗水晶</p>
+
+            </nuxt-link>
+          </div>
+          <div class="best-user-item">
+            <nuxt-link to="/">
+              <div data-num="4" class="best-user-item__img">
+                <img src="http://placehold.it/300" alt="">
+              </div>
+              <p class="best-user-item__name">Hei Pi Jey</p>
+              <p class="best-user-item__score">捐赠了7320颗水晶</p>
+
+            </nuxt-link>
+          </div>
+          <div class="best-user-item">
+            <nuxt-link to="/">
+              <div data-num="4" class="best-user-item__img">
+                <img src="http://placehold.it/300" alt="">
+              </div>
+              <p class="best-user-item__name">Hei Pi Jey</p>
+              <p class="best-user-item__score">捐赠了7320颗水晶</p>
+
+            </nuxt-link>
+          </div>
+        </div>
+        <div class="best-users-third">
+          <div class="best-user-item">
+            <nuxt-link to="/">
+              <div data-num="4" class="best-user-item__img">
+                <img src="http://placehold.it/300" alt="">
+              </div>
+              <p class="best-user-item__name">Hei Pi Jey</p>
+              <p class="best-user-item__score">捐赠了7320颗水晶</p>
+
+            </nuxt-link>
+          </div>
+          <div class="best-user-item">
+            <nuxt-link to="/">
+              <div data-num="4" class="best-user-item__img">
+                <img src="http://placehold.it/300" alt="">
+              </div>
+              <p class="best-user-item__name">Hei Pi Jey</p>
+              <p class="best-user-item__score">捐赠了7320颗水晶</p>
+
+            </nuxt-link>
+          </div>
+          <div class="best-user-item">
+            <nuxt-link to="/">
+              <div data-num="4" class="best-user-item__img">
+                <img src="http://placehold.it/300" alt="">
+              </div>
+              <p class="best-user-item__name">Hei Pi Jey</p>
+              <p class="best-user-item__score">捐赠了7320颗水晶</p>
+
+            </nuxt-link>
+          </div>
+          <div class="best-user-item">
+            <nuxt-link to="/">
+              <div data-num="4" class="best-user-item__img">
+                <img src="http://placehold.it/300" alt="">
+              </div>
+              <p class="best-user-item__name">Hei Pi Jey</p>
+              <p class="best-user-item__score">捐赠了7320颗水晶</p>
+
+            </nuxt-link>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="best-girls">
       <div class="container">
         <h3 class="section-title">有关我们平台的问题的答案</h3>
@@ -453,10 +590,13 @@ export default {
       const get_streamers = await $axios.get(`/api/v1/user/get_streamers?at_home=true`)
       const get_top_streamers = await $axios.get(`/api/v1/user/get_streamers?top5=true`)
       const get_streams = await $axios.get(`/api/v1/stream/get_streams_for_home_page`)
+      //const response_donaters = await $axios.get(`/api/v1/gift/get_user_top10_donaters`)
       const streamers = get_streamers.data
       const top_streamers = get_top_streamers.data
       const streams = get_streams.data
-      return {streamers,streams,top_streamers}
+      //const top_donaters = response_donaters.data
+      //console.log('donaters',top_donaters)
+      return {streamers,streams,top_streamers}//,top_donaters
     }catch (e) {
       const err = 404
       return {err}
