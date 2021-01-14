@@ -1,5 +1,6 @@
 <template>
   <div class="main-wrapper">
+   <PageTop/>
     <Header/>
     <ProfileBg :is_own_profile="true"/>
     <section class="user-profile-content">
@@ -34,6 +35,7 @@
   import Footer from '@/components/footer';
   import UserMenu from '@/components/UserMenu';
   import ProfileBg from '@/components/userLk/ProfileBg';
+   import PageTop from '@/components/PageTop';
   export default {
     transition: "default",
     head: {
@@ -54,7 +56,8 @@
       Header,
       Footer,
       UserMenu,
-      ProfileBg
+      ProfileBg,
+      PageTop
     },
 
   }

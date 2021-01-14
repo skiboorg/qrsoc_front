@@ -1,5 +1,6 @@
 <template>
   <div class="main-wrapper">
+   <PageTop/>
     <Header/>
     <PageTopBanner :title="title" :bg_image="'/info_page_top.png'"/>
     <div id="a999" class="container">
@@ -22,6 +23,7 @@
 import Header from '@/components/header';
 import PageTopBanner from '@/components/PageTopBanner';
 import Footer from '@/components/footer';
+ import PageTop from '@/components/PageTop';
 export default {
 
   transition: "default",
@@ -73,6 +75,7 @@ export default {
     Header,
     Footer,
     PageTopBanner,
+    PageTop
   },
   mounted() {
     this.title = this.userMenuLinks.find(x => x.url === this.$route.path ).name

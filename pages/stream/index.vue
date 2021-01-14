@@ -11,6 +11,7 @@
           :avatar="stream.streamer.avatar"
           :stream_img="stream.image"
           :nickname="stream.streamer.nickname"
+          :stream_date="stream.date"
           :is_vip="stream.is_vip" :url="stream.url"/>
       </div>
 

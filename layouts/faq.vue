@@ -1,5 +1,6 @@
 <template>
   <div class="main-wrapper">
+   <PageTop/>
     <Header/>
     <section class="faq-page">
       <div class="container">
@@ -54,6 +55,7 @@
 <script>
 import Header from '@/components/header';
 import Footer from '@/components/footer';
+ import PageTop from '@/components/PageTop';
 export default {
 
   transition: "default",
@@ -96,6 +98,7 @@ export default {
   components:{
     Header,
     Footer,
+    PageTop
   },
 
 

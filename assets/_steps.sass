@@ -73,3 +73,13 @@
     height: fit-content
     & .section-title
       margin-bottom: 20px
+    &-wrapper
+      grid-template-columns: 1fr
+    &__items
+      order: 2
+    &__image
+      min-height: 355px
+      order: 1
+  .stepItemActive
+    &::after
+     content: none !important
