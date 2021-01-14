@@ -3,6 +3,10 @@
     display: grid
     grid-template-columns: repeat(auto-fill,minmax(200px,1fr))
     grid-row-gap: 40px
+    &.girl-profile-friends-wrapper
+      grid-template-columns: repeat(auto-fill,minmax(150px,1fr))
+      & .user-profile-friends-item__buttons
+        display: none
   &-item
     &__img
       text-align: center

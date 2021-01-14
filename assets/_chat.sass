@@ -204,6 +204,7 @@
           box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.25), 5px 5px 20px #E6E6F0
           border-radius: 3px
           z-index: 20
+          min-height: 200px
           &.stikerListActive
             opacity: 1
             pointer-events: all
@@ -243,6 +244,9 @@
     display: grid
     grid-template-columns: repeat(4,1fr)
     grid-gap: 10px
+    overflow-y: auto
+    max-height: 100px
+
   &-item
     img
       width: 40px
@@ -252,6 +256,39 @@
       cursor: pointer
       &:hover
         transform: scale(1.1)
+
+.chat-stikersTabs
+  &::after
+    content: none
+  & .el-tabs__active-bar
+    display: none
+  & .el-tabs__item
+    margin-right: 10px
+    &:last-child
+      margin-right: 0
+      padding-right: 5px !important
+
+    &:hover
+      color: $color-text-d-blue
+    &.is-disabled
+      cursor: not-allowed
+      background: #F0F0F0
+      color: #9F9FB8
+      border-radius: 8px
+      text-align: center
+      padding-right: 5px !important
+      padding: 0 5px
+
+
+    &.is-active
+      background: $color-text-d-blue
+      color: #FFFFFF
+      border-radius: 8px
+      text-align: center
+      padding: 0 5px
+  & .el-tabs__nav-wrap::after
+    content: none
+
 
 @media (max-width: 576px)
   .chat-messages

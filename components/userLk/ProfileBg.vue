@@ -11,6 +11,7 @@
               <span>{{this.$auth.user.is_streamer ? 'Изменить' : '编辑封面图片'}} </span>
             </p>
           </div>
+          <div v-else></div>
           <!--          <div class="user-profile-bg__top">-->
           <!--            <el-upload v-if="is_own_profile" class="avatar-uploader mb-25" action="" :show-file-list="false" :on-success="handleBgSuccess">-->
           <!--              <p class="user-profile-bg__change"><svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">-->
@@ -28,8 +29,8 @@
 
       </div>
     </section>
-    <el-dialog class="selectBg" title="Select BG" :visible.sync="bgDialogVisible" >
-      <div class="user-bg__wrapper">
+    <el-dialog class="selectBg" title="更换封面" :visible.sync="bgDialogVisible" >
+      <div class="user-bg__wrapper block-custom-scrollbar">
         <div class="user-bg__item"  v-for="image in user_bg" :key="image.id" :class="{'itemForVip':!$auth.user.is_vip && image.is_for_vip}">
           <img @click="changeUserBg(image.id,image.image)" :src="image.image" alt="">
         </div>

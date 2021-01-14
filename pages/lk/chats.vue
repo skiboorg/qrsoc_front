@@ -88,11 +88,11 @@
             </div>
             <div class="chat-new-message__input--smiles--list"
                  :class="{'stikerListActive':stikerListActive}" @mouseleave="stikerListActive=!stikerListActive">
-              <el-tabs v-model="activeStikerGroup" >
+              <el-tabs class="chat-stikersTabs" v-model="activeStikerGroup" >
                 <el-tab-pane v-for="(group,index) in stikers"
                              :disabled="!$auth.user.is_vip && group.is_for_vip"
                              :label="group.name" :key="group.id" :name="`tab${index}`">
-                  <div class="stiker-wrapper">
+                  <div class="stiker-wrapper block-custom-scrollbar">
                     <div class="stiker-item" v-for="stiker in group.stikers" :key="stiker.id">
                       <img @click="sendChatMessage(stiker.id)" :src="stiker.image" alt="">
                     </div>

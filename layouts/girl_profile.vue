@@ -18,7 +18,10 @@
                        :fio="this.$store.getters['girl_profile/getUser'].fio"
                        :nickname="this.$store.getters['girl_profile/getUser'].nickname"
                        :balance="this.$store.getters['girl_profile/getUser'].balance"
-                       :is_streamer="this.$store.getters['girl_profile/getUser'].is_streamer"/>
+                       :is_streamer="this.$store.getters['girl_profile/getUser'].is_streamer"
+                       :streams_rating="this.$store.getters['girl_profile/getUser'].streams_rating"
+                       :streamer_rating="this.$store.getters['girl_profile/getUser'].streamer_rating"/>
+
             <ProfileMenu/>
             <Nuxt />
           </div>

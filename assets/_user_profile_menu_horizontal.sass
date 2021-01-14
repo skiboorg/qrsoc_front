@@ -55,3 +55,21 @@
         bottom: 0
 
 
+@media (max-width: 576px)
+  .user-profile-menu-horizontal
+    &.menu-horizontal-faq
+      flex-wrap: wrap
+      position: unset
+      height: fit-content
+
+
+    &__item
+      &.menu-horizontal-faq__item
+        padding: 10px
+        flex-basis: 33.33%
+
+
+        p
+          display: block
+      p
+        display: none

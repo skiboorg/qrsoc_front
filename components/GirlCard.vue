@@ -1,5 +1,7 @@
 <template>
-     <div @click="$router.push(`/profile/${nickname}`)" class="slide" >
+     <div @click="$router.push(`/profile/${nickname}`)" class="slide"
+     :class="[!this.$auth.loggedIn?'card-disabled':'']">
+
               <img :src="avatar" alt="">
               <p class="slide-badge badge-name">{{fio}}</p>
               <p class="slide-badge badge-link">{{nickname}}</p>

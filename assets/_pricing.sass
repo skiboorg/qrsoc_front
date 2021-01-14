@@ -13,8 +13,13 @@
     border-radius: 5px
     padding: 40px 85px
     text-align: center
+    height: fit-content
     &.price-vip
       border: 1px solid $color-text-d-blue
+      padding: 40px 60px
+    & .btn
+      display: inline-flex
+      margin-bottom: 10px
     &__decor
       position: absolute
       right: 30px
@@ -39,7 +44,7 @@
     &__name
       font-weight: bold
       &.price-one
-        color: #5DAFFA
+        color: #FFB800
       &.price-two
         color: $color-text-d-blue
       &.price-three
@@ -48,6 +53,7 @@
       margin-bottom: 55px
       text-align: center
       display: inline-block
+
     &__info
       display: flex
       align-items: center
@@ -60,5 +66,9 @@
       font-size: 50px
       span
         font-size: 30px
+    &__small-text
+      font-size: 12px
+      color: $color-text-grey
+      text-align: center
 
 //@media (max-width: 576px)

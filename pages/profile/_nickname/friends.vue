@@ -1,14 +1,15 @@
 <template>
   <div class="user-profile-tab">
     <div class="user-profile-block">
-      <div v-if="this.$auth.user.own_friend_list[0].friend_list.length > 0" class="user-profile-friends-wrapper">
-        <FriendCard v-for="friend in this.$auth.user.own_friend_list[0].friend_list"
+      <div v-if="this.$store.getters['girl_profile/getUser'].own_friend_list[0].friend_list.length > 0"
+           class="user-profile-friends-wrapper girl-profile-friends-wrapper">
+        <FriendCard v-for="friend in this.$store.getters['girl_profile/getUser'].own_friend_list[0].friend_list"
                     :key="friend.id"
                     :nickname="friend.nickname"
                     :avatar="friend.avatar"
                     :fio="friend.fio"/>
       </div>
-      <p v-else>Вы не добавили не одного друга</p>
+      <p v-else>У пользователя пока нет друзей</p>
     </div>
 
   </div>
@@ -18,7 +19,7 @@
   export default {
     layout: 'girl_profile',
     scrollToTop: false,
-    auth: false,
+    auth: true,
     async fetch({store,params}){
       await store.dispatch('girl_profile/fetchGirl',params.nickname)
     },

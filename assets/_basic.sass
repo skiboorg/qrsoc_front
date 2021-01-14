@@ -33,9 +33,22 @@ body
   line-height: 66px
   a
     color: inherit
+  span
+    color: $color-text-d-blue
+    font-size: 56px
 
 
-
+.block-custom-scrollbar
+  &::-webkit-scrollbar
+        width: 5px
+  &::-webkit-scrollbar-track
+    //box-shadow: inset 0px 5px 10px rgba(0, 0, 0, 0.05)
+    border-radius: 10px
+  &::-webkit-scrollbar-thumb
+    background: $color-scrollbar
+    border-radius: 5px
+  &::-webkit-scrollbar-thumb:hover
+    background: $color-scrollbar
 
 @media (max-width: 576px)
   .section-title

@@ -1,10 +1,10 @@
 <template>
   <div class="main-wrapper">
     <Header/>
-    <PageTopBanner :title="title" :bg_image="'http://placehold.it/1920x250'"/>
+    <PageTopBanner :title="title" :bg_image="'/info_page_top.png'"/>
     <div id="a999" class="container">
-      <div style="margin-bottom: 30px" class="user-profile-menu-horizontal">
-        <div @click="[title=link.name,$router.push(link.url)]" v-if="!link.hide" class="user-profile-menu-horizontal__item"
+      <div class="user-profile-menu-horizontal menu-horizontal-faq mb-30">
+        <div @click="[title=link.name,$router.push(link.url)]" v-if="!link.hide" class="user-profile-menu-horizontal__item menu-horizontal-faq__item"
              v-for="link in userMenuLinks" :key="link.id"
              :class="{'menuHorizontalItemActive': $route.path===link.url}">
           <span v-html="link.img"></span>

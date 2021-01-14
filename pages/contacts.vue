@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <PageTopBanner :title="'联系人和反馈'" :bg_image="'http://placehold.it/1920x250'"/>
+    <PageTopBanner :title="'联系人和反馈'" :bg_image="'/contacts_page_top.jpg'"/>
     <section class="streams-page">
       <div class="container">
         <!--      <div class="page-top">-->

@@ -14,7 +14,7 @@
           <span v-else>编辑封面图片</span>
         </p>
       </el-upload>
-      <div  class="user-profile-about__img--level" :class="{'userIsVip':userData.is_vip}"><p>{{level}}</p></div>
+      <div  class="user-profile-about__img--level" :class="{'userIsVip':is_own_profile &&userData.is_vip}"><p>{{level}}</p></div>
     </div>
     <div class="user-profile-about__name">
       <p>{{fio}}</p>
@@ -41,14 +41,14 @@
       <div class="user-profile-about__girl-stats--item">
         <img src="/girl_rating_icon.png" alt="">
         <div class="user-profile-about__girl-stats--item--info">
-          <p>{{girl_rating}}</p>
+          <p>{{streamer_rating}}</p>
           <p>广播评级</p>
         </div>
       </div>
       <div class="user-profile-about__girl-stats--item">
         <img src="/girl_streams_icon.png" alt="">
         <div class="user-profile-about__girl-stats--item--info">
-          <p>{{stream_rating}}</p>
+          <p>{{streams_rating}}</p>
           <p>广播评级</p>
         </div>
       </div>
@@ -58,7 +58,7 @@
 
 <script>
   export default {
-    props:['avatar','level','fio','nickname','balance','is_streamer','girl_rating','stream_rating','is_own_profile'],
+    props:['avatar','level','fio','nickname','balance','is_streamer','streamer_rating','streams_rating','is_own_profile'],
     data() {
       return {
         userData:{

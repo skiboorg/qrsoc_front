@@ -1,20 +1,21 @@
 .steps
-  background: url(/tips.png) no-repeat
+  //background: url(/tips.png) no-repeat
   background-position-x: 80%
 
   background-position-y: center
-  height: 1050px
+  margin-bottom: 125px
+  //height: 1050px
   & .section-title
     margin-bottom: 75px
     max-width: 460px
     word-break: keep-all
   &-wrapper
-    padding: 100px 0
-    //display: grid
-    //grid-template-columns: 2fr 1fr
-    //grid-gap: 75px
-    //align-items: center
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-gap: 20px
+    align-items: center
   &-item
+    cursor: pointer
     background: #FFFFFF
     box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.25), 5px 5px 20px #E6E6F0
     border-radius: 10px
@@ -24,6 +25,26 @@
     display: flex
     align-items: center
     justify-content: flex-start
+    &.stepItemActive
+      position: relative
+      background: $color-text-d-blue
+      & .steps-item
+        &__num
+          color: #FFFFFF
+        &__group
+          &--top
+            color: #FFFFFF
+          &--bottom
+            color: #FFFFFF
+      &::after
+        position: absolute
+        content: ''
+        right: -10px
+        top: 50%
+        transform: translateY(-50%) rotate(45deg)
+        width: 20px
+        height: 20px
+        background: $color-text-d-blue
     &:last-child
       margin-bottom: 0
     &__num
@@ -31,15 +52,20 @@
       color: $color-text-d-blue
       font-size: 30px
       line-height: 32px
+      transition: all .2s linear
     &__group
       &--top
         font-weight: bold
         font-size: 24px
         margin-bottom: 5px
+        transition: all .2s linear
       &--bottom
         color: $color-text-grey
         font-size: 14px
         line-height: 18px
+        transition: all .2s linear
+    &__image
+      transition: all .2s linear
 
 @media (max-width: 576px)
   .steps

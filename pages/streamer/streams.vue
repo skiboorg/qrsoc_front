@@ -3,11 +3,25 @@
     <div class="user-profile-block">
       <h3 class="user-profile-block__title">Как пользоваться стримами?</h3>
       <p class="mb-20">В данном разделе вы видите инструкцию по созданию и настройке своей трансляции. Если у вас возникли вопросы или вам нужна помощь - свяжитесь с нами!</p>
-      <p class="mb-20">Ваш ключ трансляции: <strong>{{this.$auth.user.suid}}</strong> <el-link @click="copyToClipboard($auth.user.suid,'suid')">{{copyLinkText}}</el-link></p>
+      <p class="mb-20">Адрес сервера: <strong>rtmp://95.215.207.100/show/ </strong>
+      <p class="mb-20">Ваш ключ трансляции: <strong>{{this.$auth.user.suid}}</strong>
+<!--        <el-link @click="copyToClipboard($auth.user.suid,'suid')">{{copyLinkText}}</el-link>-->
+      </p>
       <el-collapse v-model="activeAccordion">
         <el-collapse-item title="Как запустить трансляцию" name="1">
-          <div>Consistent with real life: in line with the process and logic of real life, and comply with languages and habits that the users are used to;</div>
-          <div>Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc.</div>
+          <div>
+            Шаг 1: настройка оборудования<br><br>
+
+Для запуска трансляции вам необходимо: компьютер, веб-камера, интернет (не менее 10мбит\сек)<br>
+Скачайте и установите программу OBS Media - <a href="https://obsproject.com/ru/download" target="_blank">ссылка</a><br><br>
+
+Затем пройдите автоматическую настройку качества. Пункты выбирайте: настройка программы под трансляцию.<br><br>
+            <img src="/instr_2.jpg" alt=""><br><br>
+
+Далее добавьте источник, откуда нужно запускать трансляцию. Вы можете выбрать свою камеру или захват экрана, совместить изображения или придумать свой вариант!<br><br>
+          <img src="/instr_1.jpg" alt="">
+          </div>
+          <div></div>
         </el-collapse-item>
         <el-collapse-item title="Правила ведения трансляции" name="2">
           <div>Operation feedback: enable the users to clearly perceive their operations by style updates and interactive effects;</div>

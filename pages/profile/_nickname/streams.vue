@@ -9,7 +9,7 @@
   export default {
     layout: 'girl_profile',
     scrollToTop: false,
-    auth: false,
+    auth: true,
     async fetch({store,params}){
       await store.dispatch('girl_profile/fetchGirl',params.nickname)
     },

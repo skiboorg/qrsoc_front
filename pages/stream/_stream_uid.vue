@@ -197,7 +197,7 @@
   import videojs from "video.js";
   import "videojs-flash";
   export default {
-    auth: false,
+    auth: true,
     async asyncData({$axios,context,params}){
       console.log(params.stream_uid.split('--')[1])
       try{

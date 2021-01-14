@@ -13,11 +13,30 @@
             </div>
           </div>
           <div class="faq-page__content user-profile-block">
-            <p id="a1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda at aut culpa cumque cupiditate dolor dolore eos, ipsam ipsum iste iusto magnam nesciunt perferendis praesentium repellat reprehenderit soluta ut! Aut cupiditate delectus dicta error facere libero officia quaerat ut! Ad commodi distinctio eaque eius, error labore maxime, nostrum quaerat quis recusandae sit, tenetur voluptatibus! Aperiam dicta dignissimos voluptatem? Architecto commodi consectetur consequuntur dolorum esse ex facere illum ipsum labore, laboriosam minus nostrum, odio porro ratione tempore totam voluptatem. Amet aspernatur assumenda cupiditate doloremque enim, excepturi libero magnam magni nam natus officiis praesentium provident quidem totam voluptatibus? Cupiditate deleniti deserunt eius esse, impedit ipsam obcaecati quam quas quasi quis quos sint vitae! Aliquam amet asperiores assumenda blanditiis consequuntur culpa cumque, debitis dolore dolores ex excepturi, fugit laudantium magni molestiae nemo odio perferendis perspiciatis qui quidem, ullam ut veniam voluptates voluptatibus. Aliquam cupiditate dolores eius nisi omnis optio sequi! Cumque est nobis possimus reprehenderit ullam! Accusamus consequuntur dolor error, expedita labore mollitia, nihil non perferendis porro quis quisquam sequi suscipit veritatis. Dolorum eaque exercitationem facilis hic labore magni modi omnis quia sunt suscipit. A ab adipisci amet asperiores aspernatur assumenda beatae cumque dignissimos doloribus eaque esse et ex explicabo facilis iste itaque iure iusto maiores maxime molestiae molestias nulla provident quas quia quod repellendus sed, similique sint suscipit, tempore vitae voluptatem voluptates voluptatum! A ab amet, aspernatur commodi consequuntur est ex excepturi exercitationem hic id illum in laudantium natus, nisi odit porro, reiciendis rem sunt suscipit tempore? Amet atque beatae blanditiis deleniti eos esse impedit nihil numquam obcaecati odio pariatur perferendis quaerat qui quis quisquam, recusandae, reiciendis sed, sequi voluptatibus voluptatum! Ad alias cumque delectus ducimus fugiat fugit ipsum labore magnam, minima molestias necessitatibus nisi nobis nostrum omnis quo recusandae repellat repellendus unde vitae voluptatem? Eaque neque non nostrum officia rem soluta. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, blanditiis cumque dicta eius enim eos fuga illo itaque laborum laudantium molestiae nam nisi officiis pariatur quam repudiandae saepe sit, tenetur veritatis voluptate. Eius hic incidunt perferendis quidem. Alias, architecto assumenda commodi doloribus earum expedita facilis hic, nobis quod, similique velit?</p>
-            <p id="a2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, blanditiis cumque dicta eius enim eos fuga illo itaque laborum laudantium molestiae nam nisi officiis pariatur quam repudiandae saepe sit, tenetur veritatis voluptate. Eius hic incidunt perferendis quidem. Alias, architecto assumenda commodi doloribus earum expedita facilis hic, nobis quod, similique velit?</p>
-            <p id="a3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, blanditiis cumque dicta eius enim eos fuga illo itaque laborum laudantium molestiae nam nisi officiis pariatur quam repudiandae saepe sit, tenetur veritatis voluptate. Eius hic incidunt perferendis quidem. Alias, architecto assumenda commodi doloribus earum expedita facilis hic, nobis quod, similique velit?</p>
-            <p id="a4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, blanditiis cumque dicta eius enim eos fuga illo itaque laborum laudantium molestiae nam nisi officiis pariatur quam repudiandae saepe sit, tenetur veritatis voluptate. Eius hic incidunt perferendis quidem. Alias, architecto assumenda commodi doloribus earum expedita facilis hic, nobis quod, similique velit?</p>
+         <section class="faq">
+      <div class="container">
 
+
+
+            <div class="faq-item" v-for="(faq,index) in faqs" :key="faq.id" :class="{'faqItemActive':accordeonActive===index}">
+              <div class="faq-item__top" @click="accordeonActive=index">
+                <p>{{faq.question}}</p>
+                <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="17" cy="17" r="16.5" fill="white" stroke="#CECFDF"/>
+                  <path d="M17 21L13.5359 15L20.4641 15L17 21Z" fill="#CECFDF"/>
+                </svg>
+              </div>
+              <div class="faq-item__content">
+                <div class="faq-item__content--inner">
+                  <p>{{faq.answer}}</p>
+                </div>
+              </div>
+            </div>
+
+
+
+      </div>
+    </section>
           </div>
         </div>
 
@@ -34,12 +53,21 @@
     auth: false,
     data(){
       return {
+        accordeonActive:0,
         curAnhor:1,
+         faqs:[
+        {id:1,question:'如何使用我们的平台？',answer:'在该网站上注册，填写您的个人资料，并放置头像。 然后，您可以充分利用我们的服务：与女孩见面并聊天，观看广播并参加小组讨论，提供礼物并从女孩那里购买商品！'},
+        {id:2,question:'为什么要付费访问？',answer:'与来自俄罗斯的女孩交流的经验是一个非常有趣的话题。 我们仅对真正感兴趣的交流对象提供对该网站的访问权限，因为否则，这些女孩将无法应付想要使用我们服务的大量人流！'},
+        {id:3,question:'什么是水晶，我该如何使用它们？',answer:'水晶是我们平台上的本地货币。 有了它，您可以方便快捷地向女孩赠送礼物并表现出关注的迹象，成为女孩的粉丝，为女孩自己订购女孩和商品的私人礼物，以及请求个人广播！\n' +
+              '\n' +
+              '每月使用我们的平台，您将以常规价格获得300个晶体，以VIP速率获得1200个晶体。 如果您没有足够的货币，您总是可以立即从您的个人账户充值水晶的余额！'},
+        {id:4,question:'我对您的平台有任何疑问或建议！ 我该如何联系您？',answer:'从网站的标题或网站的页脚转到“联系人”部分，并向您写下您的问题，对我们工作的反馈或对我们平台开发的希望！'},
+        {id:5,question:'我如何查看您平台的功能？',answer:'您可以在此处查看平台的全部功能。\n' +
+              '这里介绍了VIP功能。'},
+      ],
         anhors:[
-          {id:1,name:'a1'},
-          {id:2,name:'a2'},
-          {id:3,name:'a3'},
-          {id:4,name:'a4'},
+          {id:999,name:'TOP'},
+
         ]
       }
     },

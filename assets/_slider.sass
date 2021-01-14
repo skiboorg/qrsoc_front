@@ -80,7 +80,15 @@
     right: 0
     top: 70px
     margin: 0 auto
-
+  &__date
+    position: absolute
+    top: 10px
+    right: 10px
+    background: $color-text-grey
+    color: #FFFFFF
+    font-size: 12px
+    padding: 10px
+    border-radius: 8px
   &__name
     position: absolute
     border-radius: 20px
@@ -123,6 +131,9 @@
       justify-content: center
   &:hover
     bottom: 0
+
+.card-disabled
+  cursor: not-allowed
 
 .swiper-pagination-bullet
   background: $color-text-d-blue !important

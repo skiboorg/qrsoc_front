@@ -1,6 +1,6 @@
 <template>
   <div>
-       <PageTopBanner :title="'相册'" :bg_image="'http://placehold.it/1920x250'"/>
+       <PageTopBanner :title="'相册'" :bg_image="'/streams_page_top.png'"/>
   <section class="streams-page">
     <div class="container">
       <div class="streams-page-wrapper">
