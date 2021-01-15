@@ -1,6 +1,5 @@
 <template>
   <div id="1top" >
-
 <!--    <section class="banner_slider">-->
 <!--      <client-only>-->
 <!--        <swiper class="banner_slider__wrapper"  :options="swiperOptionBanner">-->
@@ -14,7 +13,7 @@
 <!--        <div class="swiper-pagination" slot="pagination"></div>-->
 <!--      </client-only>-->
 <!--    </section>-->
-        <section class="banner">
+    <section class="banner">
           <div style="display: none" class="banner-inner">
             <h1 class="section-title text-white text-center">来自俄罗斯的美丽女孩在我们的网站上见面并交流！</h1>
             <div class="banner-checks">
@@ -65,13 +64,10 @@
             </div>
           </div>
           <div class="stream-video__content mb-10">
-
             <video style="width: 100%;height: 100%" controls loop>
-              <source src="/video.mkv" type="video/mp4">
-
+              <source src="/vid.mp4" type="video/mp4">
               Your browser does not support HTML video.
             </video>
-
           </div>
         </div>
       </div>
@@ -172,8 +168,7 @@
           </div>
           <div class="steps-item__image">
             <el-image  :src="steps[selectedStep].img">
-              <div slot="placeholder" v-loading="true" class="image-slot">
-                Loading<span class="dot">...</span>
+              <div style="width: 100%;height: 100%" slot="placeholder" v-loading="true" class="image-slot">
               </div>
             </el-image>
           </div>
@@ -469,10 +464,7 @@ export default {
         {id:5,question:'我如何查看您平台的功能？',answer:'<a href="/info/guide">您可以在此处查看平台的全部功能</a> <br>' +
               '<a href="/info/vip-introduction">这里介绍了VIP功能</a>。'},
       ],
-
-
       accordeonActive:0,
-
       swiperOption: {
         //slidesPerView: 5,
         spaceBetween: 20,
@@ -531,8 +523,6 @@ export default {
           }
         }
       },
-
-
     }
   },
   methods:{
@@ -540,7 +530,6 @@ export default {
       document.getElementById('openModalBtn').click()
     }
   }
-
 }
 </script>
 

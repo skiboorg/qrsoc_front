@@ -18,7 +18,8 @@
 
           <div v-if="activeStep===0" class="">
             <h3>Правила</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquid atque consequatur dolor itaque, neque quam ratione tenetur voluptates! Aspernatur ducimus error iste laborum modi obcaecati quidem saepe! Consequatur, veniam.</p>
+            <p>Добро пожаловать на нашу социальную платформу для общения девушек с китайской аудиторией!
+              Внимательно ознакомьтесь с правилами платформы, а так же с возможностями для монетизации контента!</p>
             <el-collapse class="mb-20" v-model="activeAccordion" accordion>
               <el-collapse-item title="Как работать на нашей платформе" name="1">
                 <p>Первый шаг - регистрация и заполнение профиля. <br>
@@ -56,8 +57,8 @@
               </el-collapse-item>
 
             </el-collapse>
-            <el-checkbox class="mb-20" v-model="agree">Прочитал и согласен с <a style="text-decoration: underline;color: inherit" href="http://localhost:8000/media/p.docx">договором-офертой</a></el-checkbox>
-            <el-checkbox class="mb-20" v-model="agree1">Прочитал и согласен с <a style="text-decoration: underline;color: inherit" href="http://localhost:8000/media/p.docx">правилами платформы</a></el-checkbox>
+            <el-checkbox class="mb-20" v-model="agree">Прочитал и согласен с <a style="text-decoration: underline;color: inherit" href="http://qrspicy.com:8000/media/p.docx">договором-офертой</a></el-checkbox>
+            <el-checkbox class="mb-20" v-model="agree1">Прочитал и согласен с <a style="text-decoration: underline;color: inherit" href="http://qrspicy.com:8000/media/p.docx">правилами платформы</a></el-checkbox>
 
             <p @click="activeStep+=1" :class="{'btnDisabled':!agree || !agree1}" class="btn btn-l-blue">Далее</p>
           </div>
@@ -80,7 +81,9 @@
 
           <div v-if="activeStep===2" class="">
             <h3>Завершение регистрации</h3>
-            <p>После нажатии на кнопку "Завершить регистрацию" ваши данные будут проверены, мы с вами свяжемся и активируем вашего пользователя. После завершения регистрации не забудьте наполнить ваш профиль информацией!</p>
+            <p>После нажатии на кнопку "Завершить регистрацию" ваши данные будут проверены, мы
+              с вами свяжемся и активируем вашего пользователя. После завершения регистрации
+              не забудьте наполнить ваш профиль информацией!</p>
 
             <div style="display: flex; align-items: center;justify-content: space-between">
               <p @click="activeStep-=1" class="btn btn-l-blue">Назад</p>

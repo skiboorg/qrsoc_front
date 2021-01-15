@@ -66,10 +66,10 @@
         <div class="footer-bottom__line">
          <p>QR Company (C) 2020.</p>
           <p>
-            Our projects:
-            <a href="#">QRLevel.com</a>
-            <a href="#">QRSpicy.com</a>
-            <a href="#">QRPuz.com </a>
+            <span class="font-bold">Our projects:</span>
+            <a class="footer-button" target="_blank" href="http://QRLevel.com">QRLevel.com</a>
+            <a class="footer-button" target="_blank" href="http://QRSpicy.com">QRSpicy.com</a>
+            <a class="footer-button" target="_blank" href="http://45.12.215.98:8888">QRPuz.com </a>
           </p>
         </div>
       </div>
