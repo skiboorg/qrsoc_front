@@ -48,7 +48,7 @@
         <el-table-column  label="Действие" >
           <template slot-scope="scope">
             <el-tooltip class="item" effect="dark" content="Удалить пост" placement="top-start">
-              <el-button type="danger" size="mini" ><i class="el-icon-delete"></i></el-button>
+              <el-button type="danger" size="mini" @click="deletePost(scope.row.id)" ><i class="el-icon-delete"></i></el-button>
             </el-tooltip>
           </template>
         </el-table-column>
@@ -107,6 +107,10 @@
           message: message,
           type: type
         });
+      },
+      async deletePost(id){
+        await this.$axios.post(`/api/v1/post/delete_post`,{id:id})
+        await this.getPosts()
       },
       async getPosts(){
         const response = await this.$axios.get(`/api/v1/post/get_posts_by_user_nickname?nickname=${this.$auth.user.nickname}`)

@@ -1,19 +1,19 @@
 <template>
-  <div id="1top" style="background: url(/body.png)">
+  <div id="1top" >
 
-    <section class="banner_slider">
-      <client-only>
-        <swiper class="banner_slider__wrapper"  :options="swiperOptionBanner">
-          <div class="swiper-pagination" slot="pagination"></div>
-          <swiper-slide v-for="banner in banners" :key="banner.id">
-            <img :src="banner.image" alt="">
-          </swiper-slide>
-        </swiper>
-          <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-        <div class="swiper-pagination" slot="pagination"></div>
-      </client-only>
-    </section>
+<!--    <section class="banner_slider">-->
+<!--      <client-only>-->
+<!--        <swiper class="banner_slider__wrapper"  :options="swiperOptionBanner">-->
+<!--          <div class="swiper-pagination" slot="pagination"></div>-->
+<!--          <swiper-slide v-for="banner in banners" :key="banner.id">-->
+<!--            <img :src="banner.image" alt="">-->
+<!--          </swiper-slide>-->
+<!--        </swiper>-->
+<!--          <div class="swiper-button-prev"></div>-->
+<!--    <div class="swiper-button-next"></div>-->
+<!--        <div class="swiper-pagination" slot="pagination"></div>-->
+<!--      </client-only>-->
+<!--    </section>-->
         <section class="banner">
           <div style="display: none" class="banner-inner">
             <h1 class="section-title text-white text-center">来自俄罗斯的美丽女孩在我们的网站上见面并交流！</h1>
@@ -44,7 +44,7 @@
         </section>
     <section class="mb-40">
       <div class="container">
-        <h3 class="section-title mb-30"><nuxt-link to="/streams">在我们的平台上如何播放？</nuxt-link> </h3>
+        <h3 class="section-title mb-30"><nuxt-link to="/streams">在我们的<span>平台上如</span>何播放？</nuxt-link> </h3>
         <p class="mb-40">我们众多广播之一的摘录！ 来找我们，我们有很多有趣的事情</p>
         <div class=" stream-video ">
           <div class="stream-video__top">
@@ -142,6 +142,7 @@
     <section class="slider-girls">
       <div class="container">
         <h3 class="section-title"> <nuxt-link to="/girls"><span>我们的女孩</span>正在等你！</nuxt-link> </h3>
+        <p>只有在我们的门户网站上注册后，您才能打开该女孩的个人资料！ 加入并开始与这些真实的女孩聊天</p>
       </div>
       <client-only>
         <swiper class="slider-girls__wrapper"  :options="swiperOption">
@@ -222,7 +223,13 @@
               <p class="pricing-item__info"><img src="/check-mark.svg" alt="">VIP俱乐部：您的广播和专辑</p>
             </div>
             <p @click="openModalBtn_click" class="btn btn-l-blue">成为参与者</p>
-            <p class="pricing-item__small-text" >有关VIP功能的更多信息</p>
+            <p>
+               <nuxt-link to="/info/vip-introduction" class="pricing-item__small-text">
+              有关VIP功能的更多信息
+            </nuxt-link>
+            </p>
+
+
           </div>
           <div class="pricing-item">
             <div class="pricing-item__decor decor-one">
@@ -310,7 +317,7 @@
               </div>
               <div class="faq-item__content">
                 <div class="faq-item__content--inner">
-                  <p>{{faq.answer}}</p>
+                  <p v-html="faq.answer"></p>
                 </div>
               </div>
             </div>
@@ -429,15 +436,15 @@ export default {
       const get_streamers = await $axios.get(`/api/v1/user/get_streamers?at_home=true`)
       const get_top_streamers = await $axios.get(`/api/v1/user/get_streamers?top5=true`)
       const get_streams = await $axios.get(`/api/v1/stream/get_streams_for_home_page`)
-      const get_banners = await $axios.get(`/api/v1/gallery/get_banners`)
+      //const get_banners = await $axios.get(`/api/v1/gallery/get_banners`)
       //const response_donaters = await $axios.get(`/api/v1/gift/get_user_top10_donaters`)
       const streamers = get_streamers.data
       const top_streamers = get_top_streamers.data
       const streams = get_streams.data
-      const banners = get_banners.data
+      //const banners = get_banners.data
       //const top_donaters = response_donaters.data
       console.log('streams',streams)
-      return {streamers,streams,top_streamers,banners}//,top_donaters
+      return {streamers,streams,top_streamers}//,top_donaters,banners
     }catch (e) {
       const err = 404
       return {err}
@@ -459,8 +466,8 @@ export default {
               '\n' +
               '每月使用我们的平台，您将以常规价格获得300个晶体，以VIP速率获得1200个晶体。 如果您没有足够的货币，您总是可以立即从您的个人账户充值水晶的余额！'},
         {id:4,question:'我对您的平台有任何疑问或建议！ 我该如何联系您？',answer:'从网站的标题或网站的页脚转到“联系人”部分，并向您写下您的问题，对我们工作的反馈或对我们平台开发的希望！'},
-        {id:5,question:'我如何查看您平台的功能？',answer:'您可以在此处查看平台的全部功能。\n' +
-              '这里介绍了VIP功能。'},
+        {id:5,question:'我如何查看您平台的功能？',answer:'<a href="/info/guide">您可以在此处查看平台的全部功能</a> <br>' +
+              '<a href="/info/vip-introduction">这里介绍了VIP功能</a>。'},
       ],
 
 

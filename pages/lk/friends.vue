@@ -8,7 +8,7 @@
                     :avatar="friend.avatar"
                     :fio="friend.fio"/>
       </div>
-      <p v-else>Вы не добавили не одного друга</p>
+      <p v-else>您尚未添加任何朋友</p>
     </div>
 
   </div>

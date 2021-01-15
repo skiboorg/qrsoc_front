@@ -60,13 +60,13 @@
      <el-dialog  :visible.sync="aboutModal">
       <div class="banner-info-block">
         <div class="banner-info-block__top">
-
-          <img class="banner-info-block__top--img" src="/lip.webp" alt="">
-
-          <div class="banner-info-block__top--name">
-            <p>Li pin hin</p>
-            <p>creator QR SOCIAL</p>
-          </div>
+          <img  src="/banner_modal_1.png" alt="">
+          <img  src="/banner_modal_2.png" alt="">
+          <img  src="/banner_modal_3.png" alt="">
+        </div>
+        <div class="banner-info-block__top--name">
+         <p>Li Ping Heing</p>
+          <p>QR Company Creator</p>
         </div>
         <div class="banner-info-block__content mb-20">
           <p class="section-subheader mb-10">我的传记</p>

@@ -49,7 +49,8 @@
             <p>{{post.comments.length}}</p>
           </div>
         </div>
-        <div class="user-profile-post__comments" :class="{'postCommentsOpened':post.comments_show}">
+<!--        <div class="user-profile-post__comments" :class="{'postCommentsOpened':post.comments_show}">-->
+        <div class="user-profile-post__comments" :class="{'postCommentsOpened':currentPostIndex ===index }">
           <div v-if="$auth.loggedIn" class="user-profile-post__reply">
             <img :src="$auth.user.avatar" alt="">
             <div class="user-profile-post__reply--form">
@@ -109,6 +110,7 @@
     data() {
       return {
         comment_text: null,
+        currentPostIndex:null
       };
     },
 
@@ -120,13 +122,15 @@
         this.posts = response.data
         if (current_post_open_status){
           this.posts[post_id].comments_show = true
+
         }
 
       },
       showComments(index){
         //показать все комменты к посту по его index
         this.comment_text = null
-        this.posts[index].comments_show ? this.posts[index].comments_show = false : this.posts[index].comments_show = true
+        this.currentPostIndex = index
+        //this.posts[index].comments_show ? this.posts[index].comments_show = false : this.posts[index].comments_show = true
       },
       async addComment(post_id,index){
         //добавляем коммент к посту по его post_id

@@ -51,19 +51,29 @@
       </div>
 
     </div>
-    <div class="footer-bottom">
-      <ul>
-        <li><a href="#">我们的女孩</a></li>
-        <li><a href="#">社会团体</a></li>
-        <li><a href="#">我们的广播</a></li>
-        <li><a href="/login">LOGIN</a></li>
+    <div class="footer-bottom ">
+      <div class="container">
+        <ul>
+          <li><nuxt-link to="/girls">我们的女孩</nuxt-link></li>
+          <li><nuxt-link to="/stream">我们的广播</nuxt-link></li>
+          <li><nuxt-link to="/info/policy">隐私政策</nuxt-link></li>
+          <li><nuxt-link to="/info/agreement">使用条款</nuxt-link></li>
+          <li><nuxt-link to="/info/rules">现场和交流规则</nuxt-link></li>
+          <li><nuxt-link to="/info/guide">社交网络指南</nuxt-link></li>
+          <li><nuxt-link to="/info/vip-introduction">VIP功能</nuxt-link></li>
+          <li><nuxt-link to="/info/updates">更新历史</nuxt-link></li>
       </ul>
-      <p>QR Company (C) 2020.</p>
+        <div class="footer-bottom__line">
+         <p>QR Company (C) 2020.</p>
+          <p>
+            Our projects:
+            <a href="#">QRLevel.com</a>
+            <a href="#">QRSpicy.com</a>
+            <a href="#">QRPuz.com </a>
+          </p>
+        </div>
+      </div>
     </div>
-
-
-
-
   </footer>
 </template>
 

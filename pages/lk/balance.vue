@@ -11,17 +11,20 @@
 
     </div>
     <el-dialog
-      :title="'Пополнение баланса на '+ balanceAddAmount"
       :visible.sync="balanceDialogVisible"
       width="30%" >
-      <div class="text-center">
-        <img src="/qr.png" alt="">
+      <div class="text-center mb-30">
+        <p class="user-profile-block__title " style="color: #262626;margin-bottom: 15px">{{`平衡补充${balanceAddAmount}颗水晶 `}}</p>
+        <p class="mb-20">验证付款后，您的余额会在几分钟之内自动补充</p>
+        <img style="width: 270px;height: 270px" src="/qr.png" alt="">
       </div>
 
-      <span slot="footer" class="dialog-footer">
-    <el-button @click="dialogVisible = false">Отмена</el-button>
-    <el-button type="primary" @click="addToBalance">Пополнить</el-button>
-  </span>
+      <div class="text-center">
+         <p class="stream-button" style="color: #FFFFFF"  @click="addToBalance">补充</p>
+      </div>
+
+
+
     </el-dialog>
   </div>
 

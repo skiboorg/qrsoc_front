@@ -1,5 +1,4 @@
 .banner
-  display: none
   background: url(/banner.jpg) no-repeat
   background-position-x: center
   //box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
@@ -46,7 +45,7 @@
     bottom: -100px
   &-info-block
 
-    padding: 50px
+    padding: 0 50px
 
     z-index: 1000
     transition: all .05s linear
@@ -54,7 +53,7 @@
     &__top
       display: flex
       align-items: center
-      justify-content: flex-start
+      justify-content: space-between
       margin-bottom: 25px
       &--img
         width: 150px
@@ -65,19 +64,19 @@
       &--name
         p
           letter-spacing: 0.05em
-          text-transform: uppercase
           &:first-child
-            font-size: 40px
+            font-size: 24px !important
+            font-weight: 600
+            color: #262626
           &:last-child
-            font-size: 14px
-            opacity: .8
+            font-size: 16px
+            color: #262626
     &__content
       p
         line-height: 150%
 
 @media (max-width: 576px)
   .banner
-    display: block
     background: url(/mobile_banner_bg.jpg) no-repeat center
     background-size: cover
     height: 620px

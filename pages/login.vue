@@ -19,7 +19,7 @@
           <div v-if="activeStep===0" class="">
             <h3>Правила</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquid atque consequatur dolor itaque, neque quam ratione tenetur voluptates! Aspernatur ducimus error iste laborum modi obcaecati quidem saepe! Consequatur, veniam.</p>
-            <el-collapse class="mb-20" v-model="activeAccordion" >
+            <el-collapse class="mb-20" v-model="activeAccordion" accordion>
               <el-collapse-item title="Как работать на нашей платформе" name="1">
                 <p>Первый шаг - регистрация и заполнение профиля. <br>
                   Расскажите о себе как можно больше информации, это привлекает внимание к вам!<br><br>

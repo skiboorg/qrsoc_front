@@ -62,9 +62,9 @@
                   </el-option>
                 </el-select>
               </el-form-item>
-              <el-form-item label="您的姓名" >
-                <el-input v-model="formData.name" placeholder="请填写您的姓名"></el-input>
-              </el-form-item>
+<!--              <el-form-item label="您的姓名" >-->
+<!--                <el-input v-model="formData.name" placeholder="请填写您的姓名"></el-input>-->
+<!--              </el-form-item>-->
               <el-form-item label="您的留言文字">
                 <el-input type="textarea" :rows="5" placeholder="您的留言文字" v-model="formData.text"></el-input>
               </el-form-item>
@@ -117,21 +117,28 @@ export default {
       },
       rules: {
         name: [
-          { required: true, message: 'Please input Activity name', trigger: 'blur' },
-          { min: 3, max: 5, message: 'Length should be 3 to 5', trigger: 'blur' }
+          { required: true, message: '请输入姓名', trigger: 'blur' }
         ],
         email:[
-          { required: true, message: 'Please input email address', trigger: 'blur' },
-          { type: 'email', message: 'Please input correct email address', trigger: ['blur', 'change'] }
+          { required: true, message: '请输入电子邮件地址', trigger: 'blur' },
+          { type: 'email', message: '请输入正确的电子邮件地址', trigger: ['blur', 'change'] }
         ]
 
       }
     }
   },
   methods:{
+    notify(title,message,type){
+      this.$notify({
+        title: title,
+        message: message,
+        type: type
+      });
+    },
     async sendForm(){
       const response = await this.$axios.post(`/api/v1/feedback/add_feedback`,this.formData)
       console.log(response)
+      this.notify('您的留言已发送！','我们将回复您的邮件','success')
     }
 
 

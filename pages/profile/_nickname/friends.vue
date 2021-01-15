@@ -9,7 +9,7 @@
                     :avatar="friend.avatar"
                     :fio="friend.fio"/>
       </div>
-      <p v-else>У пользователя пока нет друзей</p>
+      <p v-else>用户还没有朋友</p>
     </div>
 
   </div>

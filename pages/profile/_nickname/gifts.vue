@@ -51,8 +51,8 @@
         </el-radio>
       </el-radio-group>
       <div class="user-profile-gifts__message">
-        <el-input v-model="gift_message" placeholder="输入女孩的愿望或信息"></el-input>
-        <a href="#" class="btn btn-l-blue" :class="{'btnDisabled':!gift_message}" @click.prevent="sendGift">选择礼物</a>
+        <el-input v-model="special_gift_message" placeholder="输入女孩的愿望或信息"></el-input>
+        <a href="#" class="btn btn-l-blue" :class="{'btnDisabled':!special_gift_message}" @click.prevent="sendGift">选择礼物</a>
       </div>
     </div>
     <div class="stream-best-donaters">
@@ -99,8 +99,8 @@
     data() {
       return {
         giftDialogVisible:false,
-
         gift_message:null,
+        special_gift_message:null,
         selected_gift_img:null,
         selected_gift_price:null,
         selected_gift_id:null,
@@ -134,18 +134,19 @@
         console.log('user.balance',this.$auth.user.balance)
         console.log('gift_price',this.selected_gift_price)
         if(this.$auth.user.balance < this.selected_gift_price){
-          this.notify('Ошибка','Не хватает средств','error')
+          this.notify('发送失败！','我们将回复您的邮件','error')
           this.selected_gift_id = null
           this.gift_message = null
+          this.special_gift_message = null
           return
         }
         await this.$axios.post(`/api/v1/gift/send_gift_to_user`,{
           gift_id:this.selected_gift_id,
           nickname:this.$route.params.nickname,
-          message:this.gift_message,
+          message:this.gift_message ? this.gift_message : this.special_gift_message,
           stream:false
         })
-        this.notify('Успешно','Подарок отправлен','success')
+        this.notify('您的礼物已发送！','您可以在个人帐户中跟踪它','success')
         await this.$auth.fetchUser()
         this.selected_gift_id = null
         this.gift_message = null

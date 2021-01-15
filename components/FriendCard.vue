@@ -23,9 +23,9 @@
           width="260"
           v-model="messagePopoverVisible">
           <div style="text-align: right; margin: 0">
-            <el-input class="mb-10" placeholder="Please input" v-model="message"></el-input>
-            <el-button size="mini" type="text" class="main-color" @click="messagePopoverVisible = false">cancel</el-button>
-            <el-button  type="danger" size="mini" @click="sendBlankChatMessage(nickname)">Send</el-button>
+            <el-input class="mb-10" placeholder="与女孩开始对话" v-model="message"></el-input>
+            <el-button size="mini" type="text" class="main-color" @click="messagePopoverVisible = false">撤消</el-button>
+            <el-button  type="danger" size="mini" @click="sendBlankChatMessage(nickname)">发送消息</el-button>
           </div>
   <div slot="reference" class="user-profile-friends-item__button">
           <svg width="24"  height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -38,7 +38,7 @@
 
 export default {
   layout: 'info',
-  scrollToTop: false,
+
   auth: false,
   data(){
     return {

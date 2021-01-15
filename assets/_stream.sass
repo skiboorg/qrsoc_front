@@ -1,4 +1,22 @@
 .stream
+  &-button
+    background: #CF5F64
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1)
+    border-radius: 6px
+    display: inline-flex
+    align-items: center
+    justify-content: space-evenly
+    height: 40px
+    width: 170px
+    margin-bottom: 20px
+    cursor: pointer
+    transition: all .2s linear
+    p
+      color: #FFFFFF
+    &:hover
+      background: #F64953
+
+
   &-wrapper
     margin-bottom: 40px
     margin-top: 40px
@@ -113,7 +131,8 @@
     background: #FFFFFF
     box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.25), 5px 5px 20px #E6E6F0
     border-radius: 3px
-    padding: 15px 20px
+    //padding: 15px 20px
+    padding: 30px
     h3
       font-weight: bold
       font-size: 24px
@@ -217,7 +236,7 @@
     height: calc(100% - 90px)
     overflow: auto
     & .chat-messages
-      max-height: 605px
+      max-height: 100%
     & .chat-new-message__input
       width: 100%
     & .chat-message

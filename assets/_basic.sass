@@ -16,6 +16,7 @@ body
   background: #f8f8f8
   overflow-x: hidden
   padding-top: 60px
+  background: url(/body.png)
 
 @media (max-width: 576px)
   body
@@ -23,7 +24,8 @@ body
 
 .main-color
   color: $color-l-green
-
+.v-modal
+  display: none
 .container
   max-width: 1180px
   padding: 0 10px
@@ -40,6 +42,16 @@ body
     color: $color-text-d-blue
     font-size: 56px
 
+.info-title
+  font-size: 36px
+  font-weight: bold
+  color: $color-text-d-blue
+  margin-bottom: 20px
+
+.info-subtitle
+  font-size: 24px
+  font-weight: bold
+  margin-bottom: 10px
 
 .block-custom-scrollbar
   &::-webkit-scrollbar
@@ -75,6 +87,9 @@ body
 
 .mb-40
   margin-bottom: 40px
+
+.mb-60
+  margin-bottom: 60px
 .mt-40
   margin-top: 40px
 .c-pointer
@@ -131,6 +146,13 @@ body
   text-align: left
 
 .authModal
+  &-buttons
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    flex-wrap: wrap
+    .btn
+      width: 130px
   &-group
     display: flex
     align-items: flex-start
@@ -298,6 +320,12 @@ body
 
 .info-page
   padding-bottom: 100px
+
+.info-vip-item
+  margin-bottom: 30px
+  span
+    display: inline-block
+    margin-bottom: 5px
 
 .page-top-banner
   height: 250px

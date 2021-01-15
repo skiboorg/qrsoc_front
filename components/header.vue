@@ -140,29 +140,30 @@
     <el-dialog class="authModal" :visible.sync="authModal"  >
       <el-tabs  v-model="activeTab" :stretch="true">
         <el-tab-pane label="登录帐号" name="loginTab">
-          <el-input class="mb-10 mt-40" v-model="userData.wechatid" placeholder="id"></el-input>
-          <el-input class="mb-20" v-model="userData.password" show-password placeholder="pass"></el-input>
+          <el-input class="mb-10 mt-40" v-model="userData.wechatid" placeholder="您的微信号码"></el-input>
+          <el-input class="mb-20" v-model="userData.password" show-password placeholder="输入密码"></el-input>
           <div class="authModal-group mb-20">
             <el-checkbox class="text-f-14" v-model="userData.agree">让我签名</el-checkbox>
-            <p class="text-f-14 text-l-green c-pointer" >忘记密码了?</p>
+            <p class="text-f-14  c-pointer" > <nuxt-link class="text-l-green" to="/contacts">忘记密码了?</nuxt-link> </p>
           </div>
           <p class="btn btn-l-blue text-f-14 mb-15" @click="userLogin">登录</p>
-          <p class="text-center text-f-14">没有帐号? <span class="text-l-green c-pointer">登入</span></p>
+          <p class="text-center text-f-14" @click="activeTab='regTab'"><span class="text-l-green c-pointer">还没有帐号？ 现在注册 </span></p>
         </el-tab-pane>
         <el-tab-pane label="报到" name="regTab">
           <p class="text-center mb-15">付款后，您的注册确认信将发送到您的邮件中。付款时，请在付款说明中注明您的昵称和姓名</p>
           <div v-if="register_step===1">
-            <el-input class="mb-10" v-model="registerData.fio" placeholder="fio"></el-input>
-            <el-input class="mb-10 " v-model="registerData.wechatid" placeholder="wechatid"></el-input>
-            <el-input class="mb-10" v-model="registerData.email" placeholder="email"></el-input>
-            <el-input class="mb-10" v-model="registerData.password1" placeholder="password1" show-password></el-input>
-            <el-input class="mb-10" v-model="registerData.password2" placeholder="password2" show-password></el-input>
+            <el-input class="mb-10" v-model="registerData.fio" placeholder="您的名字和姓氏"></el-input>
+            <el-input class="mb-10 " v-model="registerData.wechatid" placeholder="您的微信号码"></el-input>
+            <el-input class="mb-10" v-model="registerData.email" placeholder="你的邮件"></el-input>
+            <el-input class="mb-10" v-model="registerData.password1" placeholder="输入密码" show-password></el-input>
+            <el-input class="mb-10" v-model="registerData.password2" placeholder="再次输入密码" show-password></el-input>
             <el-checkbox class="text-f-14 mb-20" v-model="registerData.agree">让我签名</el-checkbox>
             <p class="btn btn-l-blue text-f-14 mb-15" @click="register_step=2">进一步</p>
-            <p class="text-center text-f-14">已经有一个帐户? <span class="text-l-green c-pointer">进来</span></p>
+             <p class="text-center text-f-14" @click="activeTab='loginTab'"><span class="text-l-green c-pointer">已经有一个帐户?</span></p>
+
           </div>
           <div v-if="register_step===2">
-            <el-input class="mb-20 mt-40" v-model="registerData.nickname" placeholder="nickname"></el-input>
+            <el-input class="mb-20 mt-40" v-model="registerData.nickname" placeholder="输入你的昵称"></el-input>
             <div class="authModal-group">
               <div class="">
                 <p class="text-f-14 text-grey mb-20">选择关税</p>
@@ -178,7 +179,11 @@
               </div>
 
             </div>
-            <p class="btn btn-l-blue text-f-14 mb-15" @click="userRegister">在网站上注册</p>
+            <div class="authModal-buttons">
+              <p class="btn btn-l-blue text-f-14 mb-15" @click="register_step=1">背部</p>
+              <p class="btn btn-l-blue text-f-14 mb-15" @click="userRegister">在网站上注册</p>
+            </div>
+
           </div>
         </el-tab-pane>
       </el-tabs>
@@ -267,7 +272,7 @@ export default {
         this.authModal=false
         this.ws_connect()
       } catch (error) {
-        this.notify('Ошибка','Проверьте введеные данные','error')
+        this.notify('错误','检查输入的数据！','error')
       }
     },
     logOut(){
@@ -284,10 +289,10 @@ export default {
           nickname:this.registerData.nickname,
         })
         console.log(await response)
-        this.notify('Успешно','Регистрация завершена','success')
+        this.notify('您已经成功注册了！','我们将在12小时内激活您的帐户','success')
         this.$router.push('/')
       }catch (e) {
-        this.notify('Ошибка','Проверьте введеные данные','error')
+        this.notify('错误','检查输入的数据！','error')
       }
 
 

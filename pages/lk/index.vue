@@ -20,8 +20,8 @@
         <p>{{this.$auth.user.city}}</p>
       </div>
       <div class="user-profile-block__info-grid">
-        <p>国家</p>
-        <p>俄罗斯联邦</p>
+        <p>工作的地方</p>
+        <p>{{this.$auth.user.work_place}}</p>
       </div>
       <div v-if="this.$auth.user.birthday" class="user-profile-block__info-grid">
         <p>年龄</p>
@@ -51,7 +51,8 @@
 
       <h3 class="user-profile-block__title">礼物历史</h3>
       <div v-if="!gift.gift.is_special_gift" class="gift-table-item" v-for="gift in sended_gift" :key="gift.id">
-        <p class="gift-table-item__date">{{gift.created_at}}</p>
+        <p class="gift-table-item__date">{{new Date(gift.created_at).getHours()}}:{{new Date(gift.created_at).getMinutes()}} {{new Date(gift.created_at).toLocaleDateString()}}</p>
+
         <div class="gift-table-item__user">
           <img :src="gift.user.avatar" alt="">
           <div class="gift-table-item__user--name">
@@ -74,7 +75,8 @@
 
       <h3 class="user-profile-block__title">女孩的服务</h3>
       <div v-if="gift.gift.is_special_gift" class="gift-table-item" v-for="gift in sended_gift" :key="gift.id">
-        <p class="gift-table-item__date">{{gift.created_at}}</p>
+         <p class="gift-table-item__date">{{new Date(gift.created_at).getHours()}}:{{new Date(gift.created_at).getMinutes()}} {{new Date(gift.created_at).toLocaleDateString()}}</p>
+
         <div class="gift-table-item__user">
           <img :src="gift.user.avatar" alt="">
           <div class="gift-table-item__user--name">

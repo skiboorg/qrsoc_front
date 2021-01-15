@@ -1,7 +1,7 @@
 .slider-girls
   margin-bottom: 125px
   & .section-title
-    margin-bottom: 70px
+    margin-bottom: 30px
   &__wrapper
     height: 440px
 
@@ -72,8 +72,9 @@
     &:before
       position: absolute
       content: url(/stream-vip.png)
-      right: 10px
-      top: 10px
+      left: 50%
+      top: 50%
+      transform: translateY(-50%) translateX(-50%)
   &__play
     position: absolute
     left: 0
@@ -135,6 +136,8 @@
 .card-disabled
   cursor: not-allowed
 
+.card-enabled
+  cursor: pointer !important
 .swiper-pagination-bullet
   background: $color-text-d-blue !important
 .swiper-pagination-bullet-active

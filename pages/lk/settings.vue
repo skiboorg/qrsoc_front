@@ -13,21 +13,21 @@
           <div class="faq-item__content--inner">
             <el-form ref="form" :model="userData" label-width="120px" label-position="left">
               <el-form-item label="居住地">
-                <el-input v-model="userData.city"></el-input>
+                <el-input v-model="userData.city" placeholder="输入值"></el-input>
               </el-form-item>
               <el-form-item label="教育">
-                <el-input v-model="userData.education" placeholder="education"></el-input>
+                <el-input v-model="userData.education" placeholder="输入值"></el-input>
               </el-form-item>
               <el-form-item label="我的专业">
-                <el-input v-model="userData.work_place" placeholder="work_place"></el-input>
+                <el-input v-model="userData.work_place" placeholder="输入值"></el-input>
               </el-form-item>
               <el-form-item label="出生日期">
-                <el-date-picker v-model="userData.birthday" type="date" placeholder="birthday"
+                <el-date-picker v-model="userData.birthday" type="date" placeholder="输入值"
                                 format="yyyy/MM/dd" value-format="yyyy-MM-dd">
                 </el-date-picker>
               </el-form-item>
               <el-form-item label="个人信息">
-                <el-input type="textarea" :rows="2" placeholder="Please input" v-model="userData.about"></el-input>
+                <el-input type="textarea" :rows="2" placeholder="输入值" v-model="userData.about"></el-input>
               </el-form-item>
 
 
@@ -50,7 +50,7 @@
 
             <el-form ref="form" :model="userData" label-width="120px" label-position="left">
               <el-form-item label="兴趣标签">
-                <el-select v-model="userData.tags" multiple placeholder="tags">
+                <el-select v-model="userData.tags" multiple placeholder="输入值">
                   <el-option
                     v-for="item in tags"
                     :key="item.id"
@@ -63,10 +63,10 @@
 
 
               <el-form-item label="我的兴趣">
-                <el-input type="textarea" :rows="2" placeholder="Please input" v-model="userData.interests"></el-input>
+                <el-input type="textarea" :rows="2" placeholder="输入值" v-model="userData.interests"></el-input>
               </el-form-item>
               <el-form-item label="我对艺术的兴趣">
-                <el-input type="textarea" :rows="2" placeholder="Please input" v-model="userData.interests_additional"></el-input>
+                <el-input type="textarea" :rows="2" placeholder="输入值" v-model="userData.interests_additional"></el-input>
               </el-form-item>
 
             </el-form>
@@ -88,23 +88,23 @@
           <div class="faq-item__content--inner">
             <el-form ref="form" :model="userData" label-width="120px" label-position="left">
 
-              <el-form-item label="FIO">
-                 <el-input placeholder="FIO"  v-model="userData.fio"></el-input>
+              <el-form-item label="姓氏和名字">
+                 <el-input placeholder="输入值"  v-model="userData.fio"></el-input>
               </el-form-item >
-              <el-form-item label="NICK">
-                 <el-input placeholder="NICK"  v-model="userData.nickname"></el-input>
+              <el-form-item label="您的昵称">
+                 <el-input placeholder="输入值"  v-model="userData.nickname"></el-input>
               </el-form-item>
 
               <el-form-item label="旧密码">
-                <el-input v-model="userData.email"></el-input>
+                <el-input v-model="userData.email" placeholder="输入值"></el-input>
               </el-form-item>
 
               <el-form-item label="新密码">
 
-                <el-input v-model="userData.password1" placeholder="new pass"></el-input>
+                <el-input v-model="userData.password1" placeholder="输入值"></el-input>
               </el-form-item>
               <el-form-item label="重复新密码">
-                <el-input v-model="userData.password2" placeholder="repeat pass"></el-input>
+                <el-input v-model="userData.password2" placeholder="输入值"></el-input>
               </el-form-item>
 
 
@@ -195,7 +195,7 @@
           url: '/api/v1/user/update/',
           data: formData
         })
-          this.notify('Успешно','Данные обновлены','success')
+          this.notify('设置更新！','应用了新设置','success')
           this.$auth.fetchUser()
 
       },
