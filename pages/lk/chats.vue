@@ -74,7 +74,7 @@
               <img :src="chatImgPreview" alt="">
             </div>
             <el-input ref="newMessage" class="chat-new-message__input"
-                      placeholder="new message"
+                      placeholder="写短信"
                       v-model="newMessage">
             </el-input>
             <div class="chat-new-message__input--smiles" @mouseenter="stikerListActive=!stikerListActive">
