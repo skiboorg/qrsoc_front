@@ -296,10 +296,7 @@
 
     },
     updated() {
-
-      //this.$nextTick(() => this.scrollToEnd());
-
-
+      this.$nextTick(() => this.scrollToEnd());
     },
     mounted() {
 

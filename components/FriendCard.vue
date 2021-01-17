@@ -78,10 +78,10 @@
         console.log(checkFriendList)
         if (checkFriendList.length > 0){
           await this.$axios.post('/api/v1/friend/add_or_delete_friend_by_nickname',{nickname:nickname,action:'delete'})
-          this.notify('Успешно','Пользователь удален из избранного','success')
+          this.notify('从收藏夹中删除','该用户已从您的书签中删除','success')
         }else {
           await this.$axios.post('/api/v1/friend/add_or_delete_friend_by_nickname',{nickname:nickname,action:'add'})
-          this.notify('Успешно','Пользователь добавлен в избранное','success')
+          this.notify('添加到收藏夹','书签中的用户','success')
         }
         await this.$auth.fetchUser()
       }

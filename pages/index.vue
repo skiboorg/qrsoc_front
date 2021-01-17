@@ -120,15 +120,18 @@
               <div class="features-item__img">
                 <img src="/feature-img3.png" alt="">
               </div>
-              <p class="features-item__title">与俄罗斯姑娘交流24/7</p>
-              <p class="features-item__text">与女孩见面并交流：全天候私人聊天或社交团体中！ 交流您的思想和心情，帮助俄罗斯姑娘学习有趣的汉语和迷人的中国文化！</p>
+              <p class="features-item__title">通过评级促进女孩</p>
+              <p class="features-item__text">评分最高的女孩将前往中国学习和发展文化！ 在那里我们可以与他们见面并在特别会议上现场聊天！<br>
+向女孩们提问，观看广播，赠送礼物并表现出关注的迹象-所有这些都促进了您对评级感兴趣的女孩</p>
             </div>
             <div class="features-item">
               <div class="features-item__img">
                 <img src="/feature-img4.png" alt="">
               </div>
-              <p class="features-item__title">与俄罗斯姑娘交流24/7</p>
-              <p class="features-item__text">与女孩见面并交流：全天候私人聊天或社交团体中！ 交流您的思想和心情，帮助俄罗斯姑娘学习有趣的汉语和迷人的中国文化！</p>
+              <p class="features-item__title">无限的可能性</p>
+              <p class="features-item__text">我们的平台使用内部货币“水晶”，您可以为此：<br>
+-亲自向女孩购买商品（签名，绘画，带有祝贺和笑话的视频）<br>
+-吸引注意并向选定的女孩赠送礼物和贴纸，同时提升她们的等级</p>
             </div>
           </div>
         </div>
@@ -247,7 +250,7 @@
     </section>
     <section class="why-we">
       <div class="container">
-        <h3 class="section-title">我们平台的功能</h3>
+        <h3 class="section-title"><span>我们平台</span>的功能</h3>
         <div class="why-we-wrapper">
           <div class="why-we-item">
             <img src="/why-img-1.png" alt="">

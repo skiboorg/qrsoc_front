@@ -13,10 +13,22 @@ $bg-gradient-l-blue: linear-gradient(180deg, #C1343D 0%, #C1343D 100%)
 body
   font-family: 'Msyh',sans-serif
   color: $color-text
-  background: #f8f8f8
+  background: #DFDFDF
   overflow-x: hidden
   padding-top: 60px
   background: url(/body.png)
+  &::-webkit-scrollbar
+    width: 6px
+  &::-webkit-scrollbar-track
+    //box-shadow: inset 0px 5px 10px rgba(0, 0, 0, 0.05)
+    background: #DFDFDF
+    border-radius: 10px
+  &::-webkit-scrollbar-thumb
+    background: $color-text-d-blue
+    border-radius: 5px
+  &::-webkit-scrollbar-thumb:hover
+    background: $color-text-d-blue
+
 
 @media (max-width: 576px)
   body

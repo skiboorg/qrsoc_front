@@ -18,13 +18,9 @@
         <p class="mb-20">验证付款后，您的余额会在几分钟之内自动补充</p>
         <img style="width: 270px;height: 270px" src="/qr.png" alt="">
       </div>
-
       <div class="text-center">
          <p class="stream-button" style="color: #FFFFFF"  @click="addToBalance">补充</p>
       </div>
-
-
-
     </el-dialog>
   </div>
 

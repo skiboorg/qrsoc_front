@@ -4,6 +4,7 @@
   //box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
   height: 831px
   margin-bottom: 115px
+
   &-inner
     max-width: 1180px
     padding: 0 10px
@@ -51,9 +52,9 @@
     transition: all .05s linear
 
     &__top
-      display: flex
-      align-items: center
-      justify-content: space-between
+      display: grid
+      grid-template-columns: repeat(3,1fr)
+      grid-gap: 10px
       margin-bottom: 25px
       &--img
         width: 150px
@@ -74,9 +75,21 @@
     &__content
       p
         line-height: 150%
-
+@media (max-width: 1700px)
+  .banner
+    height: 740px
+    background-size: contain
+@media (max-width: 1400px)
+  .banner
+    height: 620px
+@media (max-width: 1100px)
+  .banner
+    height: 485px
+@media (max-width: 900px)
+  .banner
+    height: 394px
 @media (max-width: 576px)
   .banner
     background: url(/mobile_banner_bg.png) no-repeat center
     background-size: cover
-    height: 620px
+    height: 860px

@@ -251,23 +251,30 @@
     img
       width: 40px
       height: 40px
-      filter: drop-shadow(1px 1px 3px #cecece)
       transition: all .2s linear
       cursor: pointer
       &:hover
         transform: scale(1.1)
 
 .chat-stikersTabs
+  &__close
+    position: absolute
+    right: 10px
+    top: 10px
+    cursor: pointer
+    &:hover
+      color: $color-text-d-blue
   &::after
     content: none
   & .el-tabs__active-bar
     display: none
   & .el-tabs__item
     margin-right: 10px
+    line-height: 30px !important
+    height: 30px !important
     &:last-child
       margin-right: 0
       padding-right: 5px !important
-
     &:hover
       color: $color-text-d-blue
     &.is-disabled
@@ -276,8 +283,8 @@
       color: #9F9FB8
       border-radius: 8px
       text-align: center
-      padding-right: 5px !important
-      padding: 0 5px
+
+      padding: 0 15px !important
 
 
     &.is-active
@@ -285,7 +292,7 @@
       color: #FFFFFF
       border-radius: 8px
       text-align: center
-      padding: 0 5px
+      padding: 0 15px !important
   & .el-tabs__nav-wrap::after
     content: none
 

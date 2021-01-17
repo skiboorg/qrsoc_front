@@ -12,7 +12,7 @@
         </div>
   <div v-else @click="openStream(is_vip,url)"
              class="slide-stream slide-stream-vip"
-            :class="[!this.$auth.loggedIn ? 'card-disabled':'']"
+            :class="[!this.$auth.loggedIn ? 'card-disabled':'',this.$auth.user.is_vip ? 'vipOpened' : '']"
              :style="'background: url(' + stream_img + ') no-repeat center'">
           <p class="slide-stream__date">{{ new Date (stream_date).toLocaleDateString()}} {{ new Date (stream_date).toLocaleTimeString()}}</p>
               <p class="slide-stream__name">{{name}}</p>
@@ -38,11 +38,12 @@
     },
     mounted() {
 
+
     },
     methods: {
       openStream(vip,url){
         if (vip){
-          this.$auth.is_vip ? this.$router.push(`/stream/${url}`) : null
+          this.$auth.user.is_vip ? this.$router.push(`/stream/${url}`) : null
         }
         else{
           this.$router.push(`/stream/${url}`)

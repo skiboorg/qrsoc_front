@@ -11,7 +11,7 @@
       </div>
       <div class="header-nav">
         <ul>
-          <li v-for="item in navItems" :key="item.id"><nuxt-link :to="item.link">{{item.name}}</nuxt-link></li>
+          <li v-for="item in $auth.loggedIn ? navItemsAuth : navItemsNotAuth" :key="item.id"><nuxt-link :to="item.link">{{item.name}}</nuxt-link></li>
         </ul>
       </div>
 
@@ -127,7 +127,7 @@
       </div>
       <div class="header-nav-mobile" :class="{'mobileNavActive':mobileNavActive}">
         <ul>
-          <li v-for="item in navItems" :key="item.id"><nuxt-link :to="item.link">
+          <li v-for="item in $auth.loggedIn ? navItemsAuth : navItemsNotAuth" :key="item.id"><nuxt-link :to="item.link">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M19 21L12 16L5 21V5C5 4.46957 5.21071 3.96086 5.58579 3.58579C5.96086 3.21071 6.46957 3 7 3H17C17.5304 3 18.0391 3.21071 18.4142 3.58579C18.7893 3.96086 19 4.46957 19 5V21Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -211,12 +211,20 @@ export default {
       mobileNavActive:false,
       userMenuActive:false,
       register_step:1,
-      navItems:[
-        {id:1,name:'我们的女孩',link:'/'},
-        {id:2,name:'社会团体',link:'/lk'},
+      navItemsAuth:[
+        {id:1,name:'回到主页面',link:'/'},
+        {id:2,name:'个人专区',link:'/lk'},
         {id:3,name:'我们的广播',link:'/stream'},
         {id:4,name:'我们的女孩',link:'/girls'},
-        {id:5,name:'社会团体',link:'/info/rules'},
+        {id:5,name:'信息和规则',link:'/info/rules'},
+        {id:6,name:'联系人和反馈',link:'/contacts'},
+        {id:7,name:'ВХОД ДЛЯ ДЕВУШЕК',link:'/login'},
+      ],
+      navItemsNotAuth:[
+        {id:1,name:'回到主页面',link:'/'},
+        {id:3,name:'我们的广播',link:'/stream'},
+        {id:4,name:'我们的女孩',link:'/girls'},
+        {id:5,name:'信息和规则',link:'/info/rules'},
         {id:6,name:'联系人和反馈',link:'/contacts'},
         {id:7,name:'ВХОД ДЛЯ ДЕВУШЕК',link:'/login'},
       ],

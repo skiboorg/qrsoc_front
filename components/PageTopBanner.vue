@@ -2,7 +2,7 @@
      <div class="page-top-banner" :style="'background: url('+bg_image+')'">
        <div class="container page-top-banner__inner">
          <h3>{{title}}</h3>
-         <p><nuxt-link to="/">< 如何赚取积分?</nuxt-link></p>
+         <p><nuxt-link to="/">回到主页面?</nuxt-link></p>
        </div>
      </div>
 </template>

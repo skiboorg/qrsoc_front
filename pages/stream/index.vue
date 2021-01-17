@@ -1,6 +1,6 @@
 <template>
   <div>
-       <PageTopBanner :title="'相册'" :bg_image="'/streams_page_top.png'"/>
+       <PageTopBanner :title="'我们的广播'" :bg_image="'/streams_page_top.png'"/>
   <section class="streams-page">
     <div class="container">
       <div class="streams-page-wrapper">

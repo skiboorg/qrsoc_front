@@ -1,6 +1,6 @@
 <template>
   <div>
-    <PageTopBanner :title="'相册'" :bg_image="'/girl_page_top.png'"/>
+    <PageTopBanner :title="'我们的女孩'" :bg_image="'/girl_page_top.png'"/>
   <section class="girls-page">
 
     <div class="container">

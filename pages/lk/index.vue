@@ -103,7 +103,7 @@
 <script>
 export default {
   layout: 'user_lk',
-  scrollToTop: false,
+
   auth: true,
   async asyncData({$axios,$auth,params}){
     console.log(params)
