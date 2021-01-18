@@ -1,3 +1,5 @@
+import serveStatic from 'serve-static'
+
 export default {
   //  server: {
   //    port: 80, // default: 3000
@@ -8,12 +10,14 @@ export default {
   //       img_url: 'http://185.51.246.40:8000',
   //
   //   },
-
+  serverMiddleware: [
+    '~/middleware/seo.js'
+  ],
   env: {
-        ws_url: 'ws://localhost:8000',
-        img_url: 'http://localhost:8000',
+    ws_url: 'ws://localhost:8000',
+    img_url: 'http://localhost:8000',
 
-    },
+  },
   head: {
     title: '二维码-辣妹 - 社交网络约会',
     meta: [
@@ -72,11 +76,11 @@ export default {
   },
   auth: {
     redirect: {
-    login: '/',
-    logout: '/',
-    callback: '/',
-    home: '/'
-  },
+      login: '/',
+      logout: '/',
+      callback: '/',
+      home: '/'
+    },
     strategies: {
       local: {
         endpoints: {

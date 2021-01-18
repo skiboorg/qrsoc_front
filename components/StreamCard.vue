@@ -1,7 +1,7 @@
 <template>
-        <div v-if="!is_vip" @click="openStream(is_vip,url)"
+        <div  @click="openStream(is_vip,url)"
              class="slide-stream"
-             :class="[!this.$auth.loggedIn ? 'card-disabled':'']"
+             :class="[!this.$auth.loggedIn ? 'card-disabled':this.$auth.user.is_vip ? 'vipOpened' : '', is_vip ? 'slide-stream-vip':'']"
              :style="'background: url(' + stream_img + ') no-repeat center'">
           <p class="slide-stream__date">{{ new Date (stream_date).toLocaleDateString()}} {{ new Date (stream_date).toLocaleTimeString()}}</p>
               <p class="slide-stream__name">{{name}}</p>
@@ -10,19 +10,6 @@
                 <p class="">{{nickname}}</p>
               </div>
         </div>
-  <div v-else @click="openStream(is_vip,url)"
-             class="slide-stream slide-stream-vip"
-            :class="[!this.$auth.loggedIn ? 'card-disabled':'',this.$auth.user.is_vip ? 'vipOpened' : '']"
-             :style="'background: url(' + stream_img + ') no-repeat center'">
-          <p class="slide-stream__date">{{ new Date (stream_date).toLocaleDateString()}} {{ new Date (stream_date).toLocaleTimeString()}}</p>
-              <p class="slide-stream__name">{{name}}</p>
-              <div class="slide-stream__link">
-                <img :src="avatar" alt="">
-                <p class="">{{nickname}}</p>
-              </div>
-        </div>
-
-
 </template>
 <script>
   export default {

@@ -1,5 +1,14 @@
 <template>
   <div  class="user-profile-tab">
+    <div class="user-profile-chat__top">
+      <div class="user-profile-chat__top block">
+        <el-checkbox v-model="is_translate">Включить автоперевод на китайский</el-checkbox>
+      </div>
+      <div class="user-profile-chat__top block">
+        <el-input placeholder="Введите текст " v-model="ru" > </el-input>
+        <el-input placeholder="Перевод" v-model="cn"></el-input>
+      </div>
+    </div>
     <div class="user-profile-chat">
       <div v-if="chats.length>0" class="user-profile-chat__wrapper">
         <div class="stream-tabs">
@@ -127,6 +136,9 @@ export default {
   data(){
     return {
       activeTab:'users',
+      is_translate:false,
+      ru:'',
+      cn:'',
       smiles:[
         {id:1,name:'GRINNING FACE',code:'😀'},
         {id:2,name:'FACE WITH TEARS OF JOY',code:'😁'},

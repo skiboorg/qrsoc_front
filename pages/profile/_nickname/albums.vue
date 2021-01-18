@@ -5,11 +5,11 @@
 
       <div v-show="!galleryShow" class="user-profile-gallery">
         <div class="user-profile-gallery__item"
-             @click="$auth.user.is_vip ? showGallery(gallery.images,gallery.title) : null"
+             @click="showGallery(gallery.is_vip, gallery.images,gallery.title)"
              v-for="gallery in galleries"
              :style="'background: url('+gallery.image+') no-repeat center'"
              :class="[gallery.is_vip ? 'galleryVIP' : '',$auth.user.is_vip ? 'galleryVIPOpen':'']">
-          <svg v-show="gallery.is_vip && !$auth.user.is_vip" width="98" height="98" viewBox="0 0 98 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg v-show="gallery.is_vip" width="98" height="98" viewBox="0 0 98 98" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g style="mix-blend-mode:multiply" opacity="0.6">
               <circle cx="49" cy="49" r="49" fill="#383845"/>
             </g>
@@ -75,7 +75,10 @@
       }
     },
     methods: {
-      showGallery(images,title){
+      showGallery(is_vip,images,title){
+        if (is_vip && !this.$auth.user.is_vip){
+          return
+        }
         //показать все изображения в галерее из переданного массива images
         this.imgList =[]
         this.galleryTitle = title
