@@ -39,6 +39,16 @@
         left: 0
         background: $color-text-d-blue
         border-radius: 5px
+    &:first-child
+      &:hover
+        border-top-right-radius: 18px
+        &::before
+          border-top-left-radius: 18px
+    &:last-child
+      &:hover
+        border-bottom-right-radius: 18px
+        &::before
+          border-bottom-left-radius: 18px
     &__num
       padding-left: 50px
       font-size: 14px
@@ -67,6 +77,40 @@
       font-weight: bold
       color: $color-text-d-blue
       padding-right: 70px
+    &.indexMode
+      &:hover
+        &::before
+          content: none
+      & .best-girls-item
+        &__num
+          padding-left: 25px
+        &__img
+          position: relative
+          &::before
+            position: absolute
+            bottom: -5px
+            left: 35px
+            background: #fff
+            padding: 4px
+            border-radius: 100%
+          img
+            width: 54px
+            height: 54px
+          &.girlStatus1
+            &::before
+              content: url(/crown_0.png)
+          &.girlStatus2
+            &::before
+              content: url(/crown_1.png)
+          &.girlStatus3
+            &::before
+              content: url(/crown_1.png)
+
+        &__link
+          color: $color-text-grey
+        &__score
+          color: $color-text
+
 
 @media (max-width: 576px)
   .best-girls-wrapper::after

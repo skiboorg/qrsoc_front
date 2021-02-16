@@ -1,0 +1,61 @@
+.video-block
+  margin-bottom: 35px
+  margin-top: -115px
+  &__wrapper
+    min-height: 465px
+    background: #FFFFFF
+    box-shadow: 5px 5px 15px rgba(46, 46, 106, 0.16)
+    border-radius: 18px
+    padding: 20px
+    display: grid
+    grid-template-columns: 4fr 2fr
+    grid-gap: 20px
+  &__content
+    position: relative
+    video
+      object-fit: cover
+      width: 100%
+      height: 100%
+      border-radius: 5px
+    &::before
+      position: absolute
+      content: url(/live.svg)
+      left: 15px
+      top: 10px
+  &__user
+    position: absolute
+    display: flex
+    align-items: center
+    justify-content: space-between
+    right: 15px
+    left: 40%
+    top: 10px
+    background: #FFFFFF
+    mix-blend-mode: normal
+    opacity: 0.75
+    border-radius: 20px
+    padding: 5px
+    &--avatar
+      width: 24px
+      height: 24px
+      border-radius: 100%
+      object-fit: cover
+      margin-right: 10px
+    &--name
+      font-size: 14px
+      color: #000000
+      margin-right: 10px
+    &--nickname
+      color: #383845
+      flex-grow: 4
+    &--icon
+      margin-right: 10px
+    &--rating
+      font-weight: 700
+      margin-right: 10px
+    svg
+      margin-right: 10px
+  &__banners
+    display: flex
+    flex-direction: column
+    justify-content: space-between

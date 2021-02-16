@@ -55,7 +55,8 @@
 
               <div  class="chat-message__avatar"><img  :src="message.user.avatar" alt=""></div>
               <div class="chat-message__text">
-                <p v-html="message.message"></p>
+                <p v-if="message.user.id === $auth.user.id" v-html="message.message"></p>
+                <p v-else v-html="message.message_translate"></p>
                 <img v-if="message.image" :src="message.image" alt="">
                 <img v-if="message.stiker" :src="message.is_socket ? base_url+message.stiker.image : message.stiker.image" alt="">
                 <span class="chat-message__text--datetime">{{new Date(message.createdAt).toLocaleDateString()}} {{new Date(message.createdAt).toLocaleTimeString()}}</span>
@@ -193,6 +194,7 @@ export default {
                 id:data.id,
                 is_socket:true,
                 message: updated ? updated : null,//data.message,
+                message_translate: data.message_translate,//data.message,
                 stiker: data.stiker ? data.stiker : null,//data.message,
                 image: data.image ? process.env.img_url+data.image : null,//data.message,
                 createdAt: Date.now(),
@@ -231,6 +233,7 @@ export default {
       let formData = new FormData()
       formData.set('message', JSON.stringify(this.newMessage))
       formData.set('image',this.chatImg)
+      formData.set('message_lang',"zh")
       formData.set('stiker',stiker_id)
       await this.$axios({
         method: 'post',

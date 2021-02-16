@@ -1,0 +1,28 @@
+.girl-card
+  text-align: center
+  cursor: pointer
+  &__avatar
+    position: relative
+    border-radius: 5px
+    img
+      width: 280px
+      height: 280px
+      object-fit: cover
+      border-radius: 5px
+  &.girl-online
+    & .girl-card__avatar
+        &::before
+          position: absolute
+          content: url(/live.svg)
+          top: 15px
+          left: 10px
+  &__bottom
+    display: flex
+    align-items: center
+    justify-content: space-between
+    &-inner
+      flex-basis: 70px
+      display: flex
+      align-items: center
+      justify-content: space-between
+

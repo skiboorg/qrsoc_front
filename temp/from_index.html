@@ -1,0 +1,276 @@
+  <!--    <section class="banner_slider">-->
+    <!--      <client-only>-->
+    <!--        <swiper class="banner_slider__wrapper"  :options="swiperOptionBanner">-->
+    <!--          <div class="swiper-pagination" slot="pagination"></div>-->
+    <!--          <swiper-slide v-for="banner in banners" :key="banner.id">-->
+    <!--            <img :src="banner.image" alt="">-->
+    <!--          </swiper-slide>-->
+    <!--        </swiper>-->
+    <!--          <div class="swiper-button-prev"></div>-->
+    <!--    <div class="swiper-button-next"></div>-->
+    <!--        <div class="swiper-pagination" slot="pagination"></div>-->
+    <!--      </client-only>-->
+    <!--    </section>-->
+
+<section class="mb-40">
+      <div class="container">
+        <h3 class="section-title mb-30"><nuxt-link to="/streams">在我们的<span>平台上如</span>何播放？</nuxt-link> </h3>
+        <p class="mb-40">我们众多广播之一的摘录！ 来找我们，我们有很多有趣的事情</p>
+        <div class=" stream-video ">
+          <div class="stream-video__top">
+            <div  class="stream-video__top--user">
+              <img :src="streamers[0].avatar" alt="">
+              <div class="stream-video__top--user--info">
+                <p>{{streamers[0].fio}}</p>
+                <p>@{{streamers[0].nickname}}</p>
+              </div>
+            </div>
+            <p style="font-size: 24px;font-weight: bold">我与最喜欢的观众交流</p>
+            <div class="stream-video__top--stats">
+              <img src="/girl_rating_icon.png" alt="">
+              <div class="user-profile-about__girl-stats--item--info">
+                <p>{{streamers[0].streamer_rating}}</p>
+                <p>广播评级</p>
+              </div>
+            </div>
+          </div>
+          <div class="stream-video__content mb-10">
+            <video style="width: 100%;height: 100%" controls loop>
+              <source src="/vid.mp4" type="video/mp4">
+              Your browser does not support HTML video.
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
+   <section class="slider-streams">
+      <div class="container">
+        <h3 class="section-title"><nuxt-link to="/streams">与女孩预<span>定的广播</span> </nuxt-link> </h3>
+      </div>
+      <client-only>
+        <swiper class="slider-streams__wrapper"  :options="swiperOption">
+          <div class="swiper-pagination" slot="pagination"></div>
+          <swiper-slide v-for="stream in streams"
+                        :key="stream.id">
+            <StreamCard :name="stream.name"
+                        :avatar="stream.streamer.avatar"
+                        :stream_img="stream.image"
+                        :nickname="stream.streamer.nickname"
+                        :stream_date="stream.date"
+                        :is_vip="stream.is_vip" :url="stream.url"/>
+          </swiper-slide>
+        </swiper>
+        <div class="swiper-pagination" slot="pagination"></div>
+      </client-only>
+
+    </section>
+   <section class="features">
+      <div class="container">
+        <div class="features-wrapper">
+          <h3 class="section-title">您将在我 <span>们的平台</span>上 获得什么？</h3>
+          <div class="features-items">
+            <div class="features-item">
+              <div class="features-item__img">
+                <img src="/feature-img1.png" alt="">
+              </div>
+              <p class="features-item__title">与俄罗斯姑娘交流24/7</p>
+              <p class="features-item__text">与女孩见面并交流：全天候私人聊天或社交团体中！ 交流您的思想和心情，帮助俄罗斯姑娘学习有趣的汉语和迷人的中国文化！</p>
+            </div>
+            <div class="features-item">
+              <div class="features-item__img">
+                <img src="/feature-img2.png" alt="">
+              </div>
+              <p class="features-item__title">参加视频广播</p>
+              <p class="features-item__text">参与开发：我们的女孩不断为您播报各种主题！<br>
+                共同学习中国语言和文化<br>
+                棋盘游戏或电脑游戏<br>
+                做运动和瑜伽<br>
+                各种爱好：烹饪，绘画或卡拉OK</p>
+            </div>
+            <div class="features-item">
+              <div class="features-item__img">
+                <img src="/feature-img3.png" alt="">
+              </div>
+              <p class="features-item__title">通过评级促进女孩</p>
+              <p class="features-item__text">评分最高的女孩将前往中国学习和发展文化！ 在那里我们可以与他们见面并在特别会议上现场聊天！<br>
+                向女孩们提问，观看广播，赠送礼物并表现出关注的迹象-所有这些都促进了您对评级感兴趣的女孩</p>
+            </div>
+            <div class="features-item">
+              <div class="features-item__img">
+                <img src="/feature-img4.png" alt="">
+              </div>
+              <p class="features-item__title">无限的可能性</p>
+              <p class="features-item__text">我们的平台使用内部货币“水晶”，您可以为此：<br>
+                -亲自向女孩购买商品（签名，绘画，带有祝贺和笑话的视频）<br>
+                -吸引注意并向选定的女孩赠送礼物和贴纸，同时提升她们的等级</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  <section class="steps">
+      <div class="container">
+        <h3 class="section-title">女孩<span>如何使用</span>我们的平台？</h3>
+        <div class="steps-wrapper">
+          <div class="steps__items">
+            <div @click="selectedStep=index" class="steps-item" v-for="(step,index) in steps"
+                 :key="step.id" :class="{'stepItemActive':selectedStep===index}">
+              <p class="steps-item__num" v-html="step.num"></p>
+              <div class="steps-item__group">
+                <p class="steps-item__group--top" v-html="step.title"></p>
+                <p class="steps-item__group--bottom" v-html="step.text"></p>
+              </div>
+            </div>
+
+          </div>
+          <div class="steps-item__image">
+            <el-image  :src="steps[selectedStep].img">
+              <div style="width: 100%;height: 100%" slot="placeholder" v-loading="true" class="image-slot">
+              </div>
+            </el-image>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+     <section class="faq">
+      <div class="container">
+        <div class="faq-wrapper">
+          <h3 class="section-title">
+            有关我们 <span>平台的问</span> 题的答案
+          </h3>
+          <div class="faq-items">
+            <div class="faq-item" v-for="(faq,index) in faqs" :key="faq.id" :class="{'faqItemActive':accordeonActive===index}">
+              <div class="faq-item__top" @click="accordeonActive=index">
+                <p>{{faq.question}}</p>
+                <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="17" cy="17" r="16.5" fill="white" stroke="#CECFDF"/>
+                  <path d="M17 21L13.5359 15L20.4641 15L17 21Z" fill="#CECFDF"/>
+                </svg>
+              </div>
+              <div class="faq-item__content">
+                <div class="faq-item__content--inner">
+                  <p v-html="faq.answer"></p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="best-users ">
+      <div class="container">
+        <h3 class="section-title mb-30">评分<span>最高的参与</span>者委员会</h3>
+        <p class="mb-30">增加您的评分-聊天并送礼物，结识女孩并送礼物！</p>
+        <div class="best-users-first">
+          <div class="best-user-item user-gold user-top">
+            <nuxt-link to="/">
+              <div data-num="4" class="best-user-item__img">
+                <img src="/temp/chin1.jpg" alt="">
+              </div>
+              <p class="best-user-item__name">Hei Pi Jey</p>
+              <p class="best-user-item__score">捐赠了7320颗水晶</p>
+
+            </nuxt-link>
+          </div>
+          <div class="best-user-item user-sliver user-top">
+            <nuxt-link to="/">
+              <div data-num="4" class="best-user-item__img">
+                <img src="/temp/chin2.jpg" alt="">
+              </div>
+              <p class="best-user-item__name">Hei Pi Jey</p>
+              <p class="best-user-item__score">捐赠了7320颗水晶</p>
+
+            </nuxt-link>
+          </div>
+          <div class="best-user-item user-bronze user-top">
+            <nuxt-link to="/">
+              <div data-num="4" class="best-user-item__img">
+                <img src="/temp/chin3.png" alt="">
+              </div>
+              <p class="best-user-item__name">Hei Pi Jey</p>
+              <p class="best-user-item__score">捐赠了7320颗水晶</p>
+
+            </nuxt-link>
+          </div>
+        </div>
+        <div class="best-users-second">
+          <div class="best-user-item">
+            <nuxt-link to="/">
+              <div data-num="4" class="best-user-item__img">
+                <img src="/temp/chin8.jpg" alt="">
+              </div>
+              <p class="best-user-item__name">Hei Pi Jey</p>
+              <p class="best-user-item__score">捐赠了7320颗水晶</p>
+
+            </nuxt-link>
+          </div>
+          <div class="best-user-item">
+            <nuxt-link to="/">
+              <div data-num="5" class="best-user-item__img">
+                <img src="/temp/chin14.jpg" alt="">
+              </div>
+              <p class="best-user-item__name">Hei Pi Jey</p>
+              <p class="best-user-item__score">捐赠了7320颗水晶</p>
+
+            </nuxt-link>
+          </div>
+          <div class="best-user-item">
+            <nuxt-link to="/">
+              <div data-num="6" class="best-user-item__img">
+                <img src="/temp/chin15.jpg" alt="">
+              </div>
+              <p class="best-user-item__name">Hei Pi Jey</p>
+              <p class="best-user-item__score">捐赠了7320颗水晶</p>
+
+            </nuxt-link>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <section class="best-girls">
+      <div class="container">
+        <h3 class="section-title "><span>我们女孩的</span>最高评价</h3>
+        <p class="mb-30">在这里，您可以看到我们所有女孩的评分！ 将您的女友提升到令人垂涎的中国之行的顶部！</p>
+        <div class="best-girls-wrapper">
+          <div @click="$router.push(`/profile/${girl.nickname}`)" class="best-girls-item" v-for="(girl,index) in top_streamers" :key="girl.id">
+            <div class="best-girls-item__num">{{index+1}}</div>
+            <div class="best-girls-item__img">
+              <img :src="girl.avatar" alt="">
+            </div>
+            <div class="best-girls-item__score"><img src="/girl_rating_icon.png" alt="">{{girl.streamer_rating}}</div>
+            <div class="best-girls-item__name">{{girl.fio}}</div>
+            <div class="best-girls-item__link">@{{girl.nickname}}</div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+     <section class="why-we">
+      <div class="container">
+        <h3 class="section-title"><span>我们平台</span>的功能</h3>
+        <div class="why-we-wrapper">
+          <div class="why-we-item">
+            <img src="/why-img-1.png" alt="">
+            <p>美丽的俄罗斯 姑娘的海洋</p>
+          </div>
+          <div class="why-we-item">
+            <img src="/why-img-2.png" alt="">
+            <p>交流的机会：聊天和广播</p>
+          </div>
+          <div class="why-we-item">
+            <img src="/why-img-3.png" alt="">
+            <p>通过兴趣和 爱好互相寻找</p>
+          </div>
+          <div class="why-we-item">
+            <img src="/why-img-4.png" alt="">
+            <p>开放：在个人资 料中谈论自己</p>
+          </div>
+        </div>
+      </div>
+    </section>

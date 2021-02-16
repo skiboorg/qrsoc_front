@@ -1,184 +1,214 @@
 <template>
   <div id="1top" >
-<!--    <section class="banner_slider">-->
-<!--      <client-only>-->
-<!--        <swiper class="banner_slider__wrapper"  :options="swiperOptionBanner">-->
-<!--          <div class="swiper-pagination" slot="pagination"></div>-->
-<!--          <swiper-slide v-for="banner in banners" :key="banner.id">-->
-<!--            <img :src="banner.image" alt="">-->
-<!--          </swiper-slide>-->
-<!--        </swiper>-->
-<!--          <div class="swiper-button-prev"></div>-->
-<!--    <div class="swiper-button-next"></div>-->
-<!--        <div class="swiper-pagination" slot="pagination"></div>-->
-<!--      </client-only>-->
-<!--    </section>-->
     <section class="banner">
-          <div style="display: none" class="banner-inner">
-            <h1 class="section-title text-white text-center">来自俄罗斯的美丽女孩在我们的网站上见面并交流！</h1>
-            <div class="banner-checks">
-              <p class="banner-check">
-                <img src="/check-mark.svg" alt="">
-                闲聊
-              </p>
-              <p class="banner-check">
-                <img src="/check-mark.svg" alt="">
-                每日流
-              </p>
-              <p class="banner-check">
-                <img src="/check-mark.svg" alt="">
-                闲聊
-              </p>
-              <p class="banner-check">
-                <img src="/check-mark.svg" alt="">
-                每日流
-              </p>
-            </div>
-            <div class="banner-btn text-center">
-              <p class="btn btn-l-blue">开始聊天</p>
-            </div>
+      <div style="display: none" class="banner-inner">
+        <h1 class="section-title text-white text-center">来自俄罗斯的美丽女孩在我们的网站上见面并交流！</h1>
+        <div class="banner-checks">
+          <p class="banner-check">
+            <img src="/check-mark.svg" alt="">
+            闲聊
+          </p>
+          <p class="banner-check">
+            <img src="/check-mark.svg" alt="">
+            每日流
+          </p>
+          <p class="banner-check">
+            <img src="/check-mark.svg" alt="">
+            闲聊
+          </p>
+          <p class="banner-check">
+            <img src="/check-mark.svg" alt="">
+            每日流
+          </p>
+        </div>
+        <div class="banner-btn text-center">
+          <p class="btn btn-l-blue">开始聊天</p>
+        </div>
 
-            <img class="banner-decor" src="/banner-decor.png" alt="">
-          </div>
-        </section>
-    <section class="mb-40">
+        <img class="banner-decor" src="/banner-decor.png" alt="">
+      </div>
+    </section>
+    <section class="video-block" >
       <div class="container">
-        <h3 class="section-title mb-30"><nuxt-link to="/streams">在我们的<span>平台上如</span>何播放？</nuxt-link> </h3>
-        <p class="mb-40">我们众多广播之一的摘录！ 来找我们，我们有很多有趣的事情</p>
-        <div class=" stream-video ">
-          <div class="stream-video__top">
-            <div  class="stream-video__top--user">
-              <img :src="streamers[0].avatar" alt="">
-              <div class="stream-video__top--user--info">
-                <p>{{streamers[0].fio}}</p>
-                <p>@{{streamers[0].nickname}}</p>
-              </div>
+        <div class="video-block__wrapper">
+          <div class="video-block__content">
+            <div class="video-block__user">
+              <img class="video-block__user--avatar" :src="streamers[0].avatar" alt="">
+              <p class="video-block__user--name">{{streamers[0].fio}}</p>
+              <p class="video-block__user--nickname">@{{streamers[0].nickname}}</p>
+              <img class="video-block__user--icon"  src="/girl_rating_icon.png" alt="">
+              <p class="video-block__user--rating">{{streamers[0].streamer_rating}}</p>
+              <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.4733 8.65897C11.1269 8.13352 11.604 7.41297 11.8382 6.59756C12.0723 5.78216 12.0519 4.91245 11.7799 4.10943C11.5078 3.30641 10.9975 2.61002 10.32 2.11713C9.64259 1.62424 8.83163 1.35938 8 1.35938C7.16836 1.35937 6.35741 1.62424 5.67995 2.11713C5.0025 2.61002 4.49223 3.30641 4.22014 4.10943C3.94805 4.91245 3.92767 5.78216 4.16184 6.59756C4.396 7.41297 4.87307 8.13352 5.52666 8.65897C4.40672 9.11746 3.42952 9.87791 2.69926 10.8592C1.969 11.8406 1.51304 13.006 1.38 14.2313C1.37037 14.3208 1.37808 14.4113 1.40268 14.4977C1.42729 14.5841 1.46831 14.6648 1.52341 14.735C1.63468 14.8768 1.79652 14.9676 1.97333 14.9875C2.15014 15.0074 2.32744 14.9546 2.46621 14.841C2.60499 14.7272 2.69388 14.5619 2.71333 14.3812C2.85972 13.0496 3.48112 11.8197 4.45881 10.9266C5.4365 10.0335 6.70193 9.5398 8.01333 9.5398C9.32473 9.5398 10.5902 10.0335 11.5679 10.9266C12.5455 11.8197 13.1669 13.0496 13.3133 14.3812C13.3315 14.5486 13.4096 14.7032 13.5327 14.8151C13.6559 14.9271 13.8152 14.9885 13.98 14.9875H14.0533C14.2281 14.9669 14.3878 14.8766 14.4977 14.7363C14.6076 14.5959 14.6587 14.4169 14.64 14.2381C14.5063 13.0094 14.0479 11.8409 13.3139 10.8581C12.5799 9.87523 11.5979 9.11503 10.4733 8.65897ZM8 8.1753C7.47258 8.1753 6.95701 8.01549 6.51848 7.71608C6.07995 7.41667 5.73815 6.9911 5.53632 6.49319C5.33449 5.99529 5.28168 5.44741 5.38457 4.91883C5.48746 4.39026 5.74144 3.90473 6.11438 3.52365C6.48732 3.14257 6.96248 2.88305 7.47976 2.77791C7.99704 2.67277 8.53322 2.72674 9.02049 2.93297C9.50776 3.13921 9.92423 3.48847 10.2173 3.93657C10.5103 4.38467 10.6667 4.9115 10.6667 5.45043C10.6667 6.17311 10.3857 6.86619 9.88562 7.37721C9.38552 7.88822 8.70724 8.1753 8 8.1753Z" fill="#383845"/>
+              </svg>
+              <p>888</p>
+
             </div>
-            <p style="font-size: 24px;font-weight: bold">我与最喜欢的观众交流</p>
-            <div class="stream-video__top--stats">
-              <img src="/girl_rating_icon.png" alt="">
-              <div class="user-profile-about__girl-stats--item--info">
-                <p>{{streamers[0].streamer_rating}}</p>
-                <p>广播评级</p>
-              </div>
-            </div>
-          </div>
-          <div class="stream-video__content mb-10">
-            <video style="width: 100%;height: 100%" controls loop>
+            <video autoplay loop muted>
               <source src="/vid.mp4" type="video/mp4">
               Your browser does not support HTML video.
             </video>
           </div>
-        </div>
-      </div>
-    </section>
-    <section class="slider-streams">
-      <div class="container">
-        <h3 class="section-title"><nuxt-link to="/streams">与女孩预<span>定的广播</span> </nuxt-link> </h3>
-      </div>
-      <client-only>
-        <swiper class="slider-streams__wrapper"  :options="swiperOption">
-          <div class="swiper-pagination" slot="pagination"></div>
-          <swiper-slide v-for="stream in streams"
-                        :key="stream.id">
-            <StreamCard :name="stream.name"
-                        :avatar="stream.streamer.avatar"
-                        :stream_img="stream.image"
-                        :nickname="stream.streamer.nickname"
-                        :stream_date="stream.date"
-                        :is_vip="stream.is_vip" :url="stream.url"/>
-          </swiper-slide>
-        </swiper>
-        <div class="swiper-pagination" slot="pagination"></div>
-      </client-only>
-
-    </section>
-    <section class="features">
-      <div class="container">
-        <div class="features-wrapper">
-          <h3 class="section-title">您将在我 <span>们的平台</span>上 获得什么？</h3>
-          <div class="features-items">
-            <div class="features-item">
-              <div class="features-item__img">
-                <img src="/feature-img1.png" alt="">
-              </div>
-              <p class="features-item__title">与俄罗斯姑娘交流24/7</p>
-              <p class="features-item__text">与女孩见面并交流：全天候私人聊天或社交团体中！ 交流您的思想和心情，帮助俄罗斯姑娘学习有趣的汉语和迷人的中国文化！</p>
-            </div>
-            <div class="features-item">
-              <div class="features-item__img">
-                <img src="/feature-img2.png" alt="">
-              </div>
-              <p class="features-item__title">参加视频广播</p>
-              <p class="features-item__text">参与开发：我们的女孩不断为您播报各种主题！<br>
-                共同学习中国语言和文化<br>
-                棋盘游戏或电脑游戏<br>
-                做运动和瑜伽<br>
-                各种爱好：烹饪，绘画或卡拉OK</p>
-            </div>
-            <div class="features-item">
-              <div class="features-item__img">
-                <img src="/feature-img3.png" alt="">
-              </div>
-              <p class="features-item__title">通过评级促进女孩</p>
-              <p class="features-item__text">评分最高的女孩将前往中国学习和发展文化！ 在那里我们可以与他们见面并在特别会议上现场聊天！<br>
-向女孩们提问，观看广播，赠送礼物并表现出关注的迹象-所有这些都促进了您对评级感兴趣的女孩</p>
-            </div>
-            <div class="features-item">
-              <div class="features-item__img">
-                <img src="/feature-img4.png" alt="">
-              </div>
-              <p class="features-item__title">无限的可能性</p>
-              <p class="features-item__text">我们的平台使用内部货币“水晶”，您可以为此：<br>
--亲自向女孩购买商品（签名，绘画，带有祝贺和笑话的视频）<br>
--吸引注意并向选定的女孩赠送礼物和贴纸，同时提升她们的等级</p>
-            </div>
+          <div class="video-block__banners">
+            <img src="/video_block/banner.jpg" alt="">
+            <img src="/video_block/banner-1.jpg" alt="">
+            <img src="/video_block/banner-2.jpg" alt="">
           </div>
         </div>
       </div>
-
     </section>
     <section class="slider-girls">
       <div class="container">
-        <h3 class="section-title"> <nuxt-link to="/girls"><span>我们的女孩</span>正在等你！</nuxt-link> </h3>
-        <p>只有在我们的门户网站上注册后，您才能打开该女孩的个人资料！ 加入并开始与这些真实的女孩聊天</p>
+        <h3 class="section-title"> <nuxt-link to="/girls">我们的星星</nuxt-link> </h3>
+
       </div>
       <client-only>
         <swiper class="slider-girls__wrapper"  :options="swiperOption">
           <div class="swiper-pagination" slot="pagination"></div>
           <swiper-slide v-for="streamer in streamers" :key="streamer.id">
-            <GirlCard :nickname="streamer.nickname" :avatar="streamer.avatar" :fio="streamer.fio"/>
+            <GirlCard :nickname="streamer.nickname"
+                      :avatar="streamer.avatar"
+                      :fio="streamer.fio"
+                      :rating="streamer.streamer_rating"
+                      :is_online="streamer.is_online"/>
           </swiper-slide>
         </swiper>
         <div class="swiper-pagination" slot="pagination"></div>
       </client-only>
 
     </section>
-    <section class="steps">
+    <section class="streams-block">
       <div class="container">
-        <h3 class="section-title">女孩<span>如何使用</span>我们的平台？</h3>
-        <div class="steps-wrapper">
-          <div class="steps__items">
-            <div @click="selectedStep=index" class="steps-item" v-for="(step,index) in steps"
-                 :key="step.id" :class="{'stepItemActive':selectedStep===index}">
-              <p class="steps-item__num" v-html="step.num"></p>
-              <div class="steps-item__group">
-                <p class="steps-item__group--top" v-html="step.title"></p>
-                <p class="steps-item__group--bottom" v-html="step.text"></p>
+        <div class="streams-block__wrapper">
+          <div class="streams-block__left">
+            <h3 class="section-title">现在在网站上</h3>
+            <div class="streams-block__items">
+              <div class="streams-block__item" v-for="stream in streams" :key="stream.id">
+                <el-image  :src="stream.image" lazy fit="cover"></el-image>
+                <div class="streams-block__item--bottom">
+                  <p >{{stream.name}}</p>
+                  <div class="streams-block__item--bottom-inner">
+                    <p >{{new Date (stream.date).toLocaleDateString()}}</p>
+                  </div>
+                </div>
+                <div class="streams-block__item--bottom">
+                  <p class="text-grey">@{{stream.streamer.nickname}}</p>
+                  <div class="streams-block__item--bottom-inner">
+                    <img src="/girl_rating_icon.png" alt="">
+                    <p class="font-bold">{{stream.streamer.streamer_rating}}</p>
+                  </div>
+                </div>
+
               </div>
+
+
+            </div>
+          </div>
+          <div class="streams-block__right">
+            <div class="streams-block__right--tabs">
+              <div class="streams-block__right--tabs__item tabItemActive">
+                <p>女孩的等级</p>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.29 12.8135C9.247 12.8593 9.20692 12.9076 9.17 12.9581C9.13216 13.0119 9.10189 13.0703 9.08 13.1317C9.05117 13.1863 9.03095 13.2448 9.02 13.3052C9.01509 13.3694 9.01509 13.4339 9.02 13.4981C9.01662 13.6245 9.04402 13.75 9.1 13.8644C9.14492 13.9841 9.21657 14.0928 9.30989 14.1827C9.40321 14.2727 9.51591 14.3418 9.64 14.3851C9.7597 14.4361 9.88913 14.4624 10.02 14.4624C10.1509 14.4624 10.2803 14.4361 10.4 14.3851C10.5241 14.3418 10.6368 14.2727 10.7301 14.1827C10.8234 14.0928 10.8951 13.9841 10.94 13.8644C10.9844 13.7472 11.0048 13.6228 11 13.4981C11.0008 13.3712 10.9755 13.2454 10.9258 13.1279C10.876 13.0105 10.8027 12.9036 10.71 12.8135C10.617 12.7232 10.5064 12.6514 10.3846 12.6025C10.2627 12.5535 10.132 12.5283 10 12.5283C9.86799 12.5283 9.73729 12.5535 9.61543 12.6025C9.49357 12.6514 9.38297 12.7232 9.29 12.8135ZM10 0C8.02219 0 6.08879 0.565463 4.4443 1.62488C2.79981 2.6843 1.51809 4.19009 0.761209 5.95184C0.00433284 7.71359 -0.1937 9.65217 0.192152 11.5224C0.578004 13.3927 1.53041 15.1106 2.92894 16.459C4.32746 17.8074 6.10929 18.7257 8.0491 19.0977C9.98891 19.4697 11.9996 19.2788 13.8268 18.549C15.6541 17.8193 17.2159 16.5835 18.3147 14.998C19.4135 13.4125 20 11.5484 20 9.64148C20 8.37534 19.7413 7.1216 19.2388 5.95184C18.7362 4.78209 17.9997 3.71922 17.0711 2.82392C16.1425 1.92863 15.0401 1.21844 13.8268 0.733914C12.6136 0.249384 11.3132 0 10 0ZM10 17.3547C8.41775 17.3547 6.87103 16.9023 5.55544 16.0548C4.23985 15.2072 3.21447 14.0026 2.60897 12.5932C2.00347 11.1838 1.84504 9.63292 2.15372 8.13671C2.4624 6.6405 3.22433 5.26614 4.34315 4.18743C5.46197 3.10873 6.88743 2.37412 8.43928 2.0765C9.99113 1.77889 11.5997 1.93163 13.0615 2.51543C14.5233 3.09922 15.7727 4.08784 16.6518 5.35626C17.5308 6.62469 18 8.11595 18 9.64148C18 11.6871 17.1571 13.649 15.6569 15.0955C14.1566 16.542 12.1217 17.3547 10 17.3547ZM10 4.82074C9.47307 4.82041 8.95534 4.95391 8.49891 5.20779C8.04249 5.46167 7.66347 5.82698 7.4 6.26696C7.32765 6.3767 7.27907 6.49941 7.25718 6.62772C7.23529 6.75603 7.24054 6.88728 7.27263 7.01358C7.30472 7.13988 7.36297 7.25862 7.44389 7.36265C7.5248 7.46668 7.62671 7.55386 7.74347 7.61893C7.86024 7.68401 7.98945 7.72563 8.12334 7.74131C8.25722 7.75699 8.39301 7.7464 8.52254 7.71017C8.65207 7.67394 8.77266 7.61282 8.87705 7.53049C8.98145 7.44817 9.06749 7.34633 9.13 7.23111C9.21811 7.08397 9.34497 6.9619 9.49775 6.87724C9.65053 6.79259 9.82379 6.74836 10 6.74903C10.2652 6.74903 10.5196 6.85061 10.7071 7.03143C10.8946 7.21224 11 7.45747 11 7.71318C11 7.96889 10.8946 8.21412 10.7071 8.39494C10.5196 8.57575 10.2652 8.67733 10 8.67733C9.73479 8.67733 9.48043 8.77891 9.2929 8.95972C9.10536 9.14053 9 9.38577 9 9.64148V10.6056C9 10.8613 9.10536 11.1066 9.2929 11.2874C9.48043 11.4682 9.73479 11.5698 10 11.5698C10.2652 11.5698 10.5196 11.4682 10.7071 11.2874C10.8946 11.1066 11 10.8613 11 10.6056V10.4321C11.6614 10.2007 12.2174 9.75257 12.5708 9.16603C12.9242 8.57948 13.0525 7.89183 12.9334 7.22329C12.8143 6.55475 12.4552 5.94784 11.919 5.50867C11.3828 5.0695 10.7035 4.826 10 4.82074Z" fill="#CECFDF"/>
+                </svg>
+              </div>
+              <div class="streams-block__right--tabs__item">
+                <p>女孩的等级</p>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.29 12.8135C9.247 12.8593 9.20692 12.9076 9.17 12.9581C9.13216 13.0119 9.10189 13.0703 9.08 13.1317C9.05117 13.1863 9.03095 13.2448 9.02 13.3052C9.01509 13.3694 9.01509 13.4339 9.02 13.4981C9.01662 13.6245 9.04402 13.75 9.1 13.8644C9.14492 13.9841 9.21657 14.0928 9.30989 14.1827C9.40321 14.2727 9.51591 14.3418 9.64 14.3851C9.7597 14.4361 9.88913 14.4624 10.02 14.4624C10.1509 14.4624 10.2803 14.4361 10.4 14.3851C10.5241 14.3418 10.6368 14.2727 10.7301 14.1827C10.8234 14.0928 10.8951 13.9841 10.94 13.8644C10.9844 13.7472 11.0048 13.6228 11 13.4981C11.0008 13.3712 10.9755 13.2454 10.9258 13.1279C10.876 13.0105 10.8027 12.9036 10.71 12.8135C10.617 12.7232 10.5064 12.6514 10.3846 12.6025C10.2627 12.5535 10.132 12.5283 10 12.5283C9.86799 12.5283 9.73729 12.5535 9.61543 12.6025C9.49357 12.6514 9.38297 12.7232 9.29 12.8135ZM10 0C8.02219 0 6.08879 0.565463 4.4443 1.62488C2.79981 2.6843 1.51809 4.19009 0.761209 5.95184C0.00433284 7.71359 -0.1937 9.65217 0.192152 11.5224C0.578004 13.3927 1.53041 15.1106 2.92894 16.459C4.32746 17.8074 6.10929 18.7257 8.0491 19.0977C9.98891 19.4697 11.9996 19.2788 13.8268 18.549C15.6541 17.8193 17.2159 16.5835 18.3147 14.998C19.4135 13.4125 20 11.5484 20 9.64148C20 8.37534 19.7413 7.1216 19.2388 5.95184C18.7362 4.78209 17.9997 3.71922 17.0711 2.82392C16.1425 1.92863 15.0401 1.21844 13.8268 0.733914C12.6136 0.249384 11.3132 0 10 0ZM10 17.3547C8.41775 17.3547 6.87103 16.9023 5.55544 16.0548C4.23985 15.2072 3.21447 14.0026 2.60897 12.5932C2.00347 11.1838 1.84504 9.63292 2.15372 8.13671C2.4624 6.6405 3.22433 5.26614 4.34315 4.18743C5.46197 3.10873 6.88743 2.37412 8.43928 2.0765C9.99113 1.77889 11.5997 1.93163 13.0615 2.51543C14.5233 3.09922 15.7727 4.08784 16.6518 5.35626C17.5308 6.62469 18 8.11595 18 9.64148C18 11.6871 17.1571 13.649 15.6569 15.0955C14.1566 16.542 12.1217 17.3547 10 17.3547ZM10 4.82074C9.47307 4.82041 8.95534 4.95391 8.49891 5.20779C8.04249 5.46167 7.66347 5.82698 7.4 6.26696C7.32765 6.3767 7.27907 6.49941 7.25718 6.62772C7.23529 6.75603 7.24054 6.88728 7.27263 7.01358C7.30472 7.13988 7.36297 7.25862 7.44389 7.36265C7.5248 7.46668 7.62671 7.55386 7.74347 7.61893C7.86024 7.68401 7.98945 7.72563 8.12334 7.74131C8.25722 7.75699 8.39301 7.7464 8.52254 7.71017C8.65207 7.67394 8.77266 7.61282 8.87705 7.53049C8.98145 7.44817 9.06749 7.34633 9.13 7.23111C9.21811 7.08397 9.34497 6.9619 9.49775 6.87724C9.65053 6.79259 9.82379 6.74836 10 6.74903C10.2652 6.74903 10.5196 6.85061 10.7071 7.03143C10.8946 7.21224 11 7.45747 11 7.71318C11 7.96889 10.8946 8.21412 10.7071 8.39494C10.5196 8.57575 10.2652 8.67733 10 8.67733C9.73479 8.67733 9.48043 8.77891 9.2929 8.95972C9.10536 9.14053 9 9.38577 9 9.64148V10.6056C9 10.8613 9.10536 11.1066 9.2929 11.2874C9.48043 11.4682 9.73479 11.5698 10 11.5698C10.2652 11.5698 10.5196 11.4682 10.7071 11.2874C10.8946 11.1066 11 10.8613 11 10.6056V10.4321C11.6614 10.2007 12.2174 9.75257 12.5708 9.16603C12.9242 8.57948 13.0525 7.89183 12.9334 7.22329C12.8143 6.55475 12.4552 5.94784 11.919 5.50867C11.3828 5.0695 10.7035 4.826 10 4.82074Z" fill="#CECFDF"/>
+                </svg>
+              </div>
+            </div>
+            <div class="streams-block__right--tab">
+              <div @click="$router.push(`/profile/${girl.nickname}`)" class="best-girls-item indexMode" v-for="(girl,index) in top_streamers" :key="girl.id">
+                <div class="best-girls-item__num">{{index+1}}</div>
+                <div class="best-girls-item__img" :class="[index < 3 ? `girlStatus${index+1}` : '']">
+                  <img :src="girl.avatar" alt="">
+                </div>
+                <div class="best-girls-item__name font-bold">{{girl.fio}}</div>
+                <div class="best-girls-item__link">@{{girl.nickname}}</div>
+                <div class="best-girls-item__score font-bold"><img src="/girl_rating_icon.png" alt="">{{girl.streamer_rating}}</div>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="features-block">
+      <div class="container ">
+        <div class="features-block__top">
+          <p @click="featuresActiveTab=!featuresActiveTab"
+             :class="{'linkActive':!featuresActiveTab}" class="features-block__top--link ">平台功能</p>
+          <p @click="featuresActiveTab=!featuresActiveTab"
+             :class="{'linkActive':featuresActiveTab}" class="features-block__top--link">这个怎么运作?</p>
+        </div>
+      </div>
+      <div class="features-block__bg">
+        <div class="container">
+          <div v-if="!featuresActiveTab" class="features-block__inner grid">
+            <el-image src="/features/1.jpg" lazy></el-image>
+            <el-image src="/features/2.jpg" lazy></el-image>
+            <el-image src="/features/3.jpg" lazy></el-image>
+            <el-image src="/features/4.jpg" lazy></el-image>
+            <el-image src="/features/5.jpg" lazy></el-image>
+            <el-image src="/features/6.jpg" lazy></el-image>
+          </div>
+          <div v-else class="features-block__inner">
+
+            <div class="faq-items">
+              <div class="faq-item" v-for="(faq,index) in faqs" :key="faq.id" :class="{'faqItemActive':accordeonActive===index}">
+                <div class="faq-item__top" @click="accordeonActive=index">
+                  <p>{{faq.question}}</p>
+                  <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="17" cy="17" r="16.5" fill="white" stroke="#CECFDF"/>
+                    <path d="M17 21L13.5359 15L20.4641 15L17 21Z" fill="#CECFDF"/>
+                  </svg>
+                </div>
+                <div class="faq-item__content">
+                  <div class="faq-item__content--inner">
+                    <p v-html="faq.answer"></p>
+                  </div>
+                </div>
+              </div>
+
             </div>
 
           </div>
-          <div class="steps-item__image">
-            <el-image  :src="steps[selectedStep].img">
-              <div style="width: 100%;height: 100%" slot="placeholder" v-loading="true" class="image-slot">
-              </div>
-            </el-image>
-          </div>
+        </div>
+      </div>
 
+    </section>
+    <section class="road-map">
+      <div class="container">
+        <h3 class="section-title">在我们平台上发展女<span>孩的路线图</span></h3>
+      </div>
+      <div class="road-map__inner">
+        <div class="container">
+          <div data-num="1" class="road-map__item num  road-map__item--first">
+            <img src="/road_map_1.png" alt="">
+            <p>女孩开始交流，向我们注册</p>
+          </div>
+          <div data-num="2" class="road-map__item num  road-map__item--second">
+            <img src="/road_map_2.png" alt="">
+            <p>学习中国 语言和文化</p>
+          </div>
+          <div data-num="3" class="road-map__item num  road-map__item--third">
+            <img src="/road_map_3.png" alt="">
+            <p>通过捐赠和捐 赠提高其评分</p>
+          </div>
+          <div data-text="决赛" class="road-map__item text  road-map__item--four">
+            <img src="/road_map_4.png" alt="">
+            <p>每六个月，获得TOP3评级的女孩实现他们的梦想-前往上海学习</p>
+          </div>
 
         </div>
       </div>
+
     </section>
     <section class="pricing">
       <div class="container">
@@ -218,13 +248,13 @@
               <p class="pricing-item__info"><img src="/check-mark.svg" alt="">使用相机</p>
               <p class="pricing-item__info"><img src="/check-mark.svg" alt="">送礼物的能力</p>
               <p class="pricing-item__info"><img src="/check-mark.svg" alt="">获得VIP功能</p>
-              <p class="pricing-item__info"><img src="/check-mark.svg" alt="">VIP俱乐部：您的广播和专辑</p>
+              <p class="pricing-item__info"><img src="/check-mark.svg" alt="">VIP俱乐部您的广播和专辑</p>
             </div>
             <p @click="openModalBtn_click" class="btn btn-l-blue">成为参与者</p>
             <p>
-               <nuxt-link to="/info/vip-introduction" class="pricing-item__small-text">
-              有关VIP功能的更多信息
-            </nuxt-link>
+              <nuxt-link to="/info/vip-introduction" class="pricing-item__small-text">
+                有关VIP功能的更多信息
+              </nuxt-link>
             </p>
 
 
@@ -245,176 +275,21 @@
             </div>
             <p @click="openModalBtn_click" class="btn btn-l-blue">成为参与者</p>
           </div>
-        </div>
-      </div>
-    </section>
-    <section class="why-we">
-      <div class="container">
-        <h3 class="section-title"><span>我们平台</span>的功能</h3>
-        <div class="why-we-wrapper">
-          <div class="why-we-item">
-            <img src="/why-img-1.png" alt="">
-            <p>美丽的俄罗斯 姑娘的海洋</p>
-          </div>
-          <div class="why-we-item">
-            <img src="/why-img-2.png" alt="">
-            <p>交流的机会：聊天和广播</p>
-          </div>
-          <div class="why-we-item">
-            <img src="/why-img-3.png" alt="">
-            <p>通过兴趣和 爱好互相寻找</p>
-          </div>
-          <div class="why-we-item">
-            <img src="/why-img-4.png" alt="">
-            <p>开放：在个人资 料中谈论自己</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="road-map">
-      <div class="container">
-        <h3 class="section-title">在我们平台上发展女<span>孩的路线图</span></h3>
-      </div>
-      <div class="road-map__inner">
-        <div class="container">
-          <div data-num="1" class="road-map__item num  road-map__item--first">
-            <img src="/road_map_1.png" alt="">
-            <p>女孩开始交流，向我们注册</p>
-          </div>
-          <div data-num="2" class="road-map__item num  road-map__item--second">
-            <img src="/road_map_2.png" alt="">
-            <p>学习中国 语言和文化</p>
-          </div>
-          <div data-num="3" class="road-map__item num  road-map__item--third">
-            <img src="/road_map_3.png" alt="">
-            <p>通过捐赠和捐 赠提高其评分</p>
-          </div>
-          <div data-text="决赛" class="road-map__item text  road-map__item--four">
-            <img src="/road_map_4.png" alt="">
-            <p>每六个月，获得TOP3评级的女孩实现他们的梦想-前往上海学习</p>
-          </div>
-
-        </div>
-      </div>
-
-    </section>
-    <section class="faq">
-      <div class="container">
-        <div class="faq-wrapper">
-          <h3 class="section-title">
-            有关我们 <span>平台的问</span> 题的答案
-          </h3>
-          <div class="faq-items">
-            <div class="faq-item" v-for="(faq,index) in faqs" :key="faq.id" :class="{'faqItemActive':accordeonActive===index}">
-              <div class="faq-item__top" @click="accordeonActive=index">
-                <p>{{faq.question}}</p>
-                <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="17" cy="17" r="16.5" fill="white" stroke="#CECFDF"/>
-                  <path d="M17 21L13.5359 15L20.4641 15L17 21Z" fill="#CECFDF"/>
-                </svg>
-              </div>
-              <div class="faq-item__content">
-                <div class="faq-item__content--inner">
-                  <p v-html="faq.answer"></p>
-                </div>
-              </div>
+          <div class="pricing-payments">
+            <div class="pricing-payment">
+              <el-image src="/payments/vip.png" lazy></el-image>
             </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="best-users ">
-      <div class="container">
-        <h3 class="section-title mb-30">评分<span>最高的参与</span>者委员会</h3>
-        <p class="mb-30">增加您的评分-聊天并送礼物，结识女孩并送礼物！</p>
-        <div class="best-users-first">
-          <div class="best-user-item user-gold user-top">
-            <nuxt-link to="/">
-              <div data-num="4" class="best-user-item__img">
-                <img src="/temp/chin1.jpg" alt="">
-              </div>
-              <p class="best-user-item__name">Hei Pi Jey</p>
-              <p class="best-user-item__score">捐赠了7320颗水晶</p>
-
-            </nuxt-link>
-          </div>
-          <div class="best-user-item user-sliver user-top">
-            <nuxt-link to="/">
-              <div data-num="4" class="best-user-item__img">
-                <img src="/temp/chin2.jpg" alt="">
-              </div>
-              <p class="best-user-item__name">Hei Pi Jey</p>
-              <p class="best-user-item__score">捐赠了7320颗水晶</p>
-
-            </nuxt-link>
-          </div>
-          <div class="best-user-item user-bronze user-top">
-            <nuxt-link to="/">
-              <div data-num="4" class="best-user-item__img">
-                <img src="/temp/chin3.png" alt="">
-              </div>
-              <p class="best-user-item__name">Hei Pi Jey</p>
-              <p class="best-user-item__score">捐赠了7320颗水晶</p>
-
-            </nuxt-link>
-          </div>
-        </div>
-        <div class="best-users-second">
-          <div class="best-user-item">
-            <nuxt-link to="/">
-              <div data-num="4" class="best-user-item__img">
-                <img src="/temp/chin8.jpg" alt="">
-              </div>
-              <p class="best-user-item__name">Hei Pi Jey</p>
-              <p class="best-user-item__score">捐赠了7320颗水晶</p>
-
-            </nuxt-link>
-          </div>
-          <div class="best-user-item">
-            <nuxt-link to="/">
-              <div data-num="5" class="best-user-item__img">
-                <img src="/temp/chin14.jpg" alt="">
-              </div>
-              <p class="best-user-item__name">Hei Pi Jey</p>
-              <p class="best-user-item__score">捐赠了7320颗水晶</p>
-
-            </nuxt-link>
-          </div>
-          <div class="best-user-item">
-            <nuxt-link to="/">
-              <div data-num="6" class="best-user-item__img">
-                <img src="/temp/chin15.jpg" alt="">
-              </div>
-              <p class="best-user-item__name">Hei Pi Jey</p>
-              <p class="best-user-item__score">捐赠了7320颗水晶</p>
-
-            </nuxt-link>
-          </div>
-        </div>
-
-      </div>
-    </section>
-    <section class="best-girls">
-      <div class="container">
-        <h3 class="section-title "><span>我们女孩的</span>最高评价</h3>
-        <p class="mb-30">在这里，您可以看到我们所有女孩的评分！ 将您的女友提升到令人垂涎的中国之行的顶部！</p>
-        <div class="best-girls-wrapper">
-          <div @click="$router.push(`/profile/${girl.nickname}`)" class="best-girls-item" v-for="(girl,index) in top_streamers" :key="girl.id">
-            <div class="best-girls-item__num">{{index+1}}</div>
-            <div class="best-girls-item__img">
-              <img :src="girl.avatar" alt="">
+            <div class="pricing-payment">
+              <el-image src="/payments/a-p.png" lazy></el-image>
             </div>
-            <div class="best-girls-item__score"><img src="/girl_rating_icon.png" alt="">{{girl.streamer_rating}}</div>
-            <div class="best-girls-item__name">{{girl.fio}}</div>
-            <div class="best-girls-item__link">@{{girl.nickname}}</div>
-
+            <div class="pricing-payment">
+              <el-image src="/payments/w-p.png" lazy></el-image>
+            </div>
+            <p class="btn btn-l-blue btn-outline">更多</p>
           </div>
-
         </div>
       </div>
     </section>
-
   </div>
 </template>
 <script>
@@ -450,6 +325,7 @@ export default {
   },
   data(){
     return {
+      featuresActiveTab:false,
       steps:[
         {id:1,num:'01',title:'个人资料',text:'每个女孩都填写自己的个人资料：她的兴趣，喜欢的电影和音乐类型，书籍和兴趣爱好',img:'/step1.png'},
         {id:2,num:'02',title:'通讯与广播',text:'女孩为您启动广播并等待响应！ 给她的每条信息，每一份礼物和关注都很重要。 您越活跃，女孩的评价就越高',img:'/step2.png'},
@@ -466,11 +342,15 @@ export default {
         {id:4,question:'我对您的平台有任何疑问或建议！ 我该如何联系您？',answer:'从网站的标题或网站的页脚转到“联系人”部分，并向您写下您的问题，对我们工作的反馈或对我们平台开发的希望！'},
         {id:5,question:'我如何查看您平台的功能？',answer:'<a href="/info/guide">您可以在此处查看平台的全部功能</a> <br>' +
               '<a href="/info/vip-introduction">这里介绍了VIP功能</a>。'},
+        {id:6,question:'我如何查看您平台的功能？',answer:'<a href="/info/guide">您可以在此处查看平台的全部功能</a> <br>' +
+              '<a href="/info/vip-introduction">这里介绍了VIP功能</a>。'},
+        {id:7,question:'我如何查看您平台的功能？',answer:'<a href="/info/guide">您可以在此处查看平台的全部功能</a> <br>' +
+              '<a href="/info/vip-introduction">这里介绍了VIP功能</a>。'},
       ],
       accordeonActive:0,
       swiperOption: {
         //slidesPerView: 5,
-        spaceBetween: 20,
+        spaceBetween: 0,
         //centeredSlides: true,
         pagination: {
           el: '.swiper-pagination',
@@ -490,8 +370,9 @@ export default {
           },
           // when window width is >= 640px
           640: {
-            slidesPerView: 5,
-            spaceBetween: 40
+            //centeredSlides: true,
+            slidesPerView: 7,
+            spaceBetween: 20
           }
         }
       },
