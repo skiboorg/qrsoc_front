@@ -8,6 +8,8 @@
 
           <img src="/logo.png" alt="">
         </nuxt-link>
+        <p style="display: none"> {{$config.ws_url}}</p>
+
       </div>
       <div class="header-nav">
         <ul>
@@ -210,6 +212,7 @@ export default {
       registerDialogVisible:false,
       mobileNavActive:false,
       userMenuActive:false,
+      ws_url:'',
       register_step:1,
       navItemsAuth:[
         {id:1,name:'回到主页面',link:'/'},
@@ -255,7 +258,7 @@ export default {
   },
   methods: {
     ws_connect(){
-      this.socket = new WebSocket(process.env.ws_url+'/ws/user/online/')
+      this.socket = new WebSocket(this.$config.ws_url+'/ws/user/online/')
       this.socket.onopen = () => {
         console.log('ws connected')
         this.socket.send(JSON.stringify({'user_id':this.$auth.user.id,'message':'user online'}))

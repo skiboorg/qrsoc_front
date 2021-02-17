@@ -138,7 +138,7 @@ export default {
         {id:5,name:'SMILING FACE WITH HEART-SHAPED EYES',code:'😍'},
         {id:6,name:'FACE THROWING A KISS',code:'😘'},
       ],
-      base_url:process.env.img_url,
+      base_url:this.$config.img_url,
       activeStikerGroup:'tab0',
       stikerListActive:null,
       selectedStiker:null,
@@ -176,7 +176,7 @@ export default {
       }catch (e) {
         console.log('not connected')
       }
-      this.socket = new WebSocket(`${process.env.ws_url}/ws/chat/${chat_id}`)
+      this.socket = new WebSocket(`${this.$config.ws_url}/ws/chat/${chat_id}`)
       this.socket.onmessage = (res) =>{
         //console.log('message in chat',JSON.parse(res.data))
         let updated = null
@@ -196,11 +196,11 @@ export default {
                 message: updated ? updated : null,//data.message,
                 message_translate: data.message_translate,//data.message,
                 stiker: data.stiker ? data.stiker : null,//data.message,
-                image: data.image ? process.env.img_url+data.image : null,//data.message,
+                image: data.image ? this.$config.img_url+data.image : null,//data.message,
                 createdAt: Date.now(),
                 user:{
                   id:data.user.id,
-                  avatar: data.user.avatar ? process.env.img_url+data.user.avatar : '/no-avatar.svg',
+                  avatar: data.user.avatar ? this.$config.img_url+data.user.avatar : '/no-avatar.svg',
                 }
               }
           )

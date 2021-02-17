@@ -246,7 +246,7 @@
         giftModal: false,
         streamBtnActive:true,
         streamGiftActive:false,
-        img_url:process.env.img_url,
+        img_url:this.$config.img_url,
         donates:[],
         // donates:[
         //   {id:1,gift_from: "admin06",gift_from_avatar: "/media/user/avatars/1_12_vGs7rsx.jpg",
@@ -277,10 +277,10 @@
         //val['gift_to'] === this.$auth.user.id ? this.$auth.fetchUser() : null
         await this.getDonaters()
 
-        this.giftImg = process.env.img_url+val['gift_img']
+        this.giftImg = this.$config.img_url+val['gift_img']
         this.giftMessage = val['gift_message']
         this.giftFrom = val['gift_from']
-        this.giftFromImg = process.env.img_url+val['gift_from_avatar']
+        this.giftFromImg = this.$config.img_url+val['gift_from_avatar']
 
         this.streamGiftActive = true
 
@@ -364,7 +364,7 @@
         }catch (e) {
           console.log('not connected')
         }
-        this.socket = new WebSocket(`${process.env.ws_url}/ws/chat/${chat_id}`)
+        this.socket = new WebSocket(`${this.$config.ws_url}/ws/chat/${chat_id}`)
         this.socket.onmessage = (res) =>{
           console.log('socket data',JSON.parse(res.data))
           let socketData  = JSON.parse(res.data)
@@ -378,11 +378,11 @@
               {
                 id:data.id,
                 message: updated,//data.message,
-                image: data.image ? process.env.img_url+data.image : null,//data.message,
+                image: data.image ? this.$config.img_url+data.image : null,//data.message,
                 createdAt: Date.now(),
                 user:{
                   id:data.user.id,
-                  avatar: data.user.avatar ? process.env.img_url+data.user.avatar : '/no-avatar.svg',
+                  avatar: data.user.avatar ? this.$config.img_url+data.user.avatar : '/no-avatar.svg',
                 }
               }
             )

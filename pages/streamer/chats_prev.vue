@@ -141,7 +141,7 @@
         }catch (e) {
           console.log('not connected')
         }
-        this.socket = new WebSocket(`${process.env.ws_url}/ws/chat/${chat_id}`)
+        this.socket = new WebSocket(`${this.$config.ws_url}/ws/chat/${chat_id}`)
         this.socket.onmessage = (res) =>{
           //console.log('message in chat',JSON.parse(res.data))
           let data = JSON.parse(res.data)['message']
@@ -155,11 +155,11 @@
               {
                 id:data.id,
                 message: updated,//data.message,
-                image: data.image ? process.env.img_url+data.image : null,//data.message,
+                image: data.image ? this.$config.img_url+data.image : null,//data.message,
                 createdAt: Date.now(),
                 user:{
                   id:data.user.id,
-                  avatar: data.user.avatar ? process.env.img_url+data.user.avatar : '/no-avatar.svg',
+                  avatar: data.user.avatar ? this.$config.img_url+data.user.avatar : '/no-avatar.svg',
                 }
               }
             )
