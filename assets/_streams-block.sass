@@ -1,7 +1,7 @@
 .streams-block
   margin-bottom: 50px
   & .section-title
-    margin-bottom: 15px
+    margin-bottom: 50px
   &__wrapper
     display: grid
     grid-template-columns: 1fr 1fr
@@ -13,11 +13,14 @@
     grid-row-gap: 40px
   &__item
     cursor: pointer
+
     & .el-image
+      transition: all .2s linear
       border-radius: 5px
       width: 280px
       height: 155px
-
+      &:hover
+        transform: scale(1.05)
     &--bottom
       display: flex
       align-items: center
@@ -27,6 +30,7 @@
         display: flex
         align-items: center
         justify-content: space-between
+
   &__right
     &--tabs
       display: flex

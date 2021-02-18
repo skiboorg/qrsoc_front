@@ -29,6 +29,7 @@
       </div>
     </section>
     <section class="video-block" >
+
       <div class="container">
         <div class="video-block__wrapper">
           <div class="video-block__content">
@@ -38,13 +39,13 @@
               <p class="video-block__user--nickname">@{{streamers[0].nickname}}</p>
               <img class="video-block__user--icon"  src="/girl_rating_icon.png" alt="">
               <p class="video-block__user--rating">{{streamers[0].streamer_rating}}</p>
-              <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg width="25" height="25" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10.4733 8.65897C11.1269 8.13352 11.604 7.41297 11.8382 6.59756C12.0723 5.78216 12.0519 4.91245 11.7799 4.10943C11.5078 3.30641 10.9975 2.61002 10.32 2.11713C9.64259 1.62424 8.83163 1.35938 8 1.35938C7.16836 1.35937 6.35741 1.62424 5.67995 2.11713C5.0025 2.61002 4.49223 3.30641 4.22014 4.10943C3.94805 4.91245 3.92767 5.78216 4.16184 6.59756C4.396 7.41297 4.87307 8.13352 5.52666 8.65897C4.40672 9.11746 3.42952 9.87791 2.69926 10.8592C1.969 11.8406 1.51304 13.006 1.38 14.2313C1.37037 14.3208 1.37808 14.4113 1.40268 14.4977C1.42729 14.5841 1.46831 14.6648 1.52341 14.735C1.63468 14.8768 1.79652 14.9676 1.97333 14.9875C2.15014 15.0074 2.32744 14.9546 2.46621 14.841C2.60499 14.7272 2.69388 14.5619 2.71333 14.3812C2.85972 13.0496 3.48112 11.8197 4.45881 10.9266C5.4365 10.0335 6.70193 9.5398 8.01333 9.5398C9.32473 9.5398 10.5902 10.0335 11.5679 10.9266C12.5455 11.8197 13.1669 13.0496 13.3133 14.3812C13.3315 14.5486 13.4096 14.7032 13.5327 14.8151C13.6559 14.9271 13.8152 14.9885 13.98 14.9875H14.0533C14.2281 14.9669 14.3878 14.8766 14.4977 14.7363C14.6076 14.5959 14.6587 14.4169 14.64 14.2381C14.5063 13.0094 14.0479 11.8409 13.3139 10.8581C12.5799 9.87523 11.5979 9.11503 10.4733 8.65897ZM8 8.1753C7.47258 8.1753 6.95701 8.01549 6.51848 7.71608C6.07995 7.41667 5.73815 6.9911 5.53632 6.49319C5.33449 5.99529 5.28168 5.44741 5.38457 4.91883C5.48746 4.39026 5.74144 3.90473 6.11438 3.52365C6.48732 3.14257 6.96248 2.88305 7.47976 2.77791C7.99704 2.67277 8.53322 2.72674 9.02049 2.93297C9.50776 3.13921 9.92423 3.48847 10.2173 3.93657C10.5103 4.38467 10.6667 4.9115 10.6667 5.45043C10.6667 6.17311 10.3857 6.86619 9.88562 7.37721C9.38552 7.88822 8.70724 8.1753 8 8.1753Z" fill="#383845"/>
               </svg>
-              <p>888</p>
+              <p>{{streamers[0].own_friend_list[0].friend_list.length}}</p>
 
             </div>
-            <video autoplay loop muted>
+            <video autoplay controls loop >
               <source src="/vid.mp4" type="video/mp4">
               Your browser does not support HTML video.
             </video>
@@ -70,7 +71,8 @@
                       :avatar="streamer.avatar"
                       :fio="streamer.fio"
                       :rating="streamer.streamer_rating"
-                      :is_online="streamer.is_online"/>
+                      :is_online="streamer.is_online"
+                      :friends="streamer.own_friend_list[0].friend_list.length"/>
           </swiper-slide>
         </swiper>
         <div class="swiper-pagination" slot="pagination"></div>
@@ -83,23 +85,16 @@
           <div class="streams-block__left">
             <h3 class="section-title">现在在网站上</h3>
             <div class="streams-block__items">
-              <div class="streams-block__item" v-for="stream in streams" :key="stream.id">
-                <el-image  :src="stream.image" lazy fit="cover"></el-image>
-                <div class="streams-block__item--bottom">
-                  <p >{{stream.name}}</p>
-                  <div class="streams-block__item--bottom-inner">
-                    <p >{{new Date (stream.date).toLocaleDateString()}}</p>
-                  </div>
-                </div>
-                <div class="streams-block__item--bottom">
-                  <p class="text-grey">@{{stream.streamer.nickname}}</p>
-                  <div class="streams-block__item--bottom-inner">
-                    <img src="/girl_rating_icon.png" alt="">
-                    <p class="font-bold">{{stream.streamer.streamer_rating}}</p>
-                  </div>
-                </div>
+              <StreamCard v-for="stream in streams" :key="stream.id"
+                  :name="stream.name"
+                  :avatar="stream.streamer.avatar"
+                  :stream_img="stream.image"
+                  :nickname="stream.streamer.nickname"
+                  :stream_date="stream.date"
+                  :rating="stream.streamer.streamer_rating"
+                  :is_vip="stream.is_vip"
+                  :url="stream.url"/>
 
-              </div>
 
 
             </div>
@@ -142,15 +137,17 @@
     <section class="features-block">
       <div class="container ">
         <div class="features-block__top">
-          <p @click="featuresActiveTab=!featuresActiveTab"
-             :class="{'linkActive':!featuresActiveTab}" class="features-block__top--link ">平台功能</p>
-          <p @click="featuresActiveTab=!featuresActiveTab"
-             :class="{'linkActive':featuresActiveTab}" class="features-block__top--link">这个怎么运作?</p>
+          <p @click="featuresActiveTab='tab1'"
+             :class="{'linkActive':featuresActiveTab==='tab1'}" class="features-block__top--link ">平台功能</p>
+          <p @click="featuresActiveTab='tab2'"
+             :class="{'linkActive':featuresActiveTab==='tab2'}" class="features-block__top--link">这个怎么运作?</p>
+          <p @click="featuresActiveTab='tab3'"
+             :class="{'linkActive':featuresActiveTab==='tab3'}" class="features-block__top--link">这个怎么运作3?</p>
         </div>
       </div>
       <div class="features-block__bg">
         <div class="container">
-          <div v-if="!featuresActiveTab" class="features-block__inner grid">
+          <div v-if="featuresActiveTab==='tab1'" class="features-block__inner grid">
             <el-image src="/features/1.jpg" lazy></el-image>
             <el-image src="/features/2.jpg" lazy></el-image>
             <el-image src="/features/3.jpg" lazy></el-image>
@@ -158,7 +155,7 @@
             <el-image src="/features/5.jpg" lazy></el-image>
             <el-image src="/features/6.jpg" lazy></el-image>
           </div>
-          <div v-else class="features-block__inner">
+          <div v-if="featuresActiveTab==='tab2'"  class="features-block__inner">
 
             <div class="faq-items">
               <div class="faq-item" v-for="(faq,index) in faqs" :key="faq.id" :class="{'faqItemActive':accordeonActive===index}">
@@ -179,37 +176,16 @@
             </div>
 
           </div>
+          <div v-if="featuresActiveTab==='tab3'"  class="features-block__inner">
+
+            <img src="http://placehold.it/800" alt="">
+
+          </div>
         </div>
       </div>
 
     </section>
-    <section class="road-map">
-      <div class="container">
-        <h3 class="section-title">在我们平台上发展女<span>孩的路线图</span></h3>
-      </div>
-      <div class="road-map__inner">
-        <div class="container">
-          <div data-num="1" class="road-map__item num  road-map__item--first">
-            <img src="/road_map_1.png" alt="">
-            <p>女孩开始交流，向我们注册</p>
-          </div>
-          <div data-num="2" class="road-map__item num  road-map__item--second">
-            <img src="/road_map_2.png" alt="">
-            <p>学习中国 语言和文化</p>
-          </div>
-          <div data-num="3" class="road-map__item num  road-map__item--third">
-            <img src="/road_map_3.png" alt="">
-            <p>通过捐赠和捐 赠提高其评分</p>
-          </div>
-          <div data-text="决赛" class="road-map__item text  road-map__item--four">
-            <img src="/road_map_4.png" alt="">
-            <p>每六个月，获得TOP3评级的女孩实现他们的梦想-前往上海学习</p>
-          </div>
 
-        </div>
-      </div>
-
-    </section>
     <section class="pricing">
       <div class="container">
         <h3 class="section-title">我们的房价</h3>
@@ -325,7 +301,7 @@ export default {
   },
   data(){
     return {
-      featuresActiveTab:false,
+      featuresActiveTab:'tab1',
       steps:[
         {id:1,num:'01',title:'个人资料',text:'每个女孩都填写自己的个人资料：她的兴趣，喜欢的电影和音乐类型，书籍和兴趣爱好',img:'/step1.png'},
         {id:2,num:'02',title:'通讯与广播',text:'女孩为您启动广播并等待响应！ 给她的每条信息，每一份礼物和关注都很重要。 您越活跃，女孩的评价就越高',img:'/step2.png'},

@@ -12,7 +12,9 @@
           :stream_img="stream.image"
           :nickname="stream.streamer.nickname"
           :stream_date="stream.date"
-          :is_vip="stream.is_vip" :url="stream.url"/>
+          :is_vip="stream.is_vip"
+          :rating="stream.streamer.streamer_rating"
+          :url="stream.url"/>
       </div>
 
     </div>

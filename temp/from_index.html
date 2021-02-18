@@ -11,6 +11,33 @@
     <!--        <div class="swiper-pagination" slot="pagination"></div>-->
     <!--      </client-only>-->
     <!--    </section>-->
+ <section class="road-map">
+      <div class="container">
+        <h3 class="section-title">在我们平台上发展女<span>孩的路线图</span></h3>
+      </div>
+      <div class="road-map__inner">
+        <div class="container">
+          <div data-num="1" class="road-map__item num  road-map__item--first">
+            <img src="/road_map_1.png" alt="">
+            <p>女孩开始交流，向我们注册</p>
+          </div>
+          <div data-num="2" class="road-map__item num  road-map__item--second">
+            <img src="/road_map_2.png" alt="">
+            <p>学习中国 语言和文化</p>
+          </div>
+          <div data-num="3" class="road-map__item num  road-map__item--third">
+            <img src="/road_map_3.png" alt="">
+            <p>通过捐赠和捐 赠提高其评分</p>
+          </div>
+          <div data-text="决赛" class="road-map__item text  road-map__item--four">
+            <img src="/road_map_4.png" alt="">
+            <p>每六个月，获得TOP3评级的女孩实现他们的梦想-前往上海学习</p>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
 
 <section class="mb-40">
       <div class="container">
@@ -274,3 +301,17 @@
         </div>
       </div>
     </section>
+
+
+
+  <div  @click="openStream(is_vip,url)"
+        class="slide-stream"
+        :class="[!this.$auth.loggedIn ? 'card-disabled':this.$auth.user.is_vip ? 'vipOpened' : '', is_vip ? 'slide-stream-vip':'']"
+        :style="'background: url(' + stream_img + ') no-repeat center'">
+    <p class="slide-stream__date">{{ new Date (stream_date).toLocaleDateString()}} {{ new Date (stream_date).toLocaleTimeString()}}</p>
+    <p class="slide-stream__name">{{name}}</p>
+    <div class="slide-stream__link">
+      <img :src="avatar" alt="">
+      <p class="">{{nickname}}</p>
+    </div>
+  </div>
