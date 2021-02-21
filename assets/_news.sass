@@ -1,0 +1,16 @@
+.news
+  margin-bottom: 50px
+  &__wrapper
+    display: grid
+    grid-template-columns: 2fr 1fr
+    grid-gap: 20px
+  &__items
+    display: flex
+    align-items: center
+    justify-content: space-between
+    flex-wrap: wrap
+    img
+      margin-bottom: 20px
+      cursor: pointer
+      &:nth-last-child(-n+2)
+        margin-bottom: 0

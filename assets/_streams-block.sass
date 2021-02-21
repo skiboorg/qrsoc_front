@@ -4,32 +4,38 @@
     margin-bottom: 50px
   &__wrapper
     display: grid
-    grid-template-columns: 1fr 1fr
+    grid-template-columns: 2fr 1fr
     grid-gap: 20px
   &__items
     display: grid
-    grid-template-columns: 1fr 1fr
+    grid-template-columns: repeat(3,1fr)
     grid-column-gap: 20px
-    grid-row-gap: 40px
+    grid-row-gap: 20px
   &__item
     cursor: pointer
 
     & .el-image
       transition: all .2s linear
       border-radius: 5px
-      width: 280px
-      height: 155px
+      width: 220px
+      height: 130px
       &:hover
         transform: scale(1.05)
     &--bottom
       display: flex
       align-items: center
       justify-content: space-between
+      p
+        font-size: 14px
       &-inner
         flex-basis: 70px
         display: flex
         align-items: center
         justify-content: space-between
+        img
+          width: 14px
+          height: 16px
+          object-fit: contain
 
   &__right
     &--tabs

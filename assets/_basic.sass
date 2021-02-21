@@ -399,4 +399,80 @@ body
       height: 135px
   .swiper-button-prev, .swiper-button-next
     top: 16% !important
+.page-block
+  margin-bottom: 50px
+.block-w-header
+  background: #FFFFFF
+  box-shadow: 5px 5px 15px rgba(201, 201, 201, 0.1)
+  border-radius: 10px
+  &__header
+    display: flex
+    align-items: center
+    justify-content: space-between
+    border-bottom: 1px solid #E1E1E1
+    padding: 20px 0
+    &-title
+      display: flex
+      align-items: center
+      justify-content: flex-start
+      padding-left: 30px
+      svg
+        margin-right: 10px
+      h3
+        font-size: 18px
+    &-link
+      position: relative
+      display: flex
+      align-items: center
+      justify-content: flex-end
+      padding-right: 30px
+      cursor: pointer
+      p
+        margin-right: 20px
+        font-size: 14px
+        color: #DEDEDE
+        padding-right: 20px
+      &::after
+        position: absolute
+        content: url(/link-arrow.png)
+    &-buttons
+      display: flex
+      align-items: center
+      justify-content: space-between
+      padding-right: 30px
+    &-button
+      display: flex
+      align-items: center
+      justify-content: space-between
+      border: 1px solid #CECFDF
+      box-sizing: border-box
+      border-radius: 15px
+      padding: 3px 13px
+      cursor: pointer
+      transition: all .2s linear
+      margin-right: 10px
+      svg
+        margin-right: 20px
+        fill: $color-text-grey
+        transition: all .2s linear
+      p
+        transition: all .2s linear
+        font-size: 14px
+        color: $color-text-grey
+      &:hover
+        border-color: #ED903A
+        svg
+          fill: #ED903A
+        p
+          color: #ED903A
+      &:last-child
+        margin-right: 0
+      &.tabButtonActive
+        border-color: #F64953
+        svg
+          fill: #F64953
+        p
+          color: #F64953
 
+  &__content
+    padding: 20px 30px
