@@ -50,11 +50,11 @@
               Your browser does not support HTML video.
             </video>
           </div>
-          <div class="video-block__banners">
-            <img src="/video_block/banner.jpg" alt="">
-            <img src="/video_block/banner-1.jpg" alt="">
-            <img src="/video_block/banner-2.jpg" alt="">
-          </div>
+          <!--          <div class="video-block__banners">-->
+          <!--            <img src="/video_block/banner.jpg" alt="">-->
+          <!--            <img src="/video_block/banner-1.jpg" alt="">-->
+          <!--            <img src="/video_block/banner-2.jpg" alt="">-->
+          <!--          </div>-->
         </div>
       </div>
     </section>
@@ -203,8 +203,7 @@
                   <img src="http://placehold.it/700x245" alt="">
                   <img src="http://placehold.it/336x120" alt="">
                   <img src="http://placehold.it/336x120" alt="">
-                  <img src="http://placehold.it/336x120" alt="">
-                  <img src="http://placehold.it/336x120" alt="">
+
 
 
 
@@ -225,46 +224,37 @@
                 </div>
               </div>
               <div class="block-w-header__content">
+                <!--                {{top_donaters}}-->
                 <div  class="best-girl-item"
-                      @click="$router.push(`/profile/${girl.nickname}`)"
-                      v-for="(girl,index) in top_streamers" :key="girl.id"
+                      @click="$router.push(`/profile/${user.from_user.nickname}`)"
+                      v-for="(user,index) in top_donaters" :key="user.id"
                       :class="[index>0 && index<=2? 'girlInline' : '', ]">
                   <div v-if="index<=2">
                     <div :data-num="index+1" class="best-girl-item__avatar"
                          :class="[index===0 ? 'girl-gold' : '', index===1 ? 'girl-silver' : '',index===2 ? 'girl-bronze' : '',]"
-                    > <img :src="girl.avatar" alt=""></div>
+                    > <img :src="user.from_user.avatar" alt=""></div>
                     <div class="best-girl-item__info">
                       <div class="best-girl-item__info-rating">
-                        <img src="/girl_rating_icon.png" alt="">
-                        <p>{{girl.streamer_rating}}</p>
+                        <!--                        <img src="/girl_rating_icon.png" alt="">-->
+                        <!--                        <p>{{user}}</p>-->
                       </div>
-                      <p class="best-girl-item__info-name">{{girl.fio}}</p>
-                      <p class="best-girl-item__info-link">@{{girl.nickname}}</p>
+                      <p class="best-girl-item__info-name">{{user.from_user.fio}}</p>
+                      <p class="best-girl-item__info-link">@{{user.from_user.nickname}}</p>
                     </div>
                   </div>
                   <div v-else class="best-girls-item indexMode">
                     <div class="best-girls-item__num">{{index+1}}</div>
                     <div class="best-girls-item__img" :class="[index < 3 ? `girlStatus${index+1}` : '']">
-                      <img :src="girl.avatar" alt="">
+                      <!--                      <img :src="user.from_user.avatar" alt="">-->
                     </div>
-                    <div class="best-girls-item__name font-bold">{{girl.fio}}</div>
-                    <div class="best-girls-item__link">@{{girl.nickname}}</div>
-                    <div class="best-girls-item__score font-bold"><img src="/girl_rating_icon.png" alt="">{{girl.streamer_rating}}</div>
+                    <div class="best-girls-item__name font-bold">{{user.from_user.fio}}</div>
+                    <div class="best-girls-item__link">@{{user.from_user.nickname}}</div>
+                    <!--                    <div class="best-girls-item__score font-bold"><img src="/girl_rating_icon.png" alt="">{{user}}</div>-->
 
                   </div>
 
 
                 </div>
-
-
-
-
-
-
-
-
-
-
               </div>
             </div>
           </div>
@@ -321,25 +311,25 @@
               <el-image src="/features/6.jpg" lazy></el-image>
             </div>
           </div>
-           <div v-if="featuresActiveTab==='tab2'" class="block-w-header__content">
+          <div v-if="featuresActiveTab==='tab2'" class="block-w-header__content">
             <div class="features-block__inner ">
-               <div class="faq-items">
-              <div class="faq-item" v-for="(faq,index) in faqs" :key="faq.id" :class="{'faqItemActive':accordeonActive===index}">
-                <div class="faq-item__top" @click="accordeonActive=index">
-                  <p>{{faq.question}}</p>
-                  <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="17" cy="17" r="16.5" fill="white" stroke="#CECFDF"/>
-                    <path d="M17 21L13.5359 15L20.4641 15L17 21Z" />
-                  </svg>
-                </div>
-                <div class="faq-item__content">
-                  <div class="faq-item__content--inner">
-                    <p v-html="faq.answer"></p>
+              <div class="faq-items">
+                <div class="faq-item" v-for="(faq,index) in faqs" :key="faq.id" :class="{'faqItemActive':accordeonActive===index}">
+                  <div class="faq-item__top" @click="accordeonActive=index">
+                    <p>{{faq.question}}</p>
+                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="17" cy="17" r="16.5" fill="white" stroke="#CECFDF"/>
+                      <path d="M17 21L13.5359 15L20.4641 15L17 21Z" />
+                    </svg>
+                  </div>
+                  <div class="faq-item__content">
+                    <div class="faq-item__content--inner">
+                      <p v-html="faq.answer"></p>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-            </div>
+              </div>
             </div>
           </div>
           <div v-if="featuresActiveTab==='tab3'" class="block-w-header__content">
@@ -349,7 +339,7 @@
           </div>
           <div v-if="featuresActiveTab==='tab4'" class="block-w-header__content">
             <div class="features-block__inner ">
-             4
+              4
             </div>
           </div>
 
@@ -357,86 +347,130 @@
       </div>
     </div>
 
-
-
     <section class="pricing">
       <div class="container">
-        <h3 class="section-title">我们的房价</h3>
-        <div class="pricing-wrapper">
-          <div class="pricing-item">
-            <div class="pricing-item__decor decor-one">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20.59 13.41L13.42 20.58C13.2343 20.766 13.0137 20.9135 12.7709 21.0141C12.5281 21.1148 12.2678 21.1666 12.005 21.1666C11.7422 21.1666 11.4819 21.1148 11.2391 21.0141C10.9963 20.9135 10.7757 20.766 10.59 20.58L2 12V2H12L20.59 10.59C20.9625 10.9647 21.1716 11.4716 21.1716 12C21.1716 12.5284 20.9625 13.0353 20.59 13.41V13.41Z" stroke="#f64953" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M7 7H7.01" stroke="#f64953" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <p class="pricing-item__name price-one">每月固定费用</p>
-            <p class="pricing-item__price">124.00 <span>Y</span></p>
-            <div class="pricing-item__infos">
-              <p class="pricing-item__info"><img src="/check-mark.svg" alt="">一般聊天中的交流</p>
-              <p class="pricing-item__info"><img src="/check-mark.svg" alt="">使用相机</p>
-              <p class="pricing-item__info"><img src="/check-mark.svg" alt="">送礼物的能力</p>
-            </div>
-            <p @click="openModalBtn_click" class="btn btn-l-blue">成为参与者</p>
-          </div>
-          <div class="pricing-item  price-vip">
-            <div class="pricing-item__decor decor-two">
-              <div class="crown">
-                <svg  width="44" height="31" viewBox="0 0 44 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M1.62891 9.28153C1.62891 10.6181 2.68545 11.7191 3.99736 11.7339L9.64951 28.9924L9.80662 29.4721L10.2848 29.3104C13.9659 28.0658 17.9097 27.3842 21.9999 27.3842C26.09 27.3842 30.0339 28.0658 33.7149 29.3104L34.1939 29.4724L34.3505 28.9917L39.9734 11.7339C41.314 11.719 42.3412 10.6183 42.3412 9.31157C42.3412 7.95565 41.2602 6.88909 39.9459 6.88909C38.592 6.88909 37.5506 7.99595 37.5506 9.31157C37.5506 10.0461 37.8664 10.7022 38.3755 11.1448C37.3876 12.1879 35.9111 13.6753 34.3919 14.9643C33.5193 15.7047 32.644 16.3698 31.8473 16.8471C31.0324 17.3353 30.3708 17.5829 29.9068 17.5829C29.0076 17.5829 28.1738 17.1536 27.3926 16.3778C26.6085 15.599 25.9112 14.5025 25.3033 13.2565C24.1791 10.952 23.4065 8.23278 22.9472 6.33608C23.7848 5.95499 24.3656 5.09883 24.3656 4.11486C24.3656 2.75894 23.2845 1.69238 21.9703 1.69238C20.6163 1.69238 19.575 2.79925 19.575 4.11486C19.575 5.09883 20.1558 5.95499 20.9933 6.33608C20.5341 8.23278 19.7614 10.952 18.6372 13.2565C18.0294 14.5025 17.3321 15.599 16.5479 16.3778C15.7667 17.1536 14.9329 17.5829 14.0337 17.5829C13.5697 17.5829 12.9081 17.3353 12.0932 16.8471C11.2965 16.3698 10.4212 15.7047 9.54864 14.9643C8.02938 13.6753 6.55293 12.1879 5.56506 11.1448C6.07411 10.7022 6.38988 10.0461 6.38988 9.31157C6.38988 7.95565 5.30883 6.88909 3.99459 6.88909C2.67526 6.88909 1.62891 7.96077 1.62891 9.28153Z" fill="#FFB800" stroke="#FF7A00"/>
+        <div class="streams-block__wrapper">
+          <div class="block-w-header">
+            <div class="block-w-header__header">
+              <div class="block-w-header__header-title">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.75 17.5C8.75 17.5 7.5 17.5 7.5 16.25C7.5 15 8.75 11.25 13.75 11.25C18.75 11.25 20 15 20 16.25C20 17.5 18.75 17.5 18.75 17.5H8.75ZM13.75 10C14.7446 10 15.6984 9.60491 16.4017 8.90165C17.1049 8.19839 17.5 7.24456 17.5 6.25C17.5 5.25544 17.1049 4.30161 16.4017 3.59835C15.6984 2.89509 14.7446 2.5 13.75 2.5C12.7554 2.5 11.8016 2.89509 11.0983 3.59835C10.3951 4.30161 10 5.25544 10 6.25C10 7.24456 10.3951 8.19839 11.0983 8.90165C11.8016 9.60491 12.7554 10 13.75 10Z" fill="black"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M6.52 17.5005C6.33469 17.1103 6.24228 16.6825 6.25 16.2505C6.25 14.5568 7.1 12.813 8.67 11.6005C7.88636 11.3591 7.06994 11.241 6.25 11.2505C1.25 11.2505 0 15.0005 0 16.2505C0 17.5005 1.25 17.5005 1.25 17.5005H6.52Z" fill="black"/>
+                  <path d="M5.625 10C6.4538 10 7.24866 9.67076 7.83471 9.08471C8.42076 8.49866 8.75 7.7038 8.75 6.875C8.75 6.0462 8.42076 5.25134 7.83471 4.66529C7.24866 4.07924 6.4538 3.75 5.625 3.75C4.7962 3.75 4.00134 4.07924 3.41529 4.66529C2.82924 5.25134 2.5 6.0462 2.5 6.875C2.5 7.7038 2.82924 8.49866 3.41529 9.08471C4.00134 9.67076 4.7962 10 5.625 10Z" fill="black"/>
                 </svg>
+                <h3>现在在网站上</h3>
+
               </div>
-              <svg width="41" height="19" viewBox="0 0 41 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M17.0312 0.847656L10.7266 19H6.35547L0.132812 0.847656H4.30469L8.23047 13.6797C8.42578 14.3125 8.54688 14.9102 8.59375 15.4727H8.66406C8.72656 14.8945 8.85938 14.2812 9.0625 13.6328L12.9883 0.847656H17.0312ZM23.1133 0.847656V19H19.2461V0.847656H23.1133ZM31.1875 12.6719V19H27.3203V0.847656H33.5664C38.082 0.847656 40.3398 2.76172 40.3398 6.58984C40.3398 8.44922 39.6562 9.94141 38.2891 11.0664C36.9297 12.1836 35.2266 12.7188 33.1797 12.6719H31.1875ZM31.1875 3.84766V9.70703H32.8633C35.1367 9.70703 36.2734 8.71875 36.2734 6.74219C36.2734 4.8125 35.1484 3.84766 32.8984 3.84766H31.1875Z" fill="white"/>
-              </svg>
+              <div class="block-w-header__header-link">
+                <p>现在在网站上</p>
+
+              </div>
             </div>
-            <p class="pricing-item__name price-two">VIP费是最好的</p>
-            <p class="pricing-item__price">999.00 <span>Y</span></p>
-            <div class="pricing-item__infos">
-              <p class="pricing-item__info"><img src="/check-mark.svg" alt="">一般聊天中的交流</p>
-              <p class="pricing-item__info"><img src="/check-mark.svg" alt="">使用相机</p>
-              <p class="pricing-item__info"><img src="/check-mark.svg" alt="">送礼物的能力</p>
-              <p class="pricing-item__info"><img src="/check-mark.svg" alt="">获得VIP功能</p>
-              <p class="pricing-item__info"><img src="/check-mark.svg" alt="">VIP俱乐部您的广播和专辑</p>
-            </div>
-            <p @click="openModalBtn_click" class="btn btn-l-blue">成为参与者</p>
-            <p>
-              <nuxt-link to="/info/vip-introduction" class="pricing-item__small-text">
-                有关VIP功能的更多信息
-              </nuxt-link>
-            </p>
+            <div class="block-w-header__content">
+
+              <div class="pricing-wrapper">
+                <div class="pricing-item">
+                  <div class="pricing-item__decor decor-one">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20.59 13.41L13.42 20.58C13.2343 20.766 13.0137 20.9135 12.7709 21.0141C12.5281 21.1148 12.2678 21.1666 12.005 21.1666C11.7422 21.1666 11.4819 21.1148 11.2391 21.0141C10.9963 20.9135 10.7757 20.766 10.59 20.58L2 12V2H12L20.59 10.59C20.9625 10.9647 21.1716 11.4716 21.1716 12C21.1716 12.5284 20.9625 13.0353 20.59 13.41V13.41Z" stroke="#f64953" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M7 7H7.01" stroke="#f64953" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <p class="pricing-item__name price-one">每月固定费用</p>
+                  <p class="pricing-item__price">124.00 <span>Y</span></p>
+                  <div class="pricing-item__infos">
+                    <p class="pricing-item__info"><img src="/check-mark.svg" alt="">一般聊天中的交流</p>
+                    <p class="pricing-item__info"><img src="/check-mark.svg" alt="">使用相机</p>
+                    <p class="pricing-item__info"><img src="/check-mark.svg" alt="">送礼物的能力</p>
+                  </div>
+                  <p @click="openModalBtn_click" class="btn btn-l-blue">成为参与者</p>
+                </div>
+                <div class="pricing-item  price-vip">
+                  <div class="pricing-item__decor decor-two">
+                    <!--              <div class="crown">-->
+                    <!--                <svg  width="44" height="31" viewBox="0 0 44 31" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+                    <!--                  <path d="M1.62891 9.28153C1.62891 10.6181 2.68545 11.7191 3.99736 11.7339L9.64951 28.9924L9.80662 29.4721L10.2848 29.3104C13.9659 28.0658 17.9097 27.3842 21.9999 27.3842C26.09 27.3842 30.0339 28.0658 33.7149 29.3104L34.1939 29.4724L34.3505 28.9917L39.9734 11.7339C41.314 11.719 42.3412 10.6183 42.3412 9.31157C42.3412 7.95565 41.2602 6.88909 39.9459 6.88909C38.592 6.88909 37.5506 7.99595 37.5506 9.31157C37.5506 10.0461 37.8664 10.7022 38.3755 11.1448C37.3876 12.1879 35.9111 13.6753 34.3919 14.9643C33.5193 15.7047 32.644 16.3698 31.8473 16.8471C31.0324 17.3353 30.3708 17.5829 29.9068 17.5829C29.0076 17.5829 28.1738 17.1536 27.3926 16.3778C26.6085 15.599 25.9112 14.5025 25.3033 13.2565C24.1791 10.952 23.4065 8.23278 22.9472 6.33608C23.7848 5.95499 24.3656 5.09883 24.3656 4.11486C24.3656 2.75894 23.2845 1.69238 21.9703 1.69238C20.6163 1.69238 19.575 2.79925 19.575 4.11486C19.575 5.09883 20.1558 5.95499 20.9933 6.33608C20.5341 8.23278 19.7614 10.952 18.6372 13.2565C18.0294 14.5025 17.3321 15.599 16.5479 16.3778C15.7667 17.1536 14.9329 17.5829 14.0337 17.5829C13.5697 17.5829 12.9081 17.3353 12.0932 16.8471C11.2965 16.3698 10.4212 15.7047 9.54864 14.9643C8.02938 13.6753 6.55293 12.1879 5.56506 11.1448C6.07411 10.7022 6.38988 10.0461 6.38988 9.31157C6.38988 7.95565 5.30883 6.88909 3.99459 6.88909C2.67526 6.88909 1.62891 7.96077 1.62891 9.28153Z" fill="#FFB800" stroke="#FF7A00"/>-->
+                    <!--                </svg>-->
+                    <!--              </div>-->
+                    <!--              <svg width="41" height="19" viewBox="0 0 41 19" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+                    <!--                <path d="M17.0312 0.847656L10.7266 19H6.35547L0.132812 0.847656H4.30469L8.23047 13.6797C8.42578 14.3125 8.54688 14.9102 8.59375 15.4727H8.66406C8.72656 14.8945 8.85938 14.2812 9.0625 13.6328L12.9883 0.847656H17.0312ZM23.1133 0.847656V19H19.2461V0.847656H23.1133ZM31.1875 12.6719V19H27.3203V0.847656H33.5664C38.082 0.847656 40.3398 2.76172 40.3398 6.58984C40.3398 8.44922 39.6562 9.94141 38.2891 11.0664C36.9297 12.1836 35.2266 12.7188 33.1797 12.6719H31.1875ZM31.1875 3.84766V9.70703H32.8633C35.1367 9.70703 36.2734 8.71875 36.2734 6.74219C36.2734 4.8125 35.1484 3.84766 32.8984 3.84766H31.1875Z" fill="white"/>-->
+                    <!--              </svg>-->
+                    <svg  width="44" height="31" viewBox="0 0 44 31" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+                      <path d="M1.62891 9.28153C1.62891 10.6181 2.68545 11.7191 3.99736 11.7339L9.64951 28.9924L9.80662 29.4721L10.2848 29.3104C13.9659 28.0658 17.9097 27.3842 21.9999 27.3842C26.09 27.3842 30.0339 28.0658 33.7149 29.3104L34.1939 29.4724L34.3505 28.9917L39.9734 11.7339C41.314 11.719 42.3412 10.6183 42.3412 9.31157C42.3412 7.95565 41.2602 6.88909 39.9459 6.88909C38.592 6.88909 37.5506 7.99595 37.5506 9.31157C37.5506 10.0461 37.8664 10.7022 38.3755 11.1448C37.3876 12.1879 35.9111 13.6753 34.3919 14.9643C33.5193 15.7047 32.644 16.3698 31.8473 16.8471C31.0324 17.3353 30.3708 17.5829 29.9068 17.5829C29.0076 17.5829 28.1738 17.1536 27.3926 16.3778C26.6085 15.599 25.9112 14.5025 25.3033 13.2565C24.1791 10.952 23.4065 8.23278 22.9472 6.33608C23.7848 5.95499 24.3656 5.09883 24.3656 4.11486C24.3656 2.75894 23.2845 1.69238 21.9703 1.69238C20.6163 1.69238 19.575 2.79925 19.575 4.11486C19.575 5.09883 20.1558 5.95499 20.9933 6.33608C20.5341 8.23278 19.7614 10.952 18.6372 13.2565C18.0294 14.5025 17.3321 15.599 16.5479 16.3778C15.7667 17.1536 14.9329 17.5829 14.0337 17.5829C13.5697 17.5829 12.9081 17.3353 12.0932 16.8471C11.2965 16.3698 10.4212 15.7047 9.54864 14.9643C8.02938 13.6753 6.55293 12.1879 5.56506 11.1448C6.07411 10.7022 6.38988 10.0461 6.38988 9.31157C6.38988 7.95565 5.30883 6.88909 3.99459 6.88909C2.67526 6.88909 1.62891 7.96077 1.62891 9.28153Z" fill="#FFB800" stroke="#FF7A00"/>
+                    </svg>
+                  </div>
+                  <p class="pricing-item__name price-two">VIP费是最好的</p>
+                  <p class="pricing-item__price">999.00 <span>Y</span></p>
+                  <div class="pricing-item__infos">
+                    <p class="pricing-item__info"><img src="/check-mark.svg" alt="">一般聊天中的交流</p>
+                    <p class="pricing-item__info"><img src="/check-mark.svg" alt="">使用相机</p>
+                    <p class="pricing-item__info"><img src="/check-mark.svg" alt="">送礼物的能力</p>
+                    <p class="pricing-item__info"><img src="/check-mark.svg" alt="">获得VIP功能</p>
+                    <p class="pricing-item__info"><img src="/check-mark.svg" alt="">VIP俱乐部您的广播和专辑</p>
+                  </div>
+                  <p @click="openModalBtn_click" class="btn btn-l-blue btn-outline">成为参与者</p>
+                  <p>
+                    <nuxt-link to="/info/vip-introduction" class="pricing-item__small-text">
+                      有关VIP功能的更多信息
+                    </nuxt-link>
+                  </p>
 
 
+                </div>
+                <div class="pricing-item">
+                  <div class="pricing-item__decor decor-one">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M21 2L19 4M19 4L22 7L18.5 10.5L15.5 7.5M19 4L15.5 7.5M11.39 11.61C11.9064 12.1195 12.3168 12.726 12.5978 13.3948C12.8787 14.0635 13.0246 14.7813 13.0271 15.5066C13.0295 16.232 12.8884 16.9507 12.6119 17.6213C12.3355 18.2919 11.9291 18.9012 11.4162 19.4141C10.9033 19.9271 10.294 20.3334 9.62333 20.6099C8.95271 20.8864 8.23403 21.0275 7.50866 21.025C6.7833 21.0226 6.06557 20.8767 5.39682 20.5958C4.72807 20.3148 4.1215 19.9043 3.61203 19.388C2.61016 18.3507 2.05579 16.9614 2.06832 15.5193C2.08085 14.0772 2.65928 12.6977 3.67903 11.678C4.69877 10.6583 6.07824 10.0798 7.52032 10.0673C8.96241 10.0548 10.3517 10.6091 11.389 11.611L11.39 11.61ZM11.39 11.61L15.5 7.5" stroke="#FFB800" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+
+                  </div>
+                  <p class="pricing-item__name price-three">每月固定费用</p>
+                  <p class="pricing-item__price">355.00 <span>Y</span></p>
+                  <div class="pricing-item__infos">
+                    <p class="pricing-item__info"><img src="/check-mark.svg" alt="">一般聊天中的交流</p>
+                    <p class="pricing-item__info"><img src="/check-mark.svg" alt="">使用相机</p>
+                    <p class="pricing-item__info"><img src="/check-mark.svg" alt="">送礼物的能力</p>
+                  </div>
+                  <p @click="openModalBtn_click" class="btn btn-l-blue">成为参与者</p>
+                </div>
+
+              </div>
+            </div>
           </div>
-          <div class="pricing-item">
-            <div class="pricing-item__decor decor-one">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M21 2L19 4M19 4L22 7L18.5 10.5L15.5 7.5M19 4L15.5 7.5M11.39 11.61C11.9064 12.1195 12.3168 12.726 12.5978 13.3948C12.8787 14.0635 13.0246 14.7813 13.0271 15.5066C13.0295 16.232 12.8884 16.9507 12.6119 17.6213C12.3355 18.2919 11.9291 18.9012 11.4162 19.4141C10.9033 19.9271 10.294 20.3334 9.62333 20.6099C8.95271 20.8864 8.23403 21.0275 7.50866 21.025C6.7833 21.0226 6.06557 20.8767 5.39682 20.5958C4.72807 20.3148 4.1215 19.9043 3.61203 19.388C2.61016 18.3507 2.05579 16.9614 2.06832 15.5193C2.08085 14.0772 2.65928 12.6977 3.67903 11.678C4.69877 10.6583 6.07824 10.0798 7.52032 10.0673C8.96241 10.0548 10.3517 10.6091 11.389 11.611L11.39 11.61ZM11.39 11.61L15.5 7.5" stroke="#FFB800" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
+          <div class="block-w-header">
+            <div class="block-w-header__header">
+              <div class="block-w-header__header-title">
+
+                <h3>现在在网站上</h3>
+
+              </div>
+              <div class="block-w-header__header-question">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.361 11.961C8.3223 12.0038 8.28623 12.0488 8.253 12.096C8.21894 12.1462 8.1917 12.2006 8.172 12.258C8.14605 12.309 8.12785 12.3636 8.118 12.42C8.11359 12.4799 8.11359 12.5401 8.118 12.6C8.11496 12.7181 8.13962 12.8352 8.19 12.942C8.23042 13.0537 8.29491 13.1551 8.3789 13.2391C8.46289 13.3231 8.56432 13.3876 8.676 13.428C8.78373 13.4756 8.90022 13.5002 9.018 13.5002C9.13579 13.5002 9.25227 13.4756 9.36 13.428C9.47169 13.3876 9.57312 13.3231 9.65711 13.2391C9.74109 13.1551 9.80558 13.0537 9.846 12.942C9.88597 12.8326 9.90431 12.7164 9.9 12.6C9.90069 12.4816 9.87799 12.3641 9.8332 12.2545C9.78841 12.1448 9.72242 12.0451 9.639 11.961C9.55534 11.8766 9.4558 11.8097 9.34612 11.764C9.23645 11.7183 9.11881 11.6948 9 11.6948C8.88119 11.6948 8.76356 11.7183 8.65388 11.764C8.54421 11.8097 8.44467 11.8766 8.361 11.961ZM9 0C7.21997 0 5.47991 0.527841 3.99987 1.51677C2.51983 2.50571 1.36628 3.91131 0.685088 5.55585C0.00389956 7.20038 -0.17433 9.00998 0.172937 10.7558C0.520203 12.5016 1.37737 14.1053 2.63604 15.364C3.89472 16.6226 5.49836 17.4798 7.24419 17.8271C8.99002 18.1743 10.7996 17.9961 12.4442 17.3149C14.0887 16.6337 15.4943 15.4802 16.4832 14.0001C17.4722 12.5201 18 10.78 18 9C18 7.8181 17.7672 6.64778 17.3149 5.55585C16.8626 4.46392 16.1997 3.47177 15.364 2.63604C14.5282 1.80031 13.5361 1.13738 12.4442 0.685084C11.3522 0.232792 10.1819 0 9 0ZM9 16.2C7.57598 16.2 6.18393 15.7777 4.9999 14.9866C3.81586 14.1954 2.89302 13.0709 2.34807 11.7553C1.80312 10.4397 1.66054 8.99201 1.93835 7.59535C2.21616 6.19868 2.9019 4.91577 3.90883 3.90883C4.91577 2.90189 6.19869 2.21616 7.59535 1.93835C8.99202 1.66053 10.4397 1.80312 11.7553 2.34807C13.071 2.89302 14.1954 3.81586 14.9866 4.99989C15.7777 6.18393 16.2 7.57597 16.2 9C16.2 10.9096 15.4414 12.7409 14.0912 14.0912C12.7409 15.4414 10.9096 16.2 9 16.2ZM9 4.5C8.52576 4.49969 8.0598 4.62431 7.64902 4.8613C7.23824 5.09829 6.89712 5.43929 6.66 5.85C6.59488 5.95243 6.55116 6.06698 6.53146 6.18676C6.51176 6.30653 6.51649 6.42905 6.54537 6.54695C6.57425 6.66484 6.62668 6.77568 6.6995 6.87279C6.77232 6.9699 6.86404 7.05127 6.96913 7.11202C7.07422 7.17276 7.19051 7.21162 7.311 7.22626C7.4315 7.2409 7.55371 7.23101 7.67029 7.19719C7.78686 7.16337 7.89539 7.10632 7.98935 7.02947C8.0833 6.95261 8.16074 6.85755 8.217 6.75C8.2963 6.61265 8.41047 6.4987 8.54797 6.41968C8.68547 6.34066 8.84141 6.29937 9 6.3C9.2387 6.3 9.46762 6.39482 9.6364 6.5636C9.80518 6.73238 9.9 6.9613 9.9 7.2C9.9 7.43869 9.80518 7.66761 9.6364 7.83639C9.46762 8.00518 9.2387 8.1 9 8.1C8.76131 8.1 8.53239 8.19482 8.36361 8.3636C8.19482 8.53238 8.1 8.7613 8.1 9V9.9C8.1 10.1387 8.19482 10.3676 8.36361 10.5364C8.53239 10.7052 8.76131 10.8 9 10.8C9.2387 10.8 9.46762 10.7052 9.6364 10.5364C9.80518 10.3676 9.9 10.1387 9.9 9.9V9.738C10.4952 9.52202 10.9956 9.1037 11.3137 8.55618C11.6318 8.00866 11.7473 7.36676 11.6401 6.7427C11.5328 6.11864 11.2097 5.55211 10.7271 5.14216C10.2445 4.73221 9.63319 4.50491 9 4.5Z" fill="#D9D9D9"/>
+                </svg>
+
+
+              </div>
+            </div>
+            <div class="block-w-header__content">
+              <div class="pricing-payments">
+                <div class="pricing-payment">
+                  <el-image src="/payments/vip.png" lazy></el-image>
+                </div>
+                <div class="pricing-payment">
+                  <el-image src="/payments/a-p.png" lazy></el-image>
+                </div>
+                <div class="pricing-payment">
+                  <el-image src="/payments/w-p.png" lazy></el-image>
+                </div>
+                <p class="btn btn-l-blue btn-outline">更多</p>
+              </div>
 
             </div>
-            <p class="pricing-item__name price-three">每月固定费用</p>
-            <p class="pricing-item__price">355.00 <span>Y</span></p>
-            <div class="pricing-item__infos">
-              <p class="pricing-item__info"><img src="/check-mark.svg" alt="">一般聊天中的交流</p>
-              <p class="pricing-item__info"><img src="/check-mark.svg" alt="">使用相机</p>
-              <p class="pricing-item__info"><img src="/check-mark.svg" alt="">送礼物的能力</p>
-            </div>
-            <p @click="openModalBtn_click" class="btn btn-l-blue">成为参与者</p>
-          </div>
-          <div class="pricing-payments">
-            <div class="pricing-payment">
-              <el-image src="/payments/vip.png" lazy></el-image>
-            </div>
-            <div class="pricing-payment">
-              <el-image src="/payments/a-p.png" lazy></el-image>
-            </div>
-            <div class="pricing-payment">
-              <el-image src="/payments/w-p.png" lazy></el-image>
-            </div>
-            <p class="btn btn-l-blue btn-outline">更多</p>
           </div>
         </div>
+
+
       </div>
     </section>
   </div>
@@ -459,14 +493,14 @@ export default {
       const get_top_streamers = await $axios.get(`/api/v1/user/get_streamers?top5=true`)
       const get_streams = await $axios.get(`/api/v1/stream/get_streams_for_home_page`)
       //const get_banners = await $axios.get(`/api/v1/gallery/get_banners`)
-      //const response_donaters = await $axios.get(`/api/v1/gift/get_user_top10_donaters`)
+      const response_donaters = await $axios.get(`/api/v1/gift/get_user_top10_donaters`)
       const streamers = get_streamers.data
       const top_streamers = get_top_streamers.data
       const streams = get_streams.data
       //const banners = get_banners.data
-      //const top_donaters = response_donaters.data
+      const top_donaters = response_donaters.data
       console.log('streams',streams)
-      return {streamers,streams,top_streamers}//,top_donaters,banners
+      return {streamers,streams,top_streamers,top_donaters}//,top_donaters,banners
     }catch (e) {
       const err = 404
       return {err}
