@@ -76,3 +76,13 @@
       box-shadow: 5px 5px 15px rgba(46, 46, 106, 0.16)
       border-radius: 18px
       padding: 40px 0
+
+@media (max-width: 576px)
+  .streams-block
+    &__wrapper
+      grid-template-columns: 1fr
+    &__items
+      grid-template-columns: 1fr
+    &__item
+      & .el-image
+        width: 100%

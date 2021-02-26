@@ -13,10 +13,9 @@ $bg-gradient-l-blue: linear-gradient(180deg, #C1343D 0%, #C1343D 100%)
 body
   font-family: 'Msyh',sans-serif
   color: $color-text
-  background: #DFDFDF
   overflow-x: hidden
   padding-top: 60px
-  background: url(/body.png)
+  background: #F4F5F8 url(/body.png)
   &::-webkit-scrollbar
     width: 6px
   &::-webkit-scrollbar-track
@@ -436,8 +435,21 @@ body
         position: absolute
         content: url(/link-arrow.png)
     &-question
+      position: relative
+      display: flex
+      align-items: center
+      justify-content: flex-end
       padding-right: 30px
       cursor: pointer
+      p
+        margin-right: 20px
+        font-size: 14px
+        color: #DEDEDE
+        padding-right: 20px
+      &::after
+        position: absolute
+        content: url(/link-question.png)
+
     &-buttons
       display: flex
       align-items: center

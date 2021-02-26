@@ -16,7 +16,7 @@
     padding: 0 10px
     margin: 0 auto
   &-logo
-    flex-grow: 2
+    flex-grow: 1
     a
       color: #ffffff
     &-mobile
@@ -29,32 +29,107 @@
       display: none
       &__toggle
         display: none
-    flex-grow: 3
+    flex-grow: 2
     ul
       display: flex
       align-items: center
       justify-content: space-between
       li
-        color: #F64953
+        color: $color-text-d-blue
         a
           position: relative
           display: inline-block
-          color: #F64953
+          color: #959595
           font-size: 14px
           &.nuxt-link-exact-active
-            &::after
-              position: absolute
-              content: ''
-              right: 0
-              height: 3px
-              background-color: $color-text-d-blue
-              left: 0
-              bottom: -19px
+            background: $color-text-d-blue
+            border-radius: 44px
+            color: #FFFFFF
+            padding: 5px 15px
+            //&::after
+            //  position: absolute
+            //  content: ''
+            //  right: 0
+            //  height: 3px
+            //  background-color: $color-text-d-blue
+            //  left: 0
+            //  bottom: -19px
   &-btn
-    flex-grow: 5
+    flex-grow: 6
     display: flex
     align-items: center
     justify-content: flex-end
+    &-w-icon
+      display: flex
+      align-items: center
+      justify-content: space-between
+      padding: 5px 15px
+      border: 1px solid #E7E7E7
+      box-sizing: border-box
+      border-radius: 44px
+      cursor: pointer
+      transition: all .2s linear
+      margin-right: 10px
+      &:last-child
+        margin-right: 0
+      svg
+        transition: all .2s linear
+        fill: #BDBDBD
+        margin-right: 10px
+      p
+        transition: all .2s linear
+        color: #959595
+      &:hover
+        border-color: $color-text-d-blue
+        svg
+          fill: $color-text-d-blue
+        p
+          color: $color-text-d-blue
+      &.header-btn-w-icon__red
+        border: 1px solid $color-text-d-blue
+        svg
+          transition: all .2s linear
+          fill: $color-text-d-blue
+          margin-right: 10px
+        p
+          transition: all .2s linear
+          color: $color-text-d-blue
+        &:hover
+          background: $color-text-d-blue
+          svg
+            fill: #FFFFFF
+          p
+            color: #FFFFFF
+
+      &.has-dropdown-menu
+        position: relative
+        &:hover > div
+          opacity: 1
+          pointer-events: all
+          top: 20px
+      &__dropdown
+        position: absolute
+        opacity: 0
+        pointer-events: none
+        top: 30px
+        right: 0
+        left: 0
+        transition: all .2s linear
+        padding-top: 20px
+        &-inner
+          display: flex
+          flex-direction: column
+          align-items: center
+          justify-content: center
+          background: #FFFFFF
+          border: 1px solid #E7E7E7
+          box-sizing: border-box
+          border-radius: 5px
+          padding: 15px 0
+          img
+            margin-bottom: 20px
+
+
     &__login
       display: flex
       align-items: center
@@ -184,6 +259,8 @@
     display: none
 
 @media (max-width: 576px)
+  .header-btn-w-icon
+    display: none
   .header
     padding: 0
     &-wrapper

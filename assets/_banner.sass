@@ -1,9 +1,34 @@
 .banner
+  position: relative
   background: url(/banner.jpg) no-repeat
   background-position-x: center
   //box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
   height: 558px
   //margin-bottom: 115px
+  &-girl-login
+    position: absolute
+    left: -30px
+    top: 33%
+    background: #FFFFFF
+    border-radius: 21px
+    display: inline-flex
+    align-items: center
+    justify-content: space-between
+    padding: 15px
+    cursor: pointer
+    z-index: 1
+    transition: all .2s ease-in-out
+    p
+      margin: 0 25px
+    &::after
+      position: absolute
+      content: url(/girl-login-top.png)
+      bottom: 0px
+      left: 50%
+      transform: translateX(-50%)
+      z-index: -1
+    &:hover
+      left: -20px
 
   &-inner
     max-width: 1180px
@@ -90,6 +115,6 @@
     height: 394px
 @media (max-width: 576px)
   .banner
-    background: url(/mobile_banner_bg.png) no-repeat center
+    background: url(/mobile_banner_bg.jpg) no-repeat center
     background-size: cover
-    height: 860px
+    height: 585px
