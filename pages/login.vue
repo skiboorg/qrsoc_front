@@ -1,6 +1,19 @@
 <template>
   <div class="login-page">
-    <div class="login-page__tabs">
+     <div class="block-w-header">
+          <div class="block-w-header__header">
+            <div class="block-w-header__header-title">
+
+
+              <h3>Вход/Регистрация</h3>
+
+            </div>
+            <div class="block-w-header__header-link">
+              <p> <nuxt-link to="/">На главную</nuxt-link></p>
+            </div>
+          </div>
+          <div class="block-w-header__content">
+           <div class="login-page__tabs">
       <el-tabs  v-model="activeTab" :stretch="true">
 
         <el-tab-pane label="Вход" name="loginTab">
@@ -94,6 +107,11 @@
         </el-tab-pane>
       </el-tabs>
     </div>
+
+
+          </div>
+        </div>
+
 
   </div>
 </template>

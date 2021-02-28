@@ -4,7 +4,24 @@
   <section class="girls-page">
 
     <div class="container">
-    <div v-html="item.description"></div>
+
+        <div class="block-w-header">
+          <div class="block-w-header__header">
+            <div class="block-w-header__header-title">
+
+
+              <h3>{{item.name}}</h3>
+
+            </div>
+
+          </div>
+          <div class="block-w-header__content">
+
+ <div v-html="item.description"></div>
+
+          </div>
+        </div>
+
 
 
     </div>

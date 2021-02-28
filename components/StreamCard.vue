@@ -1,8 +1,7 @@
 <template>
   <div @click="openStream(is_vip,url)"
        class="streams-block__item"
-       :class="[!this.$auth.loggedIn ? 'card-disabled':this.$auth.user.is_vip ? 'vipOpened' : '', is_vip ? 'slide-stream-vip':'']"
-  >
+       :class="[!this.$auth.loggedIn ? 'card-disabled':this.$auth.user.is_vip ? 'vipOpened' : '', is_vip ? 'slide-stream-vip':'']">
     <el-image  :src="stream_img" lazy fit="cover"></el-image>
     <div class="streams-block__item--bottom">
       <p >{{name}}</p>
