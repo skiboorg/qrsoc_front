@@ -13,7 +13,7 @@
       </div>
       <div class="header-nav">
         <ul>
-          <li v-for="item in $auth.loggedIn ? navItemsAuth : navItemsNotAuth" :key="item.id"><nuxt-link :to="item.link">{{item.name}}</nuxt-link></li>
+          <li v-if="$auth.loggedIn ? true : !item.for_auth" v-for="item in  navItemsAuth" :key="item.id"><nuxt-link :to="item.link">{{item.name}}</nuxt-link></li>
         </ul>
       </div>
 
@@ -149,7 +149,7 @@
       </div>
       <div class="header-nav-mobile" :class="{'mobileNavActive':mobileNavActive}">
         <ul>
-          <li v-for="item in $auth.loggedIn ? navItemsAuth : navItemsNotAuth" :key="item.id"><nuxt-link :to="item.link">
+          <li v-if="$auth.loggedIn ? true : !item.for_auth" v-for="item in  navItemsAuth" :key="item.id"><nuxt-link :to="item.link">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M19 21L12 16L5 21V5C5 4.46957 5.21071 3.96086 5.58579 3.58579C5.96086 3.21071 6.46957 3 7 3H17C17.5304 3 18.0391 3.21071 18.4142 3.58579C18.7893 3.96086 19 4.46957 19 5V21Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -235,22 +235,16 @@ export default {
       ws_url:'',
       register_step:1,
       navItemsAuth:[
-        {id:1,name:'首页',link:'/'},
-        {id:2,name:'个人专区',link:'/lk'},
-        {id:3,name:'直播',link:'/stream'},
-        {id:4,name:'女孩们',link:'/girls'},
-        {id:5,name:'帮助中心',link:'/info/rules'},
-        {id:6,name:'联系我们',link:'/contacts'},
+        {id:1,name:'首页',link:'/',for_auth:false},
+        {id:2,name:'个人专区',link:'/lk',for_auth:true},
+        {id:3,name:'直播',link:'/stream',for_auth:false},
+        {id:4,name:'消息',link:'/blog',for_auth:false},
+        {id:5,name:'女孩们',link:'/girls',for_auth:false},
+        {id:6,name:'帮助中心',link:'/info/rules',for_auth:false},
+        {id:7,name:'联系我们',link:'/contacts',for_auth:false},
         // {id:7,name:'ВХОД ДЛЯ ДЕВУШЕК',link:'/login'},
       ],
-      navItemsNotAuth:[
-        {id:1,name:'首页',link:'/'},
-        {id:3,name:'直播',link:'/stream'},
-        {id:4,name:'女孩们',link:'/girls'},
-        {id:5,name:'帮助中心',link:'/info/rules'},
-        {id:6,name:'联系我们',link:'/contacts'},
-        // {id:7,name:'ВХОД ДЛЯ ДЕВУШЕК',link:'/login'},
-      ],
+
       userData:{
         email:null,
         password:null,

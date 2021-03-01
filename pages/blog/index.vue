@@ -24,7 +24,7 @@
           </div>
           <div class="block-w-header__content">
 
-<div class="news__items">
+<div class="news__items blog">
                   <div @click="$router.push(`/blog/${item.name_slug}`)" v-for="item in news" :key="item.id" class="news__item">
                     <el-image  :src="item.image"  lazy fit="cover"></el-image>
                                   <h3>{{item.name}}</h3>
@@ -56,7 +56,7 @@
     async asyncData({$axios,params}){
 
      try{
-         const response_news = await $axios.get(`/api/v1/blog/get_items?is_at_index=true`)
+         const response_news = await $axios.get(`/api/v1/blog/get_items`)
       const news = response_news.data
         return {news}
      }catch (e) {

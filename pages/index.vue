@@ -252,6 +252,25 @@
             <div class="block-w-header">
               <div class="block-w-header__header">
                 <div class="block-w-header__header-title">
+                  <svg width="22" height="19" viewBox="0 0 22 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0)">
+                      <path d="M22 7.752L17.9197 0.95L10.7932 0L4.06154 0.95L0 7.657L10.9812 18.848L22 7.752Z" fill="#337DFF"/>
+                      <path d="M0 7.69528L0.0188034 7.71428L7.07009 8.41728L4.04274 0.988281L0 7.69528Z" fill="#4D94FF"/>
+                      <path d="M10.906 2.69775L17.9385 0.96875L14.8923 8.35975L10.906 2.69775Z" fill="#81D1FF"/>
+                      <path d="M10.906 2.69775L4.04272 0.96875L7.03247 8.41675L10.906 2.69775Z" fill="#64C6FF"/>
+                      <path d="M22.2057 7.70328L15.098 8.25428L18.1442 0.863281L22.2057 7.70328Z" fill="#A1DCFF"/>
+                      <path d="M0.0187988 7.71387L11.0376 18.9999L7.03248 8.41687L0.0187988 7.71387Z" fill="#275EFF"/>
+                      <path d="M22 7.80859L11.0564 18.9046L14.8735 8.35959L22 7.80859Z" fill="#ABC9FF"/>
+                      <path d="M4.04272 0.988L10.906 2.717L17.9573 0.988L10.7743 0L4.04272 0.988Z" fill="#BFE7FF"/>
+                      <path d="M7.03247 8.41724L10.906 2.69824L14.8923 8.36024L7.03247 8.41724Z" fill="#5C95FF"/>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0">
+                        <rect width="22" height="19" fill="white"/>
+                      </clipPath>
+                    </defs>
+                  </svg>
+
                   <h3>现在在网站上</h3>
                 </div>
                 <div class="block-w-header__header-link">
@@ -423,7 +442,15 @@
                     </svg>
                   </div>
                   <p class="pricing-item__name price-one">每月固定费用</p>
-                  <p class="pricing-item__price">124.00 <span>Y</span></p>
+                  <el-select size="mini" v-model="tariff1_value" placeholder="Select">
+                    <el-option
+                        v-for="item in tariff1"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value">
+                    </el-option>
+                  </el-select>
+                  <p class="pricing-item__price">{{tariff1_value}}.00 <span>Y</span></p>
                   <div class="pricing-item__infos">
                     <p class="pricing-item__info"><img src="/check-mark.svg" alt="">一般聊天中的交流</p>
                     <p class="pricing-item__info"><img src="/check-mark.svg" alt="">使用相机</p>
@@ -446,7 +473,15 @@
                     </svg>
                   </div>
                   <p class="pricing-item__name price-two">VIP费是最好的</p>
-                  <p class="pricing-item__price">999.00 <span>Y</span></p>
+                  <el-select size="mini" v-model="tariff2_value" placeholder="Select">
+                    <el-option
+                        v-for="item in tariff2"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value">
+                    </el-option>
+                  </el-select>
+                  <p class="pricing-item__price">{{tariff2_value}}.00 <span>Y</span></p>
                   <div class="pricing-item__infos">
                     <p class="pricing-item__info"><img src="/check-mark.svg" alt="">一般聊天中的交流</p>
                     <p class="pricing-item__info"><img src="/check-mark.svg" alt="">使用相机</p>
@@ -555,6 +590,37 @@ export default {
   data(){
     return {
       featuresActiveTab:'tab1',
+      tariff1: [
+        {
+          value: 100,
+          label: '1 month'
+        },
+          {
+          value: 200,
+          label: '2 month'
+        },
+          {
+          value: 300,
+          label: '3 month'
+        },
+      ],
+      tariff1_value: 100,
+      tariff2: [
+        {
+          value: 500,
+          label: '1 month'
+        },
+          {
+          value: 600,
+          label: '2 month'
+        },
+          {
+          value: 700,
+          label: '3 month'
+        },
+      ],
+      tariff2_value: 500,
+
       steps:[
         {id:1,num:'01',title:'个人资料',text:'每个女孩都填写自己的个人资料：她的兴趣，喜欢的电影和音乐类型，书籍和兴趣爱好',img:'/step1.png'},
         {id:2,num:'02',title:'通讯与广播',text:'女孩为您启动广播并等待响应！ 给她的每条信息，每一份礼物和关注都很重要。 您越活跃，女孩的评价就越高',img:'/step2.png'},
@@ -642,7 +708,8 @@ export default {
     openModalBtn_click(){
       document.getElementById('openModalBtn').click()
     }
-  }
+  },
+
 }
 </script>
 
