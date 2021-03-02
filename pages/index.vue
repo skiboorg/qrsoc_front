@@ -80,7 +80,7 @@
 
             </div>
             <div class="block-w-header__header-link">
-              <p>看我们所有的女孩</p>
+              <p> <nuxt-link to="/girls">看我们所有的女孩</nuxt-link></p>
             </div>
           </div>
           <div class="block-w-header__content">
@@ -131,7 +131,7 @@
 
                 </div>
                 <div class="block-w-header__header-link">
-                  <p>所有即将播出的广播</p>
+                  <p><nuxt-link to="/streams">所有即将播出的广播</nuxt-link></p>
 
                 </div>
               </div>
@@ -157,15 +157,153 @@
             <div class="block-w-header">
               <div class="block-w-header__header">
                 <div class="block-w-header__header-title">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5C6.20101 1.5 1.5 6.20101 1.5 12C1.5 17.799 6.20101 22.5 12 22.5Z" fill="#F44336"/>
-                    <path d="M12 5.5L13.95 9.45L18.3 10.1L15.15 13.15L15.9 17.5L12 15.45L8.09995 17.5L8.84995 13.15L5.69995 10.1L10.05 9.45L12 5.5Z" fill="#FFCA28"/>
-                  </svg>
+                <svg width="24" height="29" viewBox="0 0 24 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4.59985 7.8852V13.4686V17.2132V21.7975C5.72833 22.9309 7.1587 23.4431 8.84064 23.2332V9.77432C7.91342 6.85249 6.24585 7.38983 4.59985 7.8852Z" fill="url(#paint0_radial)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4.59985 13.4668V17.2114C6.33211 18.0595 8.38063 15.272 4.59985 13.4668Z" fill="url(#paint1_radial)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1.01325 6.70898C0.826371 9.32016 2.28549 12.3679 4.59996 13.4678V10.7307C2.77426 10.3445 1.37264 9.11865 1.01325 6.70898Z" fill="url(#paint2_radial)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1.94751 14.332C2.17752 17.7492 3.11193 20.3184 4.5998 21.8045V17.2203C3.78758 16.8257 2.84598 15.9357 1.94751 14.332Z" fill="url(#paint3_radial)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M14.8435 8.09338L12.2271 6.33021L9.56767 4.53345C9.1939 4.28157 8.81295 4.12205 8.41762 4.05488C7.87135 3.94573 7.3107 4.0045 6.77881 4.23959C7.99354 6.01116 8.61169 8.0514 8.83451 9.7642L18.8183 16.4978C16.0295 14.34 15.4904 10.9396 14.8435 8.09338Z" fill="url(#paint4_radial)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M8.42407 4.05469C10.6738 7.57264 11.9533 7.51387 12.2264 6.33002L9.56693 4.53326C9.20035 4.28978 8.81221 4.12186 8.42407 4.05469Z" fill="url(#paint5_radial)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11.4143 3.16406C12.1475 4.23036 12.4134 5.53175 12.2265 6.32938L14.8429 8.09255C14.2966 5.6409 13.6569 3.60905 11.4143 3.16406Z" fill="url(#paint6_radial)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.0567592C3.22731 0.518542 5.39802 2.20615 6.78527 4.238C7.31716 4.00291 7.87781 3.94413 8.42408 4.05328C6.61276 1.21542 3.73765 -0.337856 0 0.0567592Z" fill="url(#paint7_radial)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4.59952 7.88443C3.21228 8.31263 1.8466 8.73244 1.01282 6.70898C1.37221 9.11865 2.77382 10.3361 4.59952 10.7391C7.35963 11.3436 8.55999 13.4006 8.84031 18.22V9.77355C7.91309 6.85172 6.24552 7.38907 4.59952 7.88443Z" fill="url(#paint8_radial)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1.01282 6.70898C1.37221 9.11866 2.77382 10.3361 4.59952 10.7391V7.88443C3.21228 8.31263 1.8466 8.74083 1.01282 6.70898Z" fill="url(#paint9_radial)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4.59952 10.4116C2.77382 10.017 1.44408 8.90875 1.01282 6.70898C1.37221 9.11865 2.77382 10.3361 4.59952 10.7391C7.35963 11.3436 8.55999 13.4006 8.84031 18.22C8.84031 13.2915 7.35963 11.0162 4.59952 10.4116Z" fill="url(#paint10_radial)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.0585938C2.59479 1.44394 4.60018 4.49171 4.60018 7.88372C6.24618 7.37996 7.91375 6.84261 8.84097 9.76444C8.62534 8.04325 8 6.0114 6.78527 4.23983C5.39802 2.21638 3.22731 0.528773 0 0.0585938Z" fill="url(#paint11_radial)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.0585938C2.59479 1.44394 4.60018 4.49171 4.60018 7.88372C4.60018 6.47319 5.20395 5.24736 6.25337 4.53369C6.42588 4.41615 6.60557 4.3154 6.78527 4.23983C5.39802 2.21638 3.22731 0.528773 0 0.0585938Z" fill="url(#paint12_radial)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.0585938C2.9398 0.637922 5.09614 2.32553 6.51213 4.38257C7.43935 5.72594 8.0575 7.22883 8.37376 8.68135C8.54627 8.97521 8.69722 9.33624 8.84097 9.77284C8.62534 8.05165 8 6.0198 6.78527 4.24823C5.39802 2.21638 3.22731 0.528773 0 0.0585938Z" fill="url(#paint13_radial)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M22.34 13.1554L18.1639 10.3259C15.9142 7.94142 15.8063 3.41594 11.4146 3.16406C13.6644 3.60905 14.2969 5.6409 14.8504 8.09255C15.4901 10.9304 16.0292 14.3308 18.8252 16.497L8.84137 23.2307C7.15943 23.4489 5.72906 22.9284 4.60058 21.7949C3.11271 20.3088 2.1783 17.7396 1.94829 14.3224C1.47389 19.1502 2.69582 23.5917 4.60058 25.1114C4.60058 26.5387 5.20435 27.7477 6.26096 28.4614C7.31756 29.1751 8.51792 29.1751 9.57453 28.4614L15.9573 24.1542L22.3472 19.847C23.4038 19.1334 24.0076 17.9075 24.0076 16.497C24.0004 15.0781 23.3966 13.8523 22.34 13.1554Z" fill="url(#paint14_radial)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11.4143 3.16406C13.6641 3.60905 14.2966 5.6409 14.8501 8.09255L15.957 8.8398L18.1636 10.3259C15.9139 7.94142 15.7988 3.41594 11.4143 3.16406Z" fill="url(#paint15_radial)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1.94829 14.3301C1.47389 19.1494 2.69582 23.5909 4.60058 25.1106V21.7942C3.11271 20.3081 2.1783 17.7389 1.94829 14.3301Z" fill="url(#paint16_radial)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M15.1304 8.28566C14.5554 5.68288 13.9013 3.54189 11.4143 3.16406C13.6641 3.60905 14.2966 5.6409 14.8501 8.09255C15.4898 10.9304 16.0289 14.3308 18.8249 16.497C16.2804 14.2888 15.7485 11.0312 15.1304 8.28566Z" fill="url(#paint17_radial)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4.59833 21.8026C3.11046 20.3165 2.17605 17.7473 1.94604 14.3301C2.06824 18.0663 3.00265 20.8034 4.59833 22.2308C5.71244 23.2299 7.14281 23.5909 8.83912 23.2299C7.15718 23.4482 5.72682 22.9276 4.59833 21.8026Z" fill="url(#paint18_radial)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M22.3396 13.1556L18.1635 10.3262C19.5579 13.5083 23.8849 15.4478 22.3467 19.8557C23.4034 19.142 24.0071 17.9162 24.0071 16.5057C23.9999 15.0783 23.3962 13.8525 22.3396 13.1556Z" fill="url(#paint19_radial)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1.94829 14.3301C1.47389 19.1494 2.69582 23.5909 4.60058 25.1106V23.7672C2.93301 21.9201 1.81172 18.9311 1.94829 14.3301Z" fill="url(#paint20_radial)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4.59998 23.7695V25.1129C4.59998 26.5402 5.20375 27.7493 6.26035 28.4629C7.31696 29.1766 8.51732 29.1766 9.57392 28.4629L13.8291 25.5915C11.4068 26.7165 7.29539 26.7585 4.59998 23.7695Z" fill="url(#paint21_radial)"/>
+</g>
+<defs>
+<radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-2.75737 15.9948) scale(15.11 17.65)">
+<stop stop-color="white"/>
+<stop offset="0.5" stop-color="#FBB03B"/>
+<stop offset="1" stop-color="#C4272E"/>
+</radialGradient>
+<radialGradient id="paint1_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-0.999347 15.4553) scale(16.5748 19.3611)">
+<stop stop-color="white"/>
+<stop offset="0.5" stop-color="#FBB03B"/>
+<stop offset="1" stop-color="#C4272E"/>
+</radialGradient>
+<radialGradient id="paint2_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-3.21766 2.20662) scale(15.5201 18.129)">
+<stop stop-color="white"/>
+<stop offset="0.5" stop-color="#FBB03B"/>
+<stop offset="1" stop-color="#C4272E"/>
+</radialGradient>
+<radialGradient id="paint3_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-0.832163 9.68651) scale(13.3392 15.5815)">
+<stop stop-color="white"/>
+<stop offset="0.5" stop-color="#FBB03B"/>
+<stop offset="1" stop-color="#C4272E"/>
+</radialGradient>
+<radialGradient id="paint4_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(23.2224 -2.97695) scale(26.8445 31.3571)">
+<stop stop-color="white"/>
+<stop offset="0.5" stop-color="#FBB03B"/>
+<stop offset="1" stop-color="#C4272E"/>
+</radialGradient>
+<radialGradient id="paint5_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(16.5385 1.08089) scale(16.7866 19.6085)">
+<stop stop-color="white"/>
+<stop offset="0.5" stop-color="#FBB03B"/>
+<stop offset="1" stop-color="#C4272E"/>
+</radialGradient>
+<radialGradient id="paint6_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(12.6879 -0.435329) scale(8.88382 10.3772)">
+<stop stop-color="white"/>
+<stop offset="0.5" stop-color="#FBB03B"/>
+<stop offset="1" stop-color="#C4272E"/>
+</radialGradient>
+<radialGradient id="paint7_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-5.77071 -4.54301) scale(18.8061 21.9675)">
+<stop stop-color="white"/>
+<stop offset="0.5" stop-color="#FBB03B"/>
+<stop offset="1" stop-color="#C4272E"/>
+</radialGradient>
+<radialGradient id="paint8_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-1.62759 2.98887) scale(23.8561 27.8663)">
+<stop stop-color="white"/>
+<stop offset="0.5" stop-color="#FBB03B"/>
+<stop offset="1" stop-color="#C4272E"/>
+</radialGradient>
+<radialGradient id="paint9_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-0.581184 4.84675) scale(15.1865 17.7394)">
+<stop stop-color="white"/>
+<stop offset="0.5" stop-color="#FBB03B"/>
+<stop offset="1" stop-color="#C4272E"/>
+</radialGradient>
+<radialGradient id="paint10_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(5.11121 9.73593) scale(10.171 11.8808)">
+<stop stop-color="white"/>
+<stop offset="0.5" stop-color="#FBB03B"/>
+<stop offset="1" stop-color="#C4272E"/>
+</radialGradient>
+<radialGradient id="paint11_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(3.89802 -7.08362) scale(23.4835 27.4311)">
+<stop stop-color="white"/>
+<stop offset="0.5" stop-color="#FBB03B"/>
+<stop offset="1" stop-color="#C4272E"/>
+</radialGradient>
+<radialGradient id="paint12_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-4.51506 -4.39455) scale(23.6178 27.588)">
+<stop stop-color="white"/>
+<stop offset="0.5" stop-color="#FBB03B"/>
+<stop offset="1" stop-color="#C4272E"/>
+</radialGradient>
+<radialGradient id="paint13_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(4.35843 3.23257) scale(11.2656 13.1593)">
+<stop stop-color="white"/>
+<stop offset="0.5" stop-color="#FBB03B"/>
+<stop offset="1" stop-color="#C4272E"/>
+</radialGradient>
+<radialGradient id="paint14_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(8.79562 11.4942) scale(25.969 30.3344)">
+<stop stop-color="white"/>
+<stop offset="0.5" stop-color="#FBB03B"/>
+<stop offset="1" stop-color="#C4272E"/>
+</radialGradient>
+<radialGradient id="paint15_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(9.71611 4.79606) scale(17.3224 20.2344)">
+<stop stop-color="white"/>
+<stop offset="0.5" stop-color="#FBB03B"/>
+<stop offset="1" stop-color="#C4272E"/>
+</radialGradient>
+<radialGradient id="paint16_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1.47077 9.44014) scale(23.8659 27.8778)">
+<stop stop-color="white"/>
+<stop offset="0.5" stop-color="#FBB03B"/>
+<stop offset="1" stop-color="#C4272E"/>
+</radialGradient>
+<radialGradient id="paint17_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(14.1529 8.51185) scale(17.4371 20.3682)">
+<stop stop-color="white"/>
+<stop offset="0.5" stop-color="#FBB03B"/>
+<stop offset="1" stop-color="#C4272E"/>
+</radialGradient>
+<radialGradient id="paint18_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(0.924371 20.9785) scale(16.5279 19.3063)">
+<stop stop-color="white"/>
+<stop offset="0.5" stop-color="#FBB03B"/>
+<stop offset="1" stop-color="#C4272E"/>
+</radialGradient>
+<radialGradient id="paint19_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(28.2833 10.3304) scale(26.6855 31.1713)">
+<stop stop-color="white"/>
+<stop offset="0.5" stop-color="#FBB03B"/>
+<stop offset="1" stop-color="#C4272E"/>
+</radialGradient>
+<radialGradient id="paint20_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-2.52785 14.7513) scale(26.6524 31.1327)">
+<stop stop-color="white"/>
+<stop offset="0.5" stop-color="#FBB03B"/>
+<stop offset="1" stop-color="#C4272E"/>
+</radialGradient>
+<radialGradient id="paint21_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(6.19269 31.8816) scale(21.8214 25.4896)">
+<stop stop-color="white"/>
+<stop offset="0.5" stop-color="#FBB03B"/>
+<stop offset="1" stop-color="#C4272E"/>
+</radialGradient>
+<clipPath id="clip0">
+<rect width="24" height="29" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+
 
                   <h3>女生评分</h3>
                 </div>
                 <div class="block-w-header__header-question">
-                  <p>现在在网站上</p>
+                  <p><nuxt-link to="/rating">现在在网站上</nuxt-link> </p>
 
                 </div>
               </div>
@@ -234,9 +372,9 @@
                     <path d="M19 19C18.45 19 18 18.55 18 18V4C18 3.45 18.45 3 19 3C19.55 3 20 3.45 20 4V18C20 18.55 19.55 19 19 19Z" fill="#42A5F5"/>
                   </svg>
 
-                  <h3>公告和新闻</h3>
+                  <h3><nuxt-link to="/blog"></nuxt-link> 公告和新闻</h3>
                 </div>
-                <div class="block-w-header__header-link"><p>现在在网站上</p></div>
+                <div class="block-w-header__header-link"><p><nuxt-link to="/blog">现在在网站上</nuxt-link></p></div>
               </div>
               <div class="block-w-header__content">
                 <div class="news__items">
@@ -274,7 +412,7 @@
                   <h3>现在在网站上</h3>
                 </div>
                 <div class="block-w-header__header-link">
-                  <p>现在在网站上</p>
+                  <p><nuxt-link to="/rating">现在在网站上</nuxt-link> </p>
 
                 </div>
               </div>
@@ -294,7 +432,9 @@
                         <!--                        <p>{{user}}</p>-->
                       </div>
                       <p class="best-girl-item__info-name">{{user.from_user.fio}}</p>
-                      <p class="best-girl-item__info-link">@{{user.from_user.nickname}}</p>
+                      <!--                      <p class="best-girl-item__info-link">@{{user.from_user.nickname}}</p>-->
+
+                      <p class="best-girl-item__info-summ">消費 <img src="/diamond.svg" alt=""> {{user.summ}}鑽</p>
                     </div>
                   </div>
                   <div v-else class="best-girls-item indexMode">
@@ -320,43 +460,16 @@
       <div class="container">
         <div class="block-w-header">
           <div class="block-w-header__header">
-            <div class="block-w-header__header-title">现在在网站上</div>
-            <div class="block-w-header__header-buttons">
-              <div @click="featuresActiveTab='tab1'" :class="{'tabButtonActive':featuresActiveTab==='tab1'}" class="block-w-header__header-button">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6.25 4.66602L8.33334 5.83268L7.16667 3.74935L8.33334 1.66602L6.25 2.83268L4.16667 1.66602L5.33334 3.74935L4.16667 5.83268L6.25 4.66602ZM16.25 12.8327L14.1667 11.666L15.3333 13.7493L14.1667 15.8327L16.25 14.666L18.3333 15.8327L17.1667 13.7493L18.3333 11.666L16.25 12.8327ZM18.3333 1.66602L16.25 2.83268L14.1667 1.66602L15.3333 3.74935L14.1667 5.83268L16.25 4.66602L18.3333 5.83268L17.1667 3.74935L18.3333 1.66602ZM11.975 6.07435C11.8979 5.9971 11.8063 5.93581 11.7055 5.89399C11.6047 5.85217 11.4966 5.83065 11.3875 5.83065C11.2784 5.83065 11.1703 5.85217 11.0695 5.89399C10.9687 5.93581 10.8771 5.9971 10.8 6.07435L1.075 15.7993C0.997749 15.8764 0.93646 15.968 0.894642 16.0688C0.852824 16.1696 0.831299 16.2777 0.831299 16.3869C0.831299 16.496 0.852824 16.6041 0.894642 16.7049C0.93646 16.8057 0.997749 16.8973 1.075 16.9743L3.025 18.9243C3.35 19.2493 3.875 19.2493 4.2 18.9243L13.9167 9.20768C13.9939 9.13059 14.0552 9.03901 14.097 8.9382C14.1388 8.83739 14.1604 8.72932 14.1604 8.62018C14.1604 8.51104 14.1388 8.40297 14.097 8.30216C14.0552 8.20135 13.9939 8.10978 13.9167 8.03268L11.975 6.07435ZM11.1167 10.6493L9.35 8.88268L11.3833 6.84935L13.15 8.61602L11.1167 10.6493Z" />
-                </svg>
-                <p>平台功能</p>
-              </div>
-              <div @click="featuresActiveTab='tab2'" :class="{'tabButtonActive':featuresActiveTab==='tab2'}" class="block-w-header__header-button">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M10 0C8.69231 0 7.69231 1 7.69231 2.30769V6.92308C7.69231 8.23077 8.69231 9.23077 10 9.23077H14.6154L17.6923 12.3077V9.23077C19 9.23077 20 8.23077 20 6.92308V2.30769C20 1 19 0 17.6923 0H10ZM13.2215 2.30769H14.5431L15.8415 6.92308H14.6877L14.3746 5.76923H13.2208L12.9331 6.92308H11.9231L13.2215 2.30769ZM13.8462 3.07692C13.7692 3.38462 13.6831 3.76 13.6054 3.99077L13.39 5H14.3031L14.0862 3.99C13.9331 3.76 13.8462 3.38462 13.8462 3.07692ZM2.30769 7.69231C1 7.69231 0 8.69231 0 10V14.6154C0 15.9231 1 16.9231 2.30769 16.9231V20L5.38462 16.9231H10C11.3077 16.9231 12.3077 15.9231 12.3077 14.6154V10H10C8.53846 10 7.38 9 6.99538 7.69231H2.30769ZM5.84154 9.92769C7.14923 9.92769 7.76462 11.0046 7.76462 12.2354C7.76462 13.3123 7.39462 13.9954 6.77923 14.3031C7.08692 14.4569 7.45154 14.5385 7.83615 14.6154L7.54846 15.3846C7.01 15.2308 6.45154 14.9908 5.91308 14.7592C5.83615 14.6823 5.70154 14.6877 5.62462 14.6877C4.70154 14.6108 3.84615 13.8462 3.84615 12.3077C3.84615 11 4.61077 9.92769 5.84154 9.92769ZM5.84154 10.7692C5.22615 10.7692 4.92769 11.4615 4.92769 12.3077C4.92769 13.2308 5.22615 13.8462 5.84154 13.8462C6.45692 13.8462 6.77846 13.1538 6.77846 12.3077C6.77846 11.4615 6.45692 10.7692 5.84154 10.7692Z" />
-                </svg>
-                <p>这个怎么运作?</p>
-              </div>
-              <div @click="featuresActiveTab='tab3'" :class="{'tabButtonActive':featuresActiveTab==='tab3'}" class="block-w-header__header-button">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M14.4925 2.33453C14.4926 2.0418 14.3764 1.76102 14.1695 1.55397C13.9625 1.34692 13.6818 1.23055 13.3891 1.23047C13.2441 1.23043 13.1006 1.25894 12.9667 1.31437C12.8328 1.3698 12.7111 1.45107 12.6085 1.55353C12.4015 1.76046 12.2851 2.04117 12.285 2.33391C12.285 2.94328 13.3888 5.00078 13.3888 5.00078C13.3888 5.00078 14.4925 2.94328 14.4925 2.33391V2.33453ZM12.8613 2.33453C12.8588 2.26377 12.8706 2.19324 12.896 2.12714C12.9213 2.06104 12.9597 2.00071 13.0089 1.94977C13.058 1.89882 13.117 1.85829 13.1821 1.8306C13.2473 1.8029 13.3173 1.78861 13.3881 1.78857C13.4589 1.78852 13.529 1.80274 13.5942 1.83035C13.6594 1.85797 13.7184 1.89843 13.7676 1.94932C13.8168 2.00021 13.8553 2.06048 13.8807 2.12656C13.9062 2.19263 13.918 2.26315 13.9157 2.33391C13.911 2.47059 13.8535 2.60013 13.7552 2.69521C13.6569 2.79029 13.5255 2.84349 13.3888 2.84357C13.252 2.84365 13.1206 2.79061 13.0222 2.69565C12.9237 2.60068 12.8661 2.47121 12.8613 2.33453ZM15.8007 11.5595C15.4507 11.5595 15.115 11.5889 14.8069 11.6364L6.93753 8.73516C7.06253 8.62266 7.13253 8.49766 7.13253 8.36641C7.13092 8.29722 7.11202 8.22953 7.07753 8.16953L12.3338 6.77078C12.6213 6.85641 12.9732 6.90828 13.3625 6.90828C14.3125 6.90828 15.0813 6.60578 15.0813 6.23203C15.0813 5.85703 14.3125 5.55516 13.3625 5.55516C12.4125 5.55516 11.6438 5.85828 11.6438 6.23203C11.6438 6.27578 11.6563 6.31766 11.6775 6.35828L6.18503 7.62516C5.72452 7.49524 5.24787 7.43148 4.7694 7.43578C3.46503 7.43578 2.4069 7.85266 2.4069 8.36703C2.4069 8.88141 3.46503 9.29828 4.7694 9.29828C5.12815 9.29828 5.46315 9.26391 5.76815 9.20766L13.2619 12.2489C13.1432 12.3689 13.0707 12.4989 13.0707 12.6383C13.0707 12.757 13.1307 12.8658 13.2182 12.9714L5.4344 15.8845C5.33565 15.8814 5.2369 15.8783 5.13628 15.8783C3.11128 15.8783 1.46753 16.5258 1.46753 17.322C1.46753 18.1202 3.11128 18.7677 5.13628 18.7677C7.16128 18.7677 8.80503 18.1214 8.80503 17.3227C8.80503 17.1852 8.75315 17.0527 8.66128 16.927L15.0775 13.6683C15.3088 13.6933 15.5482 13.7089 15.7994 13.7089C17.3075 13.7089 18.5307 13.2277 18.5307 12.632C18.5307 12.042 17.3075 11.5595 15.7994 11.5595H15.8007Z" />
-                </svg>
 
-                <p>这个怎么运作?</p>
-              </div>
-              <div @click="featuresActiveTab='tab4'" :class="{'tabButtonActive':featuresActiveTab==='tab4'}" class="block-w-header__header-button">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12.215 5.21773C12.215 4.62696 11.9803 4.06039 11.5626 3.64265C11.1449 3.22492 10.5783 2.99023 9.98751 2.99023C9.39674 2.99023 8.83017 3.22492 8.41243 3.64265C7.99469 4.06039 7.76001 4.62696 7.76001 5.21773C7.76001 5.8085 7.99469 6.37508 8.41243 6.79281C8.83017 7.21055 9.39674 7.44523 9.98751 7.44523C10.5783 7.44523 11.1449 7.21055 11.5626 6.79281C11.9803 6.37508 12.215 5.8085 12.215 5.21773Z" />
-                  <path d="M2.51685 12.0006H5.50585V9.01465L5.51385 8.83465C5.53985 8.53765 5.63185 8.25965 5.77385 8.01465H3.01685L2.89985 8.02165C2.65659 8.05031 2.43232 8.16724 2.26956 8.35028C2.1068 8.53331 2.01688 8.76972 2.01685 9.01465V11.5006C2.01685 11.6333 2.06952 11.7604 2.16329 11.8542C2.25706 11.948 2.38424 12.0006 2.51685 12.0006Z" />
-                  <path d="M17.9901 11.5006C17.9901 11.6333 17.9374 11.7604 17.8436 11.8542C17.7498 11.948 17.6227 12.0006 17.4901 12.0006H14.4741V9.01465L14.4681 8.86565C14.4462 8.56581 14.3566 8.27484 14.2061 8.01465H16.9901C17.2351 8.01471 17.4717 8.10477 17.6547 8.26774C17.8378 8.4307 17.9546 8.65522 17.9831 8.89865L17.9901 9.01465V11.5006Z" />
-                  <path d="M13.467 8.89865C13.4386 8.65505 13.3216 8.43039 13.1383 8.2674C12.955 8.10442 12.7183 8.01446 12.473 8.01465H7.505L7.388 8.02165C7.14475 8.05031 6.92048 8.16724 6.75772 8.35028C6.59496 8.53331 6.50504 8.76972 6.505 9.01465V12.0006H13.473V9.01465L13.467 8.89865Z" />
-                  <path d="M14.975 3.61719C15.4825 3.61719 15.9692 3.81879 16.3281 4.17764C16.6869 4.53649 16.8885 5.0232 16.8885 5.53069C16.8885 6.03818 16.6869 6.52489 16.3281 6.88374C15.9692 7.24259 15.4825 7.44419 14.975 7.44419C14.4675 7.44419 13.9808 7.24259 13.622 6.88374C13.2631 6.52489 13.0615 6.03818 13.0615 5.53069C13.0615 5.0232 13.2631 4.53649 13.622 4.17764C13.9808 3.81879 14.4675 3.61719 14.975 3.61719Z" />
-                  <path d="M6.93003 5.53069C6.93003 5.0232 6.72843 4.53649 6.36958 4.17764C6.01073 3.81879 5.52402 3.61719 5.01653 3.61719C4.50904 3.61719 4.02233 3.81879 3.66348 4.17764C3.30463 4.53649 3.10303 5.0232 3.10303 5.53069C3.10303 6.03805 3.30458 6.52463 3.66333 6.88338C4.02209 7.24214 4.50867 7.44369 5.01603 7.44369C5.52339 7.44369 6.00997 7.24214 6.36872 6.88338C6.72748 6.52463 6.92903 6.03805 6.92903 5.53069H6.93003Z" />
-                  <path d="M2.5 13.001C2.36739 13.001 2.24021 13.0537 2.14645 13.1474C2.05268 13.2412 2 13.3684 2 13.501V14.501C2 15.164 2.26339 15.7999 2.73223 16.2687C3.20107 16.7376 3.83696 17.001 4.5 17.001H15.5C16.163 17.001 16.7989 16.7376 17.2678 16.2687C17.7366 15.7999 18 15.164 18 14.501V13.501C18 13.3684 17.9473 13.2412 17.8536 13.1474C17.7598 13.0537 17.6326 13.001 17.5 13.001H2.5Z" />
-                </svg>
+            <div class="block-w-header__header-title">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.25 4.66602L8.33334 5.83268L7.16667 3.74935L8.33334 1.66602L6.25 2.83268L4.16667 1.66602L5.33334 3.74935L4.16667 5.83268L6.25 4.66602ZM16.25 12.8327L14.1667 11.666L15.3333 13.7493L14.1667 15.8327L16.25 14.666L18.3333 15.8327L17.1667 13.7493L18.3333 11.666L16.25 12.8327ZM18.3333 1.66602L16.25 2.83268L14.1667 1.66602L15.3333 3.74935L14.1667 5.83268L16.25 4.66602L18.3333 5.83268L17.1667 3.74935L18.3333 1.66602ZM11.975 6.07435C11.8979 5.9971 11.8063 5.93581 11.7055 5.89399C11.6047 5.85217 11.4966 5.83065 11.3875 5.83065C11.2784 5.83065 11.1703 5.85217 11.0695 5.89399C10.9687 5.93581 10.8771 5.9971 10.8 6.07435L1.075 15.7993C0.997749 15.8764 0.93646 15.968 0.894642 16.0688C0.852824 16.1696 0.831299 16.2777 0.831299 16.3869C0.831299 16.496 0.852824 16.6041 0.894642 16.7049C0.93646 16.8057 0.997749 16.8973 1.075 16.9743L3.025 18.9243C3.35 19.2493 3.875 19.2493 4.2 18.9243L13.9167 9.20768C13.9939 9.13059 14.0552 9.03901 14.097 8.9382C14.1388 8.83739 14.1604 8.72932 14.1604 8.62018C14.1604 8.51104 14.1388 8.40297 14.097 8.30216C14.0552 8.20135 13.9939 8.10978 13.9167 8.03268L11.975 6.07435ZM11.1167 10.6493L9.35 8.88268L11.3833 6.84935L13.15 8.61602L11.1167 10.6493Z" fill="#F64953"/>
+</svg>
 
-                <p>这个怎么运作?</p>
-              </div>
-            </div>
+              现在在网站上</div>
+
           </div>
-          <div v-if="featuresActiveTab==='tab1'" class="block-w-header__content">
+          <div class="block-w-header__content">
             <div class="features-block__inner grid">
               <el-image src="/features/1.jpg" lazy></el-image>
               <el-image src="/features/2.jpg" lazy></el-image>
@@ -366,41 +479,80 @@
               <el-image src="/features/6.jpg" lazy></el-image>
             </div>
           </div>
-          <div v-if="featuresActiveTab==='tab2'" class="block-w-header__content">
-            <div class="features-block__inner ">
-              <div class="faq-items">
-                <div class="faq-item" v-for="(faq,index) in faqs" :key="faq.id" :class="{'faqItemActive':accordeonActive===index}">
-                  <div class="faq-item__top" @click="accordeonActive=index">
-                    <p>{{faq.question}}</p>
-                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <circle cx="17" cy="17" r="16.5" fill="white" stroke="#CECFDF"/>
-                      <path d="M17 21L13.5359 15L20.4641 15L17 21Z" />
-                    </svg>
-                  </div>
-                  <div class="faq-item__content">
-                    <div class="faq-item__content--inner">
-                      <p v-html="faq.answer"></p>
-                    </div>
-                  </div>
-                </div>
 
-              </div>
-            </div>
-          </div>
-          <div v-if="featuresActiveTab==='tab3'" class="block-w-header__content">
-            <div class="features-block__inner ">
-              <img src="/roadmap.jpg" alt="">
-            </div>
-          </div>
-          <div v-if="featuresActiveTab==='tab4'" class="block-w-header__content">
-            <div class="features-block__inner ">
-              4
-            </div>
-          </div>
+
+
 
         </div>
       </div>
     </div>
+    <section class="news">
+      <div class="container">
+        <div class="news__wrapper">
+          <div class="news__left">
+            <div class="block-w-header">
+              <div class="block-w-header__header">
+                <div class="block-w-header__header-title">
+                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.4925 2.33453C14.4926 2.0418 14.3764 1.76102 14.1695 1.55397C13.9625 1.34692 13.6818 1.23055 13.3891 1.23047C13.2441 1.23043 13.1006 1.25894 12.9667 1.31437C12.8328 1.3698 12.7111 1.45107 12.6085 1.55353C12.4015 1.76046 12.2851 2.04117 12.285 2.33391C12.285 2.94328 13.3888 5.00078 13.3888 5.00078C13.3888 5.00078 14.4925 2.94328 14.4925 2.33391V2.33453ZM12.8613 2.33453C12.8588 2.26377 12.8706 2.19324 12.896 2.12714C12.9213 2.06104 12.9597 2.00071 13.0089 1.94977C13.058 1.89882 13.117 1.85829 13.1821 1.8306C13.2473 1.8029 13.3173 1.78861 13.3881 1.78857C13.4589 1.78852 13.529 1.80274 13.5942 1.83035C13.6594 1.85797 13.7184 1.89843 13.7676 1.94932C13.8168 2.00021 13.8553 2.06048 13.8807 2.12656C13.9062 2.19263 13.918 2.26315 13.9157 2.33391C13.911 2.47059 13.8535 2.60013 13.7552 2.69521C13.6569 2.79029 13.5255 2.84349 13.3888 2.84357C13.252 2.84365 13.1206 2.79061 13.0222 2.69565C12.9237 2.60068 12.8661 2.47121 12.8613 2.33453ZM15.8007 11.5595C15.4507 11.5595 15.115 11.5889 14.8069 11.6364L6.93753 8.73516C7.06253 8.62266 7.13253 8.49766 7.13253 8.36641C7.13092 8.29722 7.11202 8.22953 7.07753 8.16953L12.3338 6.77078C12.6213 6.85641 12.9732 6.90828 13.3625 6.90828C14.3125 6.90828 15.0813 6.60578 15.0813 6.23203C15.0813 5.85703 14.3125 5.55516 13.3625 5.55516C12.4125 5.55516 11.6438 5.85828 11.6438 6.23203C11.6438 6.27578 11.6563 6.31766 11.6775 6.35828L6.18503 7.62516C5.72452 7.49524 5.24787 7.43148 4.7694 7.43578C3.46503 7.43578 2.4069 7.85266 2.4069 8.36703C2.4069 8.88141 3.46503 9.29828 4.7694 9.29828C5.12815 9.29828 5.46315 9.26391 5.76815 9.20766L13.2619 12.2489C13.1432 12.3689 13.0707 12.4989 13.0707 12.6383C13.0707 12.757 13.1307 12.8658 13.2182 12.9714L5.4344 15.8845C5.33565 15.8814 5.2369 15.8783 5.13628 15.8783C3.11128 15.8783 1.46753 16.5258 1.46753 17.322C1.46753 18.1202 3.11128 18.7677 5.13628 18.7677C7.16128 18.7677 8.80503 18.1214 8.80503 17.3227C8.80503 17.1852 8.75315 17.0527 8.66128 16.927L15.0775 13.6683C15.3088 13.6933 15.5482 13.7089 15.7994 13.7089C17.3075 13.7089 18.5307 13.2277 18.5307 12.632C18.5307 12.042 17.3075 11.5595 15.7994 11.5595H15.8007Z" fill="url(#paint0_linear)"/>
+<defs>
+<linearGradient id="paint0_linear" x1="9.99909" y1="1.23047" x2="9.99909" y2="18.7677" gradientUnits="userSpaceOnUse">
+<stop stop-color="#535DF4"/>
+<stop offset="1" stop-color="#0FF2E5"/>
+</linearGradient>
+</defs>
+</svg>
+
+
+                  <h3>公告和新闻</h3>
+                </div>
+
+              </div>
+              <div class="block-w-header__content">
+                <img src="/roadmap.png" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="news__right">
+            <div class="block-w-header">
+              <div class="block-w-header__header">
+                <div class="block-w-header__header-title">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 0C8.69231 0 7.69231 1 7.69231 2.30769V6.92308C7.69231 8.23077 8.69231 9.23077 10 9.23077H14.6154L17.6923 12.3077V9.23077C19 9.23077 20 8.23077 20 6.92308V2.30769C20 1 19 0 17.6923 0H10ZM13.2215 2.30769H14.5431L15.8415 6.92308H14.6877L14.3746 5.76923H13.2208L12.9331 6.92308H11.9231L13.2215 2.30769ZM13.8462 3.07692C13.7692 3.38462 13.6831 3.76 13.6054 3.99077L13.39 5H14.3031L14.0862 3.99C13.9331 3.76 13.8462 3.38462 13.8462 3.07692ZM2.30769 7.69231C1 7.69231 0 8.69231 0 10V14.6154C0 15.9231 1 16.9231 2.30769 16.9231V20L5.38462 16.9231H10C11.3077 16.9231 12.3077 15.9231 12.3077 14.6154V10H10C8.53846 10 7.38 9 6.99538 7.69231H2.30769ZM5.84154 9.92769C7.14923 9.92769 7.76462 11.0046 7.76462 12.2354C7.76462 13.3123 7.39462 13.9954 6.77923 14.3031C7.08692 14.4569 7.45154 14.5385 7.83615 14.6154L7.54846 15.3846C7.01 15.2308 6.45154 14.9908 5.91308 14.7592C5.83615 14.6823 5.70154 14.6877 5.62462 14.6877C4.70154 14.6108 3.84615 13.8462 3.84615 12.3077C3.84615 11 4.61077 9.92769 5.84154 9.92769ZM5.84154 10.7692C5.22615 10.7692 4.92769 11.4615 4.92769 12.3077C4.92769 13.2308 5.22615 13.8462 5.84154 13.8462C6.45692 13.8462 6.77846 13.1538 6.77846 12.3077C6.77846 11.4615 6.45692 10.7692 5.84154 10.7692Z" fill="#ED903A"/>
+                  </svg>
+
+
+                  <h3>现在在网站上</h3>
+                </div>
+                <div class="block-w-header__header-link">
+                  <p><nuxt-link to="/info/rules">现在在网站上</nuxt-link> </p>
+
+                </div>
+              </div>
+              <div class="block-w-header__content">
+                <div class="faq-items">
+                  <div class="faq-item" v-for="(faq,index) in faqs" :key="faq.id" :class="{'faqItemActive':accordeonActive===index}">
+                    <div class="faq-item__top" @click="accordeonActive=index">
+                      <p>{{faq.question}}</p>
+                      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="17" cy="17" r="16.5" fill="white" stroke="#CECFDF"/>
+                        <path d="M17 21L13.5359 15L20.4641 15L17 21Z" />
+                      </svg>
+                    </div>
+                    <div class="faq-item__content">
+                      <div class="faq-item__content--inner">
+                        <p v-html="faq.answer"></p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section class="pricing">
       <div class="container">
@@ -426,10 +578,7 @@
                 <h3>现在在网站上</h3>
 
               </div>
-              <div class="block-w-header__header-link">
-                <p>现在在网站上</p>
 
-              </div>
             </div>
             <div class="block-w-header__content">
 
@@ -525,11 +674,7 @@
                 <h3>现在在网站上</h3>
 
               </div>
-              <div class="block-w-header__header-question">
 
-
-
-              </div>
             </div>
             <div class="block-w-header__content">
               <div class="pricing-payments">
@@ -595,11 +740,11 @@ export default {
           value: 100,
           label: '1 month'
         },
-          {
+        {
           value: 200,
           label: '2 month'
         },
-          {
+        {
           value: 300,
           label: '3 month'
         },
@@ -610,11 +755,11 @@ export default {
           value: 500,
           label: '1 month'
         },
-          {
+        {
           value: 600,
           label: '2 month'
         },
-          {
+        {
           value: 700,
           label: '3 month'
         },
@@ -637,10 +782,7 @@ export default {
         {id:4,question:'我对您的平台有任何疑问或建议！ 我该如何联系您？',answer:'从网站的标题或网站的页脚转到“联系人”部分，并向您写下您的问题，对我们工作的反馈或对我们平台开发的希望！'},
         {id:5,question:'我如何查看您平台的功能？',answer:'<a href="/info/guide">您可以在此处查看平台的全部功能</a> <br>' +
               '<a href="/info/vip-introduction">这里介绍了VIP功能</a>。'},
-        {id:6,question:'我如何查看您平台的功能？',answer:'<a href="/info/guide">您可以在此处查看平台的全部功能</a> <br>' +
-              '<a href="/info/vip-introduction">这里介绍了VIP功能</a>。'},
-        {id:7,question:'我如何查看您平台的功能？',answer:'<a href="/info/guide">您可以在此处查看平台的全部功能</a> <br>' +
-              '<a href="/info/vip-introduction">这里介绍了VIP功能</a>。'},
+
       ],
       accordeonActive:0,
       swiperOption: {

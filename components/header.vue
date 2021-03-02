@@ -190,9 +190,12 @@
               <div class="">
                 <p class="text-f-14 text-grey mb-20">选择关税</p>
                 <div class="authModal-group__radio">
-                  <el-radio class="mb-40 text-f-14" v-model="registerData.subscribe_type" label="1">1个月费用 <span class="text-l-green">175¥</span></el-radio>
-                  <el-radio class="mb-40 text-f-14" v-model="registerData.subscribe_type" label="2">6个月费用 <span class="text-l-green">350¥</span></el-radio>
-                  <el-radio v-model="registerData.subscribe_type" label="3">12个月费用 <span class="text-l-green">700¥</span></el-radio>
+                  <el-radio class="mb-10 text-f-14" v-model="registerData.subscribe_type" label="1">1个月费用 <span class="text-l-green">175¥</span></el-radio>
+                  <el-radio class="mb-10 text-f-14" v-model="registerData.subscribe_type" label="2">1VIP个月费用 <span class="text-l-green">175¥</span></el-radio>
+                  <el-radio class="mb-10 text-f-14" v-model="registerData.subscribe_type" label="3">6个月费用 <span class="text-l-green">350¥</span></el-radio>
+                  <el-radio class="mb-10 text-f-14" v-model="registerData.subscribe_type" label="4">6VIP个月费用 <span class="text-l-green">350¥</span></el-radio>
+                  <el-radio class="mb-10 text-f-14" v-model="registerData.subscribe_type" label="5">12个月费用 <span class="text-l-green">700¥</span></el-radio>
+                  <el-radio v-model="registerData.subscribe_type" label="6">12VIP个月费用 <span class="text-l-green">700¥</span></el-radio>
                 </div>
               </div>
               <div class="">
@@ -236,12 +239,13 @@ export default {
       register_step:1,
       navItemsAuth:[
         {id:1,name:'首页',link:'/',for_auth:false},
-        {id:2,name:'个人专区',link:'/lk',for_auth:true},
-        {id:3,name:'直播',link:'/stream',for_auth:false},
-        {id:4,name:'消息',link:'/blog',for_auth:false},
-        {id:5,name:'女孩们',link:'/girls',for_auth:false},
-        {id:6,name:'帮助中心',link:'/info/rules',for_auth:false},
-        {id:7,name:'联系我们',link:'/contacts',for_auth:false},
+        {id:2,name:'排行榜',link:'/rating',for_auth:false},
+        {id:3,name:'个人专区',link:'/lk',for_auth:true},
+        {id:4,name:'直播',link:'/stream',for_auth:false},
+        {id:5,name:'消息',link:'/blog',for_auth:false},
+        {id:6,name:'女孩们',link:'/girls',for_auth:false},
+        {id:7,name:'帮助中心',link:'/info/rules',for_auth:false},
+        {id:8,name:'联系我们',link:'/contacts',for_auth:false},
         // {id:7,name:'ВХОД ДЛЯ ДЕВУШЕК',link:'/login'},
       ],
 
