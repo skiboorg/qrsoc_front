@@ -32,6 +32,16 @@
         <el-form-item label="Искусство">
           <el-input type="textarea" :rows="2" placeholder="Искусство" v-model="userData.interests_additional"></el-input>
         </el-form-item>
+        <el-form-item label="Теги">
+                <el-select v-model="userData.tags" multiple placeholder="输入值">
+                  <el-option
+                    v-for="item in tags"
+                    :key="item.id"
+                    :label="item.name"
+                    :value="item.id">
+                  </el-option>
+                </el-select>
+              </el-form-item>
       </el-form>
       <p class="btn btn-l-blue" @click="updateUser">Сохранить</p>
 
@@ -46,6 +56,19 @@ export default {
   layout: 'streamer_lk',
   scrollToTop: false,
   auth: true,
+   async asyncData({$axios,$auth,params}){
+    console.log(params)
+    try{
+      const user_tags = await $axios.get(`/api/v1/user/get_user_tags`)
+      const tags = user_tags.data
+      return {tags}
+    }catch (e) {
+      const err = 404
+      return {err}
+
+    }
+
+  },
   data() {
     return {
       userData:{

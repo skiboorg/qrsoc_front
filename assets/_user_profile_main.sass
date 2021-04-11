@@ -202,7 +202,7 @@
 
 .user-bg
   &__wrapper
-    max-height: 200px
+    max-height: 400px
     overflow-y: auto
 
   &__item
@@ -252,11 +252,13 @@
 .selectBg
   .el-dialog
     max-width: 600px
+    height: 300px
 
 @media (max-width: 576px)
   .selectBg
-    .el-dialog
-      width: 95%
+    & .el-dialog
+        height: 300px
+
 
   .user-bg
     &__wrapper

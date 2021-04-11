@@ -30,10 +30,20 @@
       </div>
     </section>
     <el-dialog class="selectBg" title="更换封面" :visible.sync="bgDialogVisible" >
+
       <div class="user-bg__wrapper block-custom-scrollbar">
-        <div class="user-bg__item"  v-for="image in user_bg" :key="image.id" :class="{'itemForVip':!$auth.user.is_vip && image.is_for_vip}">
-          <img @click="changeUserBg(image.id,image.image)" :src="image.image" alt="">
-        </div>
+        <el-tabs class="chat-stikersTabs" v-model="activeBgGroup" >
+          <el-tab-pane v-for="(group,index) in user_bg"
+                       :disabled="!$auth.user.is_vip && group.is_for_vip ||  $auth.user.vip_level < group.is_for_vip_level "
+                       :label="group.name" :key="group.id" :name="`tab${index}`">
+            <div style="max-height: 150px" class="stiker-wrapper block-custom-scrollbar">
+              <div class="user-bg__item"  v-for="image in group.backgrounds" :key="image.id" >
+                <img @click="changeUserBg(image.id,image.image)" :src="image.image" alt="">
+              </div>
+            </div>
+          </el-tab-pane>
+        </el-tabs>
+
       </div>
     </el-dialog>
   </div>
@@ -44,6 +54,7 @@ export default {
   data() {
     return {
       bgDialogVisible:false,
+      activeBgGroup:'tab0',
       user_bg: this.$store.getters['user_bg/getUserBg'],
       userData:{
         bg_image: this.is_own_profile ? this.$auth.user.bg_image : this.$store.getters['girl_profile/getUser'].bg_image,

@@ -40,7 +40,7 @@
         </div>
         <div class="header-btn__notify">
           <div class="header-btn__notify--img">
-            <div v-if="false" class="header-btn__notify--img--num"><p>2</p></div>
+            <div v-if="chatMgsCount>0" class="header-btn__notify--img--num"><p>{{chatMgsCount}}</p></div>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M18 8C18 6.4087 17.3679 4.88258 16.2426 3.75736C15.1174 2.63214 13.5913 2 12 2C10.4087 2 8.88258 2.63214 7.75736 3.75736C6.63214 4.88258 6 6.4087 6 8C6 15 3 17 3 17H21C21 17 18 15 18 8Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               <path d="M13.7295 21C13.5537 21.3031 13.3014 21.5547 12.9978 21.7295C12.6941 21.9044 12.3499 21.9965 11.9995 21.9965C11.6492 21.9965 11.3049 21.9044 11.0013 21.7295C10.6977 21.5547 10.4453 21.3031 10.2695 21"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -228,6 +228,7 @@ export default {
   transition: 'home',
   data() {
     return {
+      chatMgsCount:0,
       hovered:false,
       authModal:false,
       activeTab:'loginTab',
@@ -269,13 +270,29 @@ export default {
     '$route.path': function(val) {
       this.mobileNavActive = false
       this.userMenuActive = false
+       if(this.$auth.user) {
+          this.getNotifications()
+        }
     }
   },
   mounted() {
-    this.$auth.user ? this.ws_connect() : null
+   if( this.$auth.user){
+      this.ws_connect()
+   }
   },
   methods: {
+    async getNotifications(){
+        const response_messages = await  this.$axios.get('/api/v1/notification/get_messages_count/')
+        //const response_other = await  this.$axios.get('/api/v1/notification/get_other_count/')
+        console.log('response_messages',response_messages.data['new_messages'])
+        this.chatMgsCount = response_messages.data['new_messages']
+        //this.notifyMgsCount = response_other.data['new_messages']
+        //this.notifyMgsCount = response.data.length
+        //await this.$axios.post('/api/v1/notification/set_read/')
+
+      },
     ws_connect(){
+       this.getNotifications()
       this.socket = new WebSocket(this.$config.ws_url+'/ws/user/online/')
       this.socket.onopen = () => {
         console.log('ws connected')
@@ -284,6 +301,16 @@ export default {
       this.socket.onmessage = (res) =>{
         let data = JSON.parse(res.data)
         console.log('socket.onmessage', data)
+        if (data.event==='chat'){
+            this.getNotifications()
+        //     this.$notify({
+        //   onClick:() => {
+        //     this.$router.push(data.url)
+        //   },
+        //   dangerouslyUseHTMLString: true,
+        //   message: `<strong><p style="cursor: pointer"><i style="margin-right: 10px" class="el-icon-chat-line-round"></i>${data.message}</p></strong>`
+        // });
+          }
       }
     },
     notify(title,message,type){

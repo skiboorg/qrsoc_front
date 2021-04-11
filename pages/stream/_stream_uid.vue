@@ -33,8 +33,8 @@
               </div>
               <!--              vjs-default-skin vjs-big-play-centered-->
               <video
-                id="my-player"
-                class="video-js ">
+                  id="my-player"
+                  class="video-js ">
                 <source :src="'http://95.215.207.100:8080/hls/'+stream.streamer.suid+'.m3u8'" type="application/x-mpegURL" />
                 <p class="vjs-no-js">
                   To view this video please enable JavaScript, and consider upgrading to a
@@ -77,12 +77,38 @@
               </div>
             </div>
           </div>
-          <div v-if="!this.$auth.user.is_streamer" class="stream-button" @click="giftModal=true">
-            <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 19H11.62C12.1971 19.0003 12.7674 18.8756 13.2916 18.6344C13.8159 18.3933 14.2817 18.0414 14.657 17.603L19.759 11.651C19.8658 11.5266 19.9404 11.3778 19.9762 11.2178C20.012 11.0577 20.0079 10.8913 19.9642 10.7333C19.9206 10.5752 19.8387 10.4303 19.7258 10.3113C19.6129 10.1923 19.4726 10.1029 19.317 10.051L17.349 9.39501C16.8734 9.2404 16.3669 9.20542 15.8745 9.29315C15.3821 9.38088 14.919 9.58863 14.526 9.89801L11.341 12.445L10.724 11.21C10.3935 10.5443 9.8831 9.98443 9.25073 9.59384C8.61837 9.20325 7.88926 8.99754 7.146 9.00001H2C0.897 9.00001 0 9.89701 0 11V17C0 18.103 0.897 19 2 19ZM2 11H7.146C7.909 11 8.594 11.423 8.935 12.105L9.382 13H5V15H11.014C11.1679 14.998 11.3191 14.9603 11.456 14.89L11.459 14.889L11.463 14.887H11.466L11.468 14.886H11.472L11.473 14.885C11.482 14.888 11.476 14.884 11.476 14.884C11.486 14.884 11.478 14.883 11.478 14.883H11.479L11.481 14.882L11.484 14.881L11.486 14.88L11.488 14.879L11.491 14.878L11.493 14.877C11.496 14.877 11.494 14.876 11.495 14.876L11.498 14.874L11.5 14.873L11.502 14.872L11.505 14.871L11.507 14.87H11.508L11.51 14.869H11.511L11.513 14.868L11.515 14.867C11.524 14.866 11.518 14.866 11.518 14.866L11.52 14.865C11.5585 14.8418 11.5953 14.8157 11.63 14.787L15.776 11.47C16.038 11.262 16.399 11.197 16.716 11.303L17.273 11.489L13.14 16.312C12.9499 16.5279 12.716 16.7009 12.454 16.8195C12.1919 16.9381 11.9077 16.9996 11.62 17H2V11ZM14 9.4057e-06H13.983C13.82 0.00200941 12.977 0.0390093 12 0.705009C11.049 0.0570093 10.226 0.00500933 10.032 0.00100933L10.002 9.4057e-06H9.998C9.197 9.4057e-06 8.443 0.313009 7.879 0.878009C7.313 1.44501 7 2.19801 7 3.00001C7 3.80201 7.313 4.55501 7.861 5.10401L11.275 8.69001C11.3689 8.78752 11.4816 8.86506 11.6062 8.918C11.7308 8.97093 11.8648 8.99817 12.0002 8.99808C12.1356 8.99798 12.2696 8.97056 12.3941 8.91746C12.5187 8.86435 12.6312 8.78665 12.725 8.68901L16.121 5.12101C16.688 4.55501 17 3.80201 17 3.00001C17 2.19801 16.687 1.44501 16.122 0.879009C15.8443 0.599555 15.514 0.377968 15.1501 0.227085C14.7862 0.0762012 14.3959 -0.00098066 14.002 9.4057e-06H14ZM15 3.00001C15 3.26701 14.896 3.51801 14.689 3.72501L12 6.55001L9.293 3.70701C9.104 3.51801 9 3.26701 9 3.00001C9 2.73301 9.104 2.48201 9.294 2.29201C9.47483 2.10807 9.72107 2.0031 9.979 2.00001C10.004 2.00101 10.481 2.03201 11.046 2.48501C11.127 2.55001 11.209 2.62401 11.293 2.70701L12 3.41401L12.707 2.70701C12.791 2.62401 12.873 2.55001 12.954 2.48501C13.483 2.06001 13.93 2.00701 14.006 2.00101C14.1363 2.00098 14.2654 2.02678 14.3857 2.07689C14.506 2.12701 14.6152 2.20046 14.707 2.29301C14.896 2.48201 15 2.73301 15 3.00001Z" fill="white"/>
-            </svg>
-            <p>捐献礼物</p>
+          <div style="display: flex;align-items: center;justify-content: space-between; margin-bottom: 20px">
+            <div v-if="!this.$auth.user.is_streamer" class="stream-button" @click="giftModal=true">
+              <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 19H11.62C12.1971 19.0003 12.7674 18.8756 13.2916 18.6344C13.8159 18.3933 14.2817 18.0414 14.657 17.603L19.759 11.651C19.8658 11.5266 19.9404 11.3778 19.9762 11.2178C20.012 11.0577 20.0079 10.8913 19.9642 10.7333C19.9206 10.5752 19.8387 10.4303 19.7258 10.3113C19.6129 10.1923 19.4726 10.1029 19.317 10.051L17.349 9.39501C16.8734 9.2404 16.3669 9.20542 15.8745 9.29315C15.3821 9.38088 14.919 9.58863 14.526 9.89801L11.341 12.445L10.724 11.21C10.3935 10.5443 9.8831 9.98443 9.25073 9.59384C8.61837 9.20325 7.88926 8.99754 7.146 9.00001H2C0.897 9.00001 0 9.89701 0 11V17C0 18.103 0.897 19 2 19ZM2 11H7.146C7.909 11 8.594 11.423 8.935 12.105L9.382 13H5V15H11.014C11.1679 14.998 11.3191 14.9603 11.456 14.89L11.459 14.889L11.463 14.887H11.466L11.468 14.886H11.472L11.473 14.885C11.482 14.888 11.476 14.884 11.476 14.884C11.486 14.884 11.478 14.883 11.478 14.883H11.479L11.481 14.882L11.484 14.881L11.486 14.88L11.488 14.879L11.491 14.878L11.493 14.877C11.496 14.877 11.494 14.876 11.495 14.876L11.498 14.874L11.5 14.873L11.502 14.872L11.505 14.871L11.507 14.87H11.508L11.51 14.869H11.511L11.513 14.868L11.515 14.867C11.524 14.866 11.518 14.866 11.518 14.866L11.52 14.865C11.5585 14.8418 11.5953 14.8157 11.63 14.787L15.776 11.47C16.038 11.262 16.399 11.197 16.716 11.303L17.273 11.489L13.14 16.312C12.9499 16.5279 12.716 16.7009 12.454 16.8195C12.1919 16.9381 11.9077 16.9996 11.62 17H2V11ZM14 9.4057e-06H13.983C13.82 0.00200941 12.977 0.0390093 12 0.705009C11.049 0.0570093 10.226 0.00500933 10.032 0.00100933L10.002 9.4057e-06H9.998C9.197 9.4057e-06 8.443 0.313009 7.879 0.878009C7.313 1.44501 7 2.19801 7 3.00001C7 3.80201 7.313 4.55501 7.861 5.10401L11.275 8.69001C11.3689 8.78752 11.4816 8.86506 11.6062 8.918C11.7308 8.97093 11.8648 8.99817 12.0002 8.99808C12.1356 8.99798 12.2696 8.97056 12.3941 8.91746C12.5187 8.86435 12.6312 8.78665 12.725 8.68901L16.121 5.12101C16.688 4.55501 17 3.80201 17 3.00001C17 2.19801 16.687 1.44501 16.122 0.879009C15.8443 0.599555 15.514 0.377968 15.1501 0.227085C14.7862 0.0762012 14.3959 -0.00098066 14.002 9.4057e-06H14ZM15 3.00001C15 3.26701 14.896 3.51801 14.689 3.72501L12 6.55001L9.293 3.70701C9.104 3.51801 9 3.26701 9 3.00001C9 2.73301 9.104 2.48201 9.294 2.29201C9.47483 2.10807 9.72107 2.0031 9.979 2.00001C10.004 2.00101 10.481 2.03201 11.046 2.48501C11.127 2.55001 11.209 2.62401 11.293 2.70701L12 3.41401L12.707 2.70701C12.791 2.62401 12.873 2.55001 12.954 2.48501C13.483 2.06001 13.93 2.00701 14.006 2.00101C14.1363 2.00098 14.2654 2.02678 14.3857 2.07689C14.506 2.12701 14.6152 2.20046 14.707 2.29301C14.896 2.48201 15 2.73301 15 3.00001Z" fill="white"/>
+              </svg>
+              <p>捐献礼物</p>
+            </div>
+
+            <div style="display: flex;align-items: center;justify-content: space-between">
+              <div v-if="stream.likes[0]">
+                <div v-if="stream.likes[0].users.length > 0" class="user-profile-post__actions--replies">
+                  <div class="user-profile-post__actions--replies--avatars">
+                         <span class="user-profile-post__actions--replies--avatar"
+                               v-for="like in stream.likes[0].users" :key="like.id">
+                            <img :src="like.avatar" width="50" height="50"/>
+                          </span>
+                  </div>
+                  <p>像{{stream.likes[0].users.length}}个人</p>
+                </div>
+              </div>
+
+              <div class="user-profile-post__actions--item" @click="likeAction(stream.id)"
+                   :class="{'elementDisabled':!$auth.loggedIn}">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20.16 4.99997C19.0937 3.94467 17.6853 3.30524 16.189 3.19705C14.6927 3.08886 13.207 3.51904 12 4.40997C10.7277 3.46361 9.14399 3.03448 7.56792 3.20901C5.99185 3.38353 4.54044 4.14875 3.50597 5.35055C2.47151 6.55236 1.93082 8.10149 1.9928 9.68598C2.05478 11.2705 2.71482 12.7726 3.84 13.89L9.84 19.94C10.4025 20.5018 11.165 20.8173 11.96 20.8173C12.755 20.8173 13.5175 20.5018 14.08 19.94L20.08 13.89C20.6709 13.3126 21.1419 12.6242 21.4659 11.8642C21.79 11.1042 21.9606 10.2877 21.968 9.4616C21.9755 8.63548 21.8195 7.81603 21.5093 7.05035C21.199 6.28467 20.7404 5.58786 20.16 4.99997ZM18.75 12.46L12.75 18.46C12.657 18.5537 12.5464 18.6281 12.4246 18.6789C12.3027 18.7296 12.172 18.7558 12.04 18.7558C11.908 18.7558 11.7773 18.7296 11.6554 18.6789C11.5336 18.6281 11.423 18.5537 11.33 18.46L5.33 12.46C4.54576 11.6583 4.10661 10.5814 4.10661 9.45997C4.10661 8.3385 4.54576 7.26162 5.33 6.45997C6.12916 5.67096 7.20697 5.22854 8.33 5.22854C9.45303 5.22854 10.5308 5.67096 11.33 6.45997C11.423 6.5537 11.5336 6.62809 11.6554 6.67886C11.7773 6.72963 11.908 6.75577 12.04 6.75577C12.172 6.75577 12.3027 6.72963 12.4246 6.67886C12.5464 6.62809 12.657 6.5537 12.75 6.45997C13.5708 5.80686 14.6032 5.47869 15.6504 5.53806C16.6977 5.59743 17.6864 6.04018 18.4281 6.78187C19.1698 7.52356 19.6125 8.5123 19.6719 9.55953C19.7313 10.6068 19.4031 11.6392 18.75 12.46Z" />
+                </svg>
+                <p v-if="stream.likes[0]">{{stream.likes[0].users.length}}</p>
+                <p v-else>0</p>
+              </div>
+            </div>
           </div>
+
           <div v-if="this.$auth.user.is_streamer" class="stream-translate stream-best-donaters mb-20">
             <div class="stream-translate__top">
               <el-checkbox v-model="is_translate">Включить автоперевод на китайский</el-checkbox>
@@ -92,7 +118,7 @@
             <div class="stream-translate__bottom">
               <el-input placeholder="Введите текст " v-model="ru" > </el-input>
               <el-input placeholder="Перевод" v-model="cn"></el-input>
-               <p class="btn btn-l-blue">Вывести ответ на экран</p>
+              <p class="btn btn-l-blue">Вывести ответ на экран</p>
             </div>
           </div>
           <div class="stream-best-donaters">
@@ -156,9 +182,9 @@
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M14.36 14.23C13.6915 14.769 12.8587 15.0629 12 15.0629C11.1413 15.0629 10.3085 14.769 9.64 14.23C9.43579 14.0603 9.17251 13.9786 8.90808 14.003C8.64365 14.0274 8.39974 14.1558 8.23 14.36C8.06027 14.5642 7.9786 14.8275 8.00298 15.0919C8.02736 15.3563 8.15579 15.6003 8.36 15.77C9.38134 16.6226 10.6696 17.0896 12 17.0896C13.3304 17.0896 14.6187 16.6226 15.64 15.77C15.8442 15.6003 15.9726 15.3563 15.997 15.0919C16.0214 14.8275 15.9397 14.5642 15.77 14.36C15.686 14.2589 15.5828 14.1753 15.4665 14.1141C15.3501 14.0528 15.2229 14.0151 15.0919 14.003C14.8275 13.9786 14.5642 14.0603 14.36 14.23ZM9 11C9.19779 11 9.39113 10.9414 9.55557 10.8315C9.72002 10.7216 9.8482 10.5654 9.92388 10.3827C9.99957 10.2 10.0194 9.99889 9.98079 9.80491C9.9422 9.61093 9.84696 9.43275 9.70711 9.29289C9.56726 9.15304 9.38908 9.0578 9.19509 9.01921C9.00111 8.98063 8.80005 9.00043 8.61732 9.07612C8.43459 9.15181 8.27842 9.27998 8.16853 9.44443C8.05865 9.60888 8 9.80222 8 10C8 10.2652 8.10536 10.5196 8.2929 10.7071C8.48043 10.8946 8.73479 11 9 11ZM15 9C14.8022 9 14.6089 9.05865 14.4444 9.16853C14.28 9.27841 14.1518 9.43459 14.0761 9.61732C14.0004 9.80004 13.9806 10.0011 14.0192 10.1951C14.0578 10.3891 14.153 10.5673 14.2929 10.7071C14.4328 10.847 14.6109 10.9422 14.8049 10.9808C14.9989 11.0194 15.2 10.9996 15.3827 10.9239C15.5654 10.8482 15.7216 10.72 15.8315 10.5556C15.9414 10.3911 16 10.1978 16 10C16 9.73478 15.8946 9.48043 15.7071 9.29289C15.5196 9.10536 15.2652 9 15 9ZM12 2C10.0222 2 8.08879 2.58649 6.4443 3.6853C4.79981 4.78412 3.51809 6.3459 2.76121 8.17317C2.00433 10.0004 1.8063 12.0111 2.19215 13.9509C2.578 15.8907 3.53041 17.6725 4.92894 19.0711C6.32746 20.4696 8.10929 21.422 10.0491 21.8079C11.9889 22.1937 13.9996 21.9957 15.8268 21.2388C17.6541 20.4819 19.2159 19.2002 20.3147 17.5557C21.4135 15.9112 22 13.9778 22 12C22 10.6868 21.7413 9.38642 21.2388 8.17317C20.7363 6.95991 19.9997 5.85752 19.0711 4.92893C18.1425 4.00035 17.0401 3.26375 15.8268 2.7612C14.6136 2.25866 13.3132 2 12 2ZM12 20C10.4178 20 8.87104 19.5308 7.55544 18.6518C6.23985 17.7727 5.21447 16.5233 4.60897 15.0615C4.00347 13.5997 3.84504 11.9911 4.15372 10.4393C4.4624 8.88743 5.22433 7.46197 6.34315 6.34315C7.46197 5.22433 8.88743 4.4624 10.4393 4.15372C11.9911 3.84504 13.5997 4.00346 15.0615 4.60896C16.5233 5.21447 17.7727 6.23984 18.6518 7.55544C19.5308 8.87103 20 10.4177 20 12C20 14.1217 19.1572 16.1566 17.6569 17.6569C16.1566 19.1571 14.1217 20 12 20Z" />
                 </svg>
-<!--                smilesListActive-->
+                <!--                smilesListActive-->
                 <div class="chat-new-message__input--smiles--list-alt"
-                :class="{'smilesListActive':smilesListActive}" @mouseleave="smilesListActive=!smilesListActive">
+                     :class="{'smilesListActive':smilesListActive}" @mouseleave="smilesListActive=!smilesListActive">
                   <p class="smiley-icon" v-for="smiley in smiles"
                      :key="smiley.id" v-html="smiley.code" @click="pasteSmiley(smiley.code)"></p>
                 </div>
@@ -210,171 +236,188 @@
 </template>
 
 <script>
-  import "video.js/dist/video-js.css";
-  import videojs from "video.js";
-  import "videojs-flash";
-  export default {
-    auth: true,
-    async asyncData({$axios,context,params}){
-      console.log(params.stream_uid.split('--')[1])
-      try{
-        const gifts = await $axios.get(`/api/v1/gift/get_all`)
-        const get_stream = await $axios.get(`/api/v1/stream/get_stream_by_uid?uid=${params.stream_uid.split('--')[1]}`)
-        const stream = get_stream.data
-        console.log(stream.id)
-        const top3_donaters = await $axios.get(`/api/v1/gift/get_user_top3_stream_donaters?stream_id=${stream.id}`)
+import "video.js/dist/video-js.css";
+import videojs from "video.js";
+import "videojs-flash";
+export default {
+  auth: true,
+  async asyncData({$axios,context,params}){
 
-        const all_gifts = gifts.data
-        const top_donaters = top3_donaters.data
-        console.log(stream,all_gifts,top_donaters)
-        return {stream,all_gifts,top_donaters}
-      }catch (e) {
-        const err = 404
-        console.log('stream error')
+    const stream_uuid = params.stream_uid.split('--')[1]
+    try{
+      const gifts = await $axios.get(`/api/v1/gift/get_all`)
+      const get_stream = await $axios.get(`/api/v1/stream/get_stream_by_uid?uid=${stream_uuid}`)
+      const stream = get_stream.data
+      console.log(stream.id)
+      const top3_donaters = await $axios.get(`/api/v1/gift/get_user_top3_stream_donaters?stream_id=${stream.id}`)
 
-        return {err}
+      const all_gifts = gifts.data
+      const top_donaters = top3_donaters.data
+      console.log(stream,all_gifts,top_donaters)
+      return {stream,all_gifts,top_donaters,stream_uuid}
+    }catch (e) {
+      const err = 404
+      console.log('stream error')
+
+      return {err}
+    }
+  },
+  data(){
+    return {
+      smilesListActive:null,
+      giftFromImg:null,
+      giftFrom:null,
+      giftImg:null,
+      giftMessage:null,
+      loading: true,
+      giftModal: false,
+      streamBtnActive:true,
+      streamGiftActive:false,
+      img_url:this.$config.img_url,
+      donates:[],
+      // donates:[
+      //   {id:1,gift_from: "admin06",gift_from_avatar: "/media/user/avatars/1_12_vGs7rsx.jpg",
+      //   gift_from_fio: "John Doegfh1",gift_img: "/media/gifts/diamond.png",gift_message: "uu",gift_price: 50,
+      //   gift_time: "13:57:00"}
+      // ],
+      smiles:[
+        {id:1,name:'GRINNING FACE',code:'😀'},
+        {id:2,name:'FACE WITH TEARS OF JOY',code:'😁'},
+        {id:3,name:'SMILING FACE WITH HALO',code:'😂'},
+        {id:4,name:'SMILING FACE WITH HORNS',code:'😈'},
+        {id:5,name:'SMILING FACE WITH HEART-SHAPED EYES',code:'😍'},
+        {id:6,name:'FACE THROWING A KISS',code:'😘'},
+      ],
+      newMessage:null,
+      giftRecieved:null,
+      messages:[],
+      gift_message:null,
+      selected_gift_img:null,
+      selected_gift_price:null,
+      selected_gift_id:null,
+      top_donaters:[],
+    }
+  },
+  watch:{
+    async giftRecieved(val){
+      console.log('giftRecieved',val)
+      //val['gift_to'] === this.$auth.user.id ? this.$auth.fetchUser() : null
+      await this.getDonaters()
+
+      this.giftImg = this.$config.img_url+val['gift_img']
+      this.giftMessage = val['gift_message']
+      this.giftFrom = val['gift_from']
+      this.giftFromImg = this.$config.img_url+val['gift_from_avatar']
+
+      this.streamGiftActive = true
+
+      setTimeout(()=>{
+        this.streamGiftActive = false;
+      }, 5000);
+      this.donates.push(val)
+      if (val['gift_to'] === this.$auth.user.id){
+        this.$auth.fetchUser()
+        let audio = new Audio('/donate-notify.mp3');
+        await audio.play();
       }
+      console.log(this.donates)
     },
-    data(){
-      return {
-        smilesListActive:null,
-        giftFromImg:null,
-        giftFrom:null,
-        giftImg:null,
-        giftMessage:null,
-        loading: true,
-        giftModal: false,
-        streamBtnActive:true,
-        streamGiftActive:false,
-        img_url:this.$config.img_url,
-        donates:[],
-        // donates:[
-        //   {id:1,gift_from: "admin06",gift_from_avatar: "/media/user/avatars/1_12_vGs7rsx.jpg",
-        //   gift_from_fio: "John Doegfh1",gift_img: "/media/gifts/diamond.png",gift_message: "uu",gift_price: 50,
-        //   gift_time: "13:57:00"}
-        // ],
-        smiles:[
-          {id:1,name:'GRINNING FACE',code:'😀'},
-          {id:2,name:'FACE WITH TEARS OF JOY',code:'😁'},
-          {id:3,name:'SMILING FACE WITH HALO',code:'😂'},
-          {id:4,name:'SMILING FACE WITH HORNS',code:'😈'},
-          {id:5,name:'SMILING FACE WITH HEART-SHAPED EYES',code:'😍'},
-          {id:6,name:'FACE THROWING A KISS',code:'😘'},
-        ],
-        newMessage:null,
-        giftRecieved:null,
-        messages:[],
-        gift_message:null,
-        selected_gift_img:null,
-        selected_gift_price:null,
-        selected_gift_id:null,
-        top_donaters:[],
-      }
-    },
-    watch:{
-      async giftRecieved(val){
-        console.log('giftRecieved',val)
-        //val['gift_to'] === this.$auth.user.id ? this.$auth.fetchUser() : null
-        await this.getDonaters()
 
-        this.giftImg = this.$config.img_url+val['gift_img']
-        this.giftMessage = val['gift_message']
-        this.giftFrom = val['gift_from']
-        this.giftFromImg = this.$config.img_url+val['gift_from_avatar']
+  },
+  created() {
+    try{
+      !this.stream.uid ? this.$router.push('/') : this.loading = false
+      this.openChat(this.stream.chat_id)
+    }catch (e) {
+      console.log('error')
+    }
+  },
+  updated() {
+    this.$nextTick(() => this.scrollToEnd());
+  },
+  mounted() {
 
-        this.streamGiftActive = true
+    //this.getDonaters()
+  },
 
-        setTimeout(()=>{
-          this.streamGiftActive = false;
-          }, 5000);
-        this.donates.push(val)
-        if (val['gift_to'] === this.$auth.user.id){
-          this.$auth.fetchUser()
-          let audio = new Audio('/donate-notify.mp3');
-          await audio.play();
+  methods:{
+    async likeAction(stream_id){
+        if (this.stream.likes[0]){
+          if  (this.stream.likes[0].users.filter(x => x.id === this.$auth.user.id).length > 0){
+            console.log('already like')
+            await this.$axios.post('/api/v1/stream/add_remove_like',{stream_id:stream_id,action:'delete'})
+          }else{
+            await this.$axios.post('/api/v1/stream/add_remove_like',{stream_id:stream_id,action:'add'})
+          }
+        }else{
+          await this.$axios.post('/api/v1/stream/add_remove_like',{stream_id:stream_id,action:'add'})
         }
-        console.log(this.donates)
-      }
-    },
-    created() {
-      try{
-        !this.stream.uid ? this.$router.push('/') : this.loading = false
-        this.openChat(this.stream.chat_id)
-      }catch (e) {
-        console.log('error')
-      }
-    },
-    updated() {
-      this.$nextTick(() => this.scrollToEnd());
-    },
-    mounted() {
 
-      //this.getDonaters()
+        const get_stream = await this.$axios.get(`/api/v1/stream/get_stream_by_uid?uid=${this.stream_uuid}`)
+        this.stream = get_stream.data
+      },
+    pasteSmiley(code){
+      this.newMessage ? this.newMessage += ` ${code} ` : this.newMessage = `${code} `
     },
+    notify(title,message,type){
+      //показать уведомление пользователю
+      this.$notify({
+        title: title,
+        message: message,
+        type: type
+      });
+    },
+    scrollToEnd: function () {
+      let content = this.$refs.messagesContainer
+      content.scrollTop = content.scrollHeight
 
-    methods:{
-      pasteSmiley(code){
-        this.newMessage ? this.newMessage += ` ${code} ` : this.newMessage = `${code} `
-      },
-      notify(title,message,type){
-        //показать уведомление пользователю
-        this.$notify({
-          title: title,
-          message: message,
-          type: type
-        });
-      },
-      scrollToEnd: function () {
-        let content = this.$refs.messagesContainer
-        content.scrollTop = content.scrollHeight
+    },
+    async getDonaters(){
+      //получаем топ3 донатера для стрима по его streamid
+      const response = await this.$axios.get(`/api/v1/gift/get_user_top3_stream_donaters?stream_id=${this.stream.id}`)
+      this.top_donaters = response.data
 
-      },
-      async getDonaters(){
-        //получаем топ3 донатера для стрима по его streamid
-        const response = await this.$axios.get(`/api/v1/gift/get_user_top3_stream_donaters?stream_id=${this.stream.id}`)
-        this.top_donaters = response.data
-
-      },
-      async sendGift(){
-        //отправляем подарок пользователю по nickname
-        if(this.$auth.user.balance < this.selected_gift_price){
-          this.notify('发送失败！','我们将回复您的邮件','error')
-          this.selected_gift_id = null
-          this.gift_message = null
-          return
-        }
-        await this.$axios.post(`/api/v1/gift/send_gift_to_user`,{
-          gift_id:this.selected_gift_id,
-          nickname:this.stream.streamer.nickname,
-          message:this.gift_message,
-          stream:this.stream.id
-        })
-        this.notify('您的礼物已发送！','您可以在个人帐户中跟踪它н','success')
-        await this.$auth.fetchUser()
+    },
+    async sendGift(){
+      //отправляем подарок пользователю по nickname
+      if(this.$auth.user.balance < this.selected_gift_price){
+        this.notify('发送失败！','我们将回复您的邮件','error')
         this.selected_gift_id = null
         this.gift_message = null
-        this.giftModal = false
-        //this.getDonaters()
+        return
+      }
+      await this.$axios.post(`/api/v1/gift/send_gift_to_user`,{
+        gift_id:this.selected_gift_id,
+        nickname:this.stream.streamer.nickname,
+        message:this.gift_message,
+        stream:this.stream.id
+      })
+      this.notify('您的礼物已发送！','您可以在个人帐户中跟踪它н','success')
+      await this.$auth.fetchUser()
+      this.selected_gift_id = null
+      this.gift_message = null
+      this.giftModal = false
+      //this.getDonaters()
 
 
-      },
-      async openChat(chat_id){
-        try{
-          this.socket.close()
-        }catch (e) {
-          console.log('not connected')
-        }
-        this.socket = new WebSocket(`${this.$config.ws_url}/ws/chat/${chat_id}`)
-        this.socket.onmessage = (res) =>{
-          console.log('socket data',JSON.parse(res.data))
-          let socketData  = JSON.parse(res.data)
-          let data = JSON.parse(res.data)['message']
-          console.log('DATA',data)
-          if (socketData['type'] === 'message'){
-            const rex = /[\u{1f300}-\u{1f5ff}\u{1f900}-\u{1f9ff}\u{1f600}-\u{1f64f}\u{1f680}-\u{1f6ff}\u{2600}-\u{26ff}\u{2700}-\u{27bf}\u{1f1e6}-\u{1f1ff}\u{1f191}-\u{1f251}\u{1f004}\u{1f0cf}\u{1f170}-\u{1f171}\u{1f17e}-\u{1f17f}\u{1f18e}\u{3030}\u{2b50}\u{2b55}\u{2934}-\u{2935}\u{2b05}-\u{2b07}\u{2b1b}-\u{2b1c}\u{3297}\u{3299}\u{303d}\u{00a9}\u{00ae}\u{2122}\u{23f3}\u{24c2}\u{23e9}-\u{23ef}\u{25b6}\u{23f8}-\u{23fa}]/ug;
-            const updated = data.message.replace(rex, match => `<span class="chat-emoji">&#x${match.codePointAt(0).toString(16)};</span>`);
-            console.log(updated)
-            this.messages.push(
+    },
+    async openChat(chat_id){
+      try{
+        this.socket.close()
+      }catch (e) {
+        console.log('not connected')
+      }
+      this.socket = new WebSocket(`${this.$config.ws_url}/ws/chat/${chat_id}`)
+      this.socket.onmessage = (res) =>{
+        console.log('socket data',JSON.parse(res.data))
+        let socketData  = JSON.parse(res.data)
+        let data = JSON.parse(res.data)['message']
+        console.log('DATA',data)
+        if (socketData['type'] === 'message'){
+          const rex = /[\u{1f300}-\u{1f5ff}\u{1f900}-\u{1f9ff}\u{1f600}-\u{1f64f}\u{1f680}-\u{1f6ff}\u{2600}-\u{26ff}\u{2700}-\u{27bf}\u{1f1e6}-\u{1f1ff}\u{1f191}-\u{1f251}\u{1f004}\u{1f0cf}\u{1f170}-\u{1f171}\u{1f17e}-\u{1f17f}\u{1f18e}\u{3030}\u{2b50}\u{2b55}\u{2934}-\u{2935}\u{2b05}-\u{2b07}\u{2b1b}-\u{2b1c}\u{3297}\u{3299}\u{303d}\u{00a9}\u{00ae}\u{2122}\u{23f3}\u{24c2}\u{23e9}-\u{23ef}\u{25b6}\u{23f8}-\u{23fa}]/ug;
+          const updated = data.message.replace(rex, match => `<span class="chat-emoji">&#x${match.codePointAt(0).toString(16)};</span>`);
+          console.log(updated)
+          this.messages.push(
               {
                 id:data.id,
                 message: updated,//data.message,
@@ -385,45 +428,45 @@
                   avatar: data.user.avatar ? this.$config.img_url+data.user.avatar : '/no-avatar.svg',
                 }
               }
-            )
-          }
-          if(socketData['type'] === 'gift'){
-            console.log('GIFT To id',socketData['gift_to'])
-            console.log('Streamer id',this.$auth.user.id)
+          )
+        }
+        if(socketData['type'] === 'gift'){
+          console.log('GIFT To id',socketData['gift_to'])
+          console.log('Streamer id',this.$auth.user.id)
 
-            this.giftRecieved = socketData
-
-          }
-
-          //this.scrollToEnd()
+          this.giftRecieved = socketData
 
         }
-        const response = await this.$axios.get(`/api/v1/chat/get_chat_messages?chat_id=${chat_id}`)
-        console.log(response.data)
-        this.messages = response.data
-        this.scrollToEnd()
 
-      },
-      async sendChatMessage(){
-        const rex = /[\u{1f300}-\u{1f5ff}\u{1f900}-\u{1f9ff}\u{1f600}-\u{1f64f}\u{1f680}-\u{1f6ff}\u{2600}-\u{26ff}\u{2700}-\u{27bf}\u{1f1e6}-\u{1f1ff}\u{1f191}-\u{1f251}\u{1f004}\u{1f0cf}\u{1f170}-\u{1f171}\u{1f17e}-\u{1f17f}\u{1f18e}\u{3030}\u{2b50}\u{2b55}\u{2934}-\u{2935}\u{2b05}-\u{2b07}\u{2b1b}-\u{2b1c}\u{3297}\u{3299}\u{303d}\u{00a9}\u{00ae}\u{2122}\u{23f3}\u{24c2}\u{23e9}-\u{23ef}\u{25b6}\u{23f8}-\u{23fa}]/ug;
-        const updated = this.newMessage.replace(rex, match => `<span class="chat-emoji">&#x${match.codePointAt(0).toString(16)};</span>`);
+        //this.scrollToEnd()
 
-        //await this.$axios.post(`/api/v1/chat/add/${this.current_chat_id}`,{message:updated})
+      }
+      const response = await this.$axios.get(`/api/v1/chat/get_chat_messages?chat_id=${chat_id}`)
+      console.log(response.data)
+      this.messages = response.data
+      this.scrollToEnd()
 
-        let formData = new FormData()
-        formData.set('message', JSON.stringify(this.newMessage))
-        formData.set('stiker',null)
+    },
+    async sendChatMessage(){
+      const rex = /[\u{1f300}-\u{1f5ff}\u{1f900}-\u{1f9ff}\u{1f600}-\u{1f64f}\u{1f680}-\u{1f6ff}\u{2600}-\u{26ff}\u{2700}-\u{27bf}\u{1f1e6}-\u{1f1ff}\u{1f191}-\u{1f251}\u{1f004}\u{1f0cf}\u{1f170}-\u{1f171}\u{1f17e}-\u{1f17f}\u{1f18e}\u{3030}\u{2b50}\u{2b55}\u{2934}-\u{2935}\u{2b05}-\u{2b07}\u{2b1b}-\u{2b1c}\u{3297}\u{3299}\u{303d}\u{00a9}\u{00ae}\u{2122}\u{23f3}\u{24c2}\u{23e9}-\u{23ef}\u{25b6}\u{23f8}-\u{23fa}]/ug;
+      const updated = this.newMessage.replace(rex, match => `<span class="chat-emoji">&#x${match.codePointAt(0).toString(16)};</span>`);
 
-        await this.$axios({
-          method: 'post',
-          headers:{
-            'content-type': 'multipart/form-data'
-          },
-          url: `/api/v1/chat/add/${this.stream.chat_id}`,
-          data: formData
-        }).then((response) => {
-          console.log('chat message response',response)
-        })
+      //await this.$axios.post(`/api/v1/chat/add/${this.current_chat_id}`,{message:updated})
+
+      let formData = new FormData()
+      formData.set('message', JSON.stringify(this.newMessage))
+      formData.set('stiker',null)
+
+      await this.$axios({
+        method: 'post',
+        headers:{
+          'content-type': 'multipart/form-data'
+        },
+        url: `/api/v1/chat/add/${this.stream.chat_id}`,
+        data: formData
+      }).then((response) => {
+        console.log('chat message response',response)
+      })
           .catch(function (error) {
             // handle error
           })
@@ -432,78 +475,78 @@
           });
 
 
-        //console.log(this.messages)
-        // this.messages.push(
+      //console.log(this.messages)
+      // this.messages.push(
+      //   {
+      //     message: this.newMessage,
+      //     user:{
+      //       id:this.$auth.user.id,
+      //       avatar:this.$auth.user.avatar,
+      //     }
+      //   }
+      // )
+      this.newMessage = null
+
+    },
+    cllick1: function() {
+      this.streamBtnActive = false
+      var thisp = this;
+      let options = {
+
+        height: "360",
+
+        fluid:true,
+        playbackRates: [0.5, 1, 1.5, 2, 2.5],
+        // sources: [
         //   {
-        //     message: this.newMessage,
-        //     user:{
-        //       id:this.$auth.user.id,
-        //       avatar:this.$auth.user.avatar,
-        //     }
+        //     type: "rtmp/mp4",
+        //     src: "rtmp://95.215.207.100/show/1234"
         //   }
-        // )
-        this.newMessage = null
-
-      },
-      cllick1: function() {
-        this.streamBtnActive = false
-        var thisp = this;
-        let options = {
-
-          height: "360",
-
-          fluid:true,
-          playbackRates: [0.5, 1, 1.5, 2, 2.5],
-          // sources: [
-          //   {
-          //     type: "rtmp/mp4",
-          //     src: "rtmp://95.215.207.100/show/1234"
-          //   }
-          // ],
-          techOrder: ["html5"],
-          autoplay: true,
-          controls: true,
-          poster:
+        // ],
+        techOrder: ["html5"],
+        autoplay: true,
+        controls: true,
+        poster:
             "http://placehold.it/1920x1080"
-        };
-        var player = videojs("my-player", options);
-        console.log(player);
-        player.ready(function() {
-          this.play();
-        });
-        player.on("ended", function() {
-          console.log("ended");
-        });
-        player.on("pause", function() {
-          console.log("pause");
-        });
-        player.on("timeupdate", function() {
-          var currentTime = this.currentTime();
-          // console.log(thisp.progressLast, currentTime, "视频进度");
-          // if (currentTime == thisp.progressLast && currentTime != 0) {
-          //   player.pause();
-          //   player.load();
-          //   player.play();
-          //   // player.ready(function() {
-          //   //   player.load();
-          //   //   player.play();
-          //   // });
-          // } else {
-          //   thisp.progressLast = currentTime;
-          // }
-        });
-        player.on("error", function() {
-          console.log("error");
-        });
-        player.on("waiting", function() {
-          console.log("waiting");
-        });
-        player.on("emptied", function() {
-          console.log("emptied");
-        });
-        this.player = player;
-      },
+      };
+      var player = videojs("my-player", options);
+      console.log(player);
+      player.ready(function() {
+        this.play();
+      });
+      player.on("ended", function() {
+        console.log("ended");
+      });
+      player.on("pause", function() {
+        console.log("pause");
+      });
+      player.on("timeupdate", function() {
+        var currentTime = this.currentTime();
+        // console.log(thisp.progressLast, currentTime, "视频进度");
+        // if (currentTime == thisp.progressLast && currentTime != 0) {
+        //   player.pause();
+        //   player.load();
+        //   player.play();
+        //   // player.ready(function() {
+        //   //   player.load();
+        //   //   player.play();
+        //   // });
+        // } else {
+        //   thisp.progressLast = currentTime;
+        // }
+      });
+      player.on("error", function() {
+        console.log("error");
+      });
+      player.on("waiting", function() {
+        console.log("waiting");
+      });
+      player.on("emptied", function() {
+        console.log("emptied");
+      });
+      this.player = player;
+    },
 
-    }
-  };
+  }
+};
 </script>

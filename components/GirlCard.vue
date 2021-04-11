@@ -2,7 +2,8 @@
   <div  class="girl-card "
        :class="[!this.$auth.loggedIn?'card-disabled':'', is_online?'girl-online':'']">
     <div @click="$router.push(`/profile/${nickname}`)" class="girl-card__avatar">
-      <img :src="avatar" alt="">
+      <el-image :src="avatar" fit="cover" lazy/>
+
     </div>
 
     <div @click="$router.push(`/profile/${nickname}`)" class="girl-card__bottom">

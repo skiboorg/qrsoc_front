@@ -10,15 +10,29 @@
       </div>
       <h3 class="user-profile-block__title">有关我的信息</h3>
       <div class="user-profile-block__info-grid">
+        <p>VIP START</p>
+        <p>{{this.$auth.user.vip_update}}</p>
+      </div>
+        <div class="user-profile-block__info-grid">
+        <p>VIP END</p>
+        <p>{{this.$auth.user.vip_expire}}</p>
+      </div>
+
+
+
+
+      <div class="user-profile-block__info-grid">
         <p>已加入</p>
         <p>{{ new Date(this.$auth.user.date_joined).getFullYear()}}年
           {{ new Date(this.$auth.user.date_joined).getMonth()}}月
           {{ new Date(this.$auth.user.date_joined).getDay()}}</p>
       </div>
+
       <div class="user-profile-block__info-grid">
         <p>市</p>
         <p>{{this.$auth.user.city}}</p>
       </div>
+
       <div class="user-profile-block__info-grid">
         <p>工作的地方</p>
         <p>{{this.$auth.user.work_place}}</p>

@@ -185,6 +185,12 @@ export default {
         console.log('not connected')
       }
       this.socket = new WebSocket(`${this.$config.ws_url}/ws/chat/${chat_id}`)
+      const opened_chat = await this.$axios.get(`/api/v1/chat/get_chat?chat_id=${chat_id}`)
+      console.log(opened_chat.data.opponent.id)
+      console.log(this.$auth.user.id)
+
+          await this.$axios.post(`/api/v1/chat/set_chat_read/${chat_id}`)
+
       this.socket.onmessage = (res) =>{
         //console.log('message in chat',JSON.parse(res.data))
         let updated = null

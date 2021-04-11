@@ -21,13 +21,13 @@
       <h3 class="user-profile-block__title">给予关注</h3>
       <p class="user-profile-block__text mb-20">我们可以给女孩更多的关注：如果您有任何祝贺或疑问，请送礼物！收到礼物后，女孩肯定会通过私人聊天给您写信并始对话！</p>
       <el-radio-group class="user-profile-special-gifts mb-20" v-model="selected_gift_id">
-        <el-radio class="user-profile-special-gift"
+        <el-radio  class="user-profile-special-gift"
                   :disabled="gift.is_for_vip && !$auth.user.is_vip"
                   v-if="gift.is_special_gift"
                   v-for="gift in all_gifts"
                   :key="gift.id"
                   :label="gift.id">
-          <div class="user-profile-special-gift__inner" >
+          <div @click="selected_gift_price=gift.price" class="user-profile-special-gift__inner" >
             <p class="user-profile-gift__name">{{gift.name}}</p>
             <div class="user-profile-gift__tooltip">
               <el-tooltip :content="gift.description" placement="left" effect="light">
@@ -53,6 +53,7 @@
       <div class="user-profile-gifts__message">
         <el-input v-model="special_gift_message" placeholder="输入女孩的愿望或信息"></el-input>
         <a href="#" class="btn btn-l-blue" :class="{'btnDisabled':!special_gift_message}" @click.prevent="sendGift">选择礼物</a>
+
       </div>
     </div>
     <div class="stream-best-donaters">

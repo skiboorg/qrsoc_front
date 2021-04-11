@@ -19,7 +19,9 @@
         <el-tab-pane label="Вход" name="loginTab">
           <el-input class="mb-10 mt-40" v-model="userData.wechatid" placeholder="ID"></el-input>
           <el-input class="mb-20" v-model="userData.password" show-password placeholder="pass"></el-input>
-          <p class="btn btn-l-blue text-f-14 mb-15" @click="userLogin">Войти</p>
+          <p class="btn btn-l-blue text-f-14 mb-40" @click="userLogin">Войти</p>
+          <p class="text-center">По всем вопросам писать в поддержку: whatsapp +79851067656</p>
+
         </el-tab-pane>
 
         <el-tab-pane label="Регистрация" name="regTab">
